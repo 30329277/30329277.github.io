@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>写新文章</title>
+</head>
+<body>
+    <div class="container">
+        <h1>写新文章</h1>
+        <form id="new-article-form">
+            <label for="title">标题:</label>
+            <input type="text" id="title" name="title" placeholder="请输入标题" required>
+            
+            <label for="content">内容:</label>
+            <textarea id="content" name="content" rows="10" placeholder="请输入内容" required></textarea>
+            
+            <button type="submit">发布文章</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
