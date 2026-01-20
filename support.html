@@ -1,40 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CNC Workpiece Calculator · Privacy & Support</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>CNC Workpiece Calculator · Privacy Policy</h1>
-        <div class="content">
-            <h2>Overview</h2>
-            <p>CNC Workpiece Calculator is an offline machining utility. The app does not ask you to create an account, does not connect to external services, and does not transmit any information outside of your device.</p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <h2>Data Collection</h2>
-            <ul>
-                <li>No personal information, contact details, or identifiers are collected.</li>
-                <li>No usage analytics, diagnostic, or crash data is gathered.</li>
-                <li>No location data, photos, microphone, or camera access is requested.</li>
-            </ul>
+        <title>CNC Workpiece Calculator — Centering, Fits, Tolerances & Weight (iOS)</title>
+        <meta
+            name="description"
+            content="CNC Workpiece Calculator is an offline iPhone/iPad utility for probe-based centering (circle/rectangle/ellipse/slot), ISO shaft-hole fits, general tolerances, and stock weight estimation."
+        />
+        <link rel="canonical" href="https://30329277.github.io/support.html" />
 
-            <h2>On-Device Processing</h2>
-            <p>All centering, tolerance, fit, and weight calculations occur entirely on your iPhone or iPad. Inputs remain in volatile memory only for the duration of your session and are not uploaded, synced, or stored on remote servers.</p>
+        <meta name="theme-color" content="#0b1221" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="icon" href="favicon-120.png" type="image/png" sizes="120x120" />
+        <link rel="icon" href="favicon-58.png" type="image/png" sizes="58x58" />
+        <link rel="icon" href="favicon-40.png" type="image/png" sizes="40x40" />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+        <link rel="mask-icon" href="favicon.svg" color="#6ee7ff" />
 
-            <h2>Third-Party Access</h2>
-            <p>The app does not embed third-party SDKs, advertising frameworks, or analytics libraries. No data is shared with external parties.</p>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="CNC Workpiece Calculator" />
+        <meta
+            property="og:description"
+            content="Offline CNC helper for centering, ISO fits, general tolerances, and weight estimation — built for iPhone and iPad."
+        />
+        <meta property="og:url" content="https://30329277.github.io/support.html" />
+        <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
 
-            <h2>Children's Privacy</h2>
-            <p>The app contains professional machining references and is safe for all ages because it does not collect any data. Parents and guardians can use the app without additional configuration.</p>
+        <link rel="stylesheet" href="landing.css" />
 
-            <h2>Contact</h2>
-            <p>If you have questions about this policy or need support, email <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a>. Typical response time is 24–48 hours.</p>
-        </div>
-        <footer>
-            <a href="index.html">Back to Home</a>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "CNC Workpiece Calculator",
+                "operatingSystem": "iOS",
+                "applicationCategory": "UtilitiesApplication",
+                "url": "https://30329277.github.io/support.html",
+                "downloadUrl": "https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <a class="brand" href="support.html" aria-label="CNC Workpiece Calculator">
+                        <span class="logo" aria-hidden="true"></span>
+                        <b>CNC Workpiece Calculator</b>
+                    </a>
+                    <nav class="nav" aria-label="Primary">
+                        <a href="#features">Features</a>
+                        <a href="#tutorial">Tutorial</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#download">Download</a>
+                        <a href="privacy.html">Privacy</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="container">
+            <section class="hero">
+                <div class="heroGrid">
+                    <div>
+                        <div class="kicker">
+                            <span class="badge">Offline • No account • No tracking</span>
+                            <span>Made for CNC setup & inspection</span>
+                        </div>
+                        <h1>Center faster. Calculate fits & tolerances. Estimate stock weight.</h1>
+                        <p class="lead">
+                            CNC Workpiece Calculator is a practical iPhone/iPad toolbox for machinists: probe-based centering across multiple
+                            shapes, ISO-style shaft/hole fit checks, general tolerance references, and quick weight estimation for common
+                            materials.
+                        </p>
+                        <div class="ctaRow" id="download">
+                            <a
+                                class="btn btnPrimary"
+                                href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                View on the App Store
+                            </a>
+                            <a class="btn btnGhost" href="#tutorial">See the workflow</a>
+                            <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contact support</a>
+                        </div>
+                    </div>
+
+                    <div class="heroCard" aria-label="App preview">
+                        <div class="heroCardInner">
+                            <img
+                                class="heroMedia"
+                                src="assets/cnc-hero-illustration.webp"
+                                alt="Illustration of CNC workpiece centering and measurement"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="section">
+                <h2>What it helps you do</h2>
+                <p>
+                    Reduce manual math during setup and inspection. Keep your workflow moving with on-device calculations you can trust
+                    while standing at the machine.
+                </p>
+
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>Probe-based centering</h3>
+                        <p>
+                            Enter measured X/Y points (with probe diameter compensation) and calculate the center/geometry for circle,
+                            rectangle, ellipse, straight slot, and double-circle patterns.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>Shaft–hole fits</h3>
+                        <p>
+                            Quickly check nominal size + tolerance grades (e.g., H7/h6) and see fit outcomes while selecting common hole/shaft
+                            types.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>Weight estimation</h3>
+                        <p>
+                            Estimate weight for common shapes (plate, tube, bar, ring…) with material presets, quantity, and metric/imperial
+                            units.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>General tolerances</h3>
+                        <p>
+                            Reference size and geometric tolerances (straightness/flatness, perpendicularity, circular runout, etc.) with
+                            clear results for shop use.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>Built for iPhone & iPad</h3>
+                        <p>
+                            Touch-friendly inputs and tab-based tools so you can switch between centering, fits, weight, and tolerances
+                            without losing context.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>Offline by design</h3>
+                        <p>
+                            No account, no ads, no tracking SDKs. Calculations run on-device so you can work even in restricted network
+                            environments.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tutorial" class="section">
+                <h2>Quick tutorial</h2>
+                <p>Three common workflows — centering, fits, and weight — with screenshots you can add later.</p>
+
+                <div class="split">
+                    <div class="figure">
+                        <img
+                            src="assets/cnc-screenshot-centering.png"
+                            alt="Centering workflow screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        />
+                        <div class="figcap">
+                            Screenshot: Centering tab — add <span class="kbd">assets/cnc-screenshot-centering.png</span>
+                        </div>
+                    </div>
+                    <div class="steps" aria-label="Centering steps">
+                        <div class="step">
+                            <div class="stepNum">1</div>
+                            <div>
+                                <b>Select a shape</b>
+                                Choose Circle, Rectangle, Ellipse, Straight Slot, or Double Circle.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">2</div>
+                            <div>
+                                <b>Add measured points</b>
+                                Enter X/Y points from probing. Set probe diameter (Ø) so calculations match your setup.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">3</div>
+                            <div>
+                                <b>Tap Calculate</b>
+                                Get center coordinates and key dimensions (diameter/width/height/angle). Use the result as your move-to target.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split" style="margin-top: 14px">
+                    <div class="figure">
+                        <img
+                            src="assets/cnc-screenshot-fit.png"
+                            alt="Shaft and hole fit screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        />
+                        <div class="figcap">Screenshot: Fit tab — add <span class="kbd">assets/cnc-screenshot-fit.png</span></div>
+                    </div>
+                    <div class="steps" aria-label="Fits steps">
+                        <div class="step">
+                            <div class="stepNum">1</div>
+                            <div>
+                                <b>Enter nominal size</b>
+                                Type your dimension in mm.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">2</div>
+                            <div>
+                                <b>Select tolerance grades</b>
+                                Pick hole/shaft types (e.g., H7 / h6) from the menu.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">3</div>
+                            <div>
+                                <b>Read the fit outcome</b>
+                                See the tolerance bands and the resulting fit classification at a glance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split" style="margin-top: 14px">
+                    <div class="figure">
+                        <img
+                            src="assets/cnc-screenshot-weight.png"
+                            alt="Weight estimation screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        />
+                        <div class="figcap">Screenshot: Weight tab — add <span class="kbd">assets/cnc-screenshot-weight.png</span></div>
+                    </div>
+                    <div class="steps" aria-label="Weight steps">
+                        <div class="step">
+                            <div class="stepNum">1</div>
+                            <div>
+                                <b>Pick unit + material</b>
+                                Metric/Imperial, then choose a material preset (steel, aluminum alloys, copper, etc.).
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">2</div>
+                            <div>
+                                <b>Select a shape</b>
+                                Plate, tube, ring, round bar, flat bar, and more.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">3</div>
+                            <div>
+                                <b>Enter dimensions</b>
+                                The weight result updates as you type.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Who it’s for</h2>
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>Job shops</h3>
+                        <p>Speed up everyday centering and quick checks without spreadsheets.</p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>Prototype & R&D</h3>
+                        <p>Iterate setups faster and keep measurement math consistent across runs.</p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>Training</h3>
+                        <p>Help new operators understand fits, tolerances, and geometry results.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="section">
+                <h2>FAQ</h2>
+                <div class="faq">
+                    <details>
+                        <summary>Does the app need the internet?</summary>
+                        <p>No. Core calculations work offline.</p>
+                    </details>
+                    <details>
+                        <summary>Does it collect any data?</summary>
+                        <p>
+                            No developer analytics or tracking SDKs are used. See the full policy on the
+                            <a href="privacy.html">Privacy</a> page.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can I use it on iPad?</summary>
+                        <p>Yes — the UI is built for both iPhone and iPad workflows.</p>
+                    </details>
+                    <details>
+                        <summary>Where do I report a bug or request a feature?</summary>
+                        <p>Email <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a>.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Download</h2>
+                <p>Ready to use it on the shop floor?</p>
+                <div class="ctaRow" style="margin-top: 12px">
+                    <a
+                        class="btn btnPrimary"
+                        href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Open App Store
+                    </a>
+                    <a class="btn btnGhost" href="privacy.html">Privacy policy</a>
+                    <a class="btn btnGhost" href="index.html">Other pages</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footerRow">
+                    <div class="small">© <span data-year></span> CNC Workpiece Calculator</div>
+                    <div class="small">
+                        <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a>
+                        · <a href="privacy.html">Privacy</a>
+                    </div>
+                </div>
+            </div>
         </footer>
-    </div>
-</body>
+
+        <script defer src="landing.js"></script>
+    </body>
 </html>
