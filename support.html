@@ -12,12 +12,12 @@
         <link rel="canonical" href="https://30329277.github.io/support.html" />
 
         <meta name="theme-color" content="#0b1221" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="icon" href="favicon-120.png" type="image/png" sizes="120x120" />
-        <link rel="icon" href="favicon-58.png" type="image/png" sizes="58x58" />
-        <link rel="icon" href="favicon-40.png" type="image/png" sizes="40x40" />
-        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-        <link rel="mask-icon" href="favicon.svg" color="#6ee7ff" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260121" />
+        <link rel="icon" href="favicon-120.png?v=20260121" type="image/png" sizes="120x120" />
+        <link rel="icon" href="favicon-58.png?v=20260121" type="image/png" sizes="58x58" />
+        <link rel="icon" href="favicon-40.png?v=20260121" type="image/png" sizes="40x40" />
+        <link rel="icon" href="favicon.svg?v=20260121" type="image/svg+xml" />
+        <link rel="mask-icon" href="favicon.svg?v=20260121" color="#6ee7ff" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="CNC Workpiece Calculator" />
@@ -166,7 +166,7 @@
 
             <section id="tutorial" class="section">
                 <h2>Quick tutorial</h2>
-                <p>Three common workflows — centering, fits, and weight — with screenshots you can add later.</p>
+                <p>Four common workflows — centering, fits, weight, and tolerances.</p>
 
                 <div class="split">
                     <div class="figure">
@@ -270,6 +270,43 @@
                             <div>
                                 <b>Enter dimensions</b>
                                 The weight result updates as you type.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="split" style="margin-top: 14px">
+                    <div class="figure">
+                        <img
+                            src="assets/cnc-screenshot-tolerances.png"
+                            alt="Tolerances screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        />
+                        <div class="figcap">
+                            Screenshot: Tolerances tab — add <span class="kbd">assets/cnc-screenshot-tolerances.png</span>
+                        </div>
+                    </div>
+                    <div class="steps" aria-label="Tolerances steps">
+                        <div class="step">
+                            <div class="stepNum">1</div>
+                            <div>
+                                <b>Open Tolerances</b>
+                                Use the General Tolerances tab for quick shop-floor reference.
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">2</div>
+                            <div>
+                                <b>Size tolerance</b>
+                                Enter nominal size, choose type (Linear / Radius / Angular) and grade (f/m/c/v).
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="stepNum">3</div>
+                            <div>
+                                <b>Geometric tolerance</b>
+                                Choose a geo type (straightness/flatness, perpendicularity, runout, etc.) and grade (H/K/L) to view the result.
                             </div>
                         </div>
                     </div>
