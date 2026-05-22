@@ -4,22 +4,28 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>WeldSight — Weld Inspection &amp; Measurement Tool (iOS)</title>
+        <title>WeldSight — Weld Inspection &amp; EN ISO 5817 Measurement Tool for iPhone &amp; iPad</title>
         <meta
             name="description"
-            content="WeldSight is an offline iOS app for weld inspection — capture weld photos, measure imperfections with calibrated tools, and evaluate against EN ISO 5817 quality levels."
+            content="WeldSight is a free offline iOS app for welding inspectors — photograph welds, calibrate using known plate thickness or pipe diameter, measure imperfections, and evaluate against EN ISO 5817 quality levels B, C, D. No internet required."
         />
+        <meta name="keywords" content="weld inspection app, EN ISO 5817, weld measurement, welding quality control, CWI tool, fillet weld, butt weld, pipe weld inspection, NDT, NDE, welding inspector, iOS weld app" />
         <link rel="canonical" href="https://30329277.github.io/weldsight-support.html" />
 
         <meta name="theme-color" content="#0b1221" />
+        <link rel="apple-touch-icon" href="ws-apple-touch-icon.png" />
+        <link rel="icon" href="ws-favicon-120.png" type="image/png" sizes="120x120" />
+        <link rel="icon" href="ws-favicon-58.png" type="image/png" sizes="58x58" />
+        <link rel="icon" href="ws-favicon-40.png" type="image/png" sizes="40x40" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="WeldSight" />
+        <meta property="og:title" content="WeldSight — Weld Inspection &amp; EN ISO 5817 Evaluation" />
         <meta
             property="og:description"
-            content="Offline weld inspection app — capture, measure, and evaluate welds against EN ISO 5817. Built for iPhone and iPad."
+            content="Free offline iOS app for welding inspectors. Photograph welds, calibrate with known dimensions, measure imperfections, evaluate against EN ISO 5817."
         />
         <meta property="og:url" content="https://30329277.github.io/weldsight-support.html" />
+        <meta property="og:image" content="https://30329277.github.io/assets/ws/scene-pipe-butt.webp" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <link rel="stylesheet" href="landing.css" />
@@ -29,13 +35,18 @@
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
                 "name": "WeldSight",
-                "operatingSystem": "iOS",
+                "operatingSystem": "iOS 17.0+",
                 "applicationCategory": "UtilitiesApplication",
+                "description": "Weld inspection and EN ISO 5817 measurement tool for iPhone and iPad. Photograph welds, calibrate using known plate thickness or pipe diameter, measure imperfections, and get instant pass/fail evaluation.",
                 "url": "https://30329277.github.io/weldsight-support.html",
                 "offers": {
                     "@type": "Offer",
                     "price": "0",
                     "priceCurrency": "USD"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Wang Ning"
                 }
             }
         </script>
@@ -53,9 +64,10 @@
                     </a>
                     <nav class="nav" aria-label="Primary">
                         <a href="#features">Features</a>
+                        <a href="#demos">Demos</a>
                         <a href="#how-it-works">How It Works</a>
+                        <a href="#use-cases">Use Cases</a>
                         <a href="#faq">FAQ</a>
-                        <a href="#download">Download</a>
                         <a href="weldsight-privacy.html">Privacy</a>
                     </nav>
                 </div>
@@ -63,146 +75,234 @@
         </header>
 
         <main id="main" class="container">
+            <!-- Hero -->
             <section class="hero">
                 <div class="heroGrid" style="grid-template-columns:1fr">
                     <div>
                         <div class="kicker">
-                            <span class="badge">Offline • No ads • No tracking</span>
+                            <span class="badge">Free • Offline • No tracking</span>
                             <span>Weld inspection in your pocket</span>
                         </div>
-                        <h1>Capture. Measure. Evaluate. All on your iPhone.</h1>
+                        <h1>Photograph. Calibrate. Measure. Evaluate against EN&nbsp;ISO&nbsp;5817.</h1>
                         <p class="lead">
-                            WeldSight is a practical iOS tool for welding inspectors and engineers — capture weld photos with a built-in camera,
-                            measure imperfections using calibrated on-screen tools, and instantly evaluate results against EN&nbsp;ISO&nbsp;5817
-                            quality levels B, C, and D.
+                            WeldSight turns your iPhone into a portable weld inspection station. Use the known plate thickness or pipe diameter
+                            as your calibration reference — no extra tools needed. Measure reinforcement, undercut, misalignment, throat thickness
+                            and more, then instantly evaluate against EN&nbsp;ISO&nbsp;5817 quality levels B, C, and D.
                         </p>
                         <div class="ctaRow" id="download">
-                            <a class="btn btnGhost" href="#how-it-works">See how it works</a>
+                            <a class="btn btnGhost" href="#demos">Watch demos</a>
                             <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contact support</a>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Key Features -->
             <section id="features" class="section">
                 <h2>Key Features</h2>
-                <p>
-                    Everything you need for on-site weld quality inspection — from image capture to standards-based evaluation.
-                </p>
+                <p>Everything a welding inspector needs for on-site quality evaluation — from photo capture to standards-based pass/fail results.</p>
 
                 <div class="grid3" role="list">
                     <div class="card" role="listitem">
                         <h3>📷 Camera &amp; Photo Import</h3>
                         <p>
-                            Capture weld photos directly in-app with up to 20× zoom and precise focus control.
-                            Import existing images from your photo library. Background removal isolates the weld for cleaner measurement.
+                            Capture weld photos with up to 20× zoom for close-up detail. Import existing images from your photo library.
+                            Background removal isolates the weld profile for cleaner measurement.
                         </p>
                     </div>
                     <div class="card" role="listitem">
-                        <h3>📐 Calibrated Measurement</h3>
+                        <h3>📐 Smart Calibration</h3>
                         <p>
-                            Set a known reference length to calibrate the image, then measure any weld dimension on-screen.
-                            Supports linear distance measurement with pixel-to-millimeter conversion.
+                            Calibrate using any known dimension already in the photo — plate thickness visible at the bevel edge,
+                            pipe outer diameter, or a ruler. The app calculates a precise pixel-to-mm ratio. No extra equipment needed.
                         </p>
                     </div>
                     <div class="card" role="listitem">
-                        <h3>🔍 Edge Detection</h3>
+                        <h3>📏 EN&nbsp;ISO&nbsp;5817 Evaluation</h3>
                         <p>
-                            Built-in Canny edge detection highlights weld boundaries automatically.
-                            Adjustable threshold and overlay help identify fusion lines, undercut edges, and reinforcement profiles.
-                        </p>
-                    </div>
-                    <div class="card" role="listitem">
-                        <h3>📏 EN ISO 5817 Evaluation</h3>
-                        <p>
-                            Select the imperfection type (excess weld metal, undercut, misalignment, etc.) and the app evaluates
-                            your measurement against quality levels B, C, and D — with pass/fail results shown instantly.
+                            Select the imperfection type (502, 504, 507, 508, 5011, 5213, 512), enter wall thickness, and get
+                            instant pass/fail for quality levels B, C, and D. Built-in illustrated reference guide included.
                         </p>
                     </div>
                     <div class="card" role="listitem">
                         <h3>📋 Project Management</h3>
                         <p>
-                            Organize inspections into projects with metadata (weld number, location, welder ID).
-                            Store multiple measurements per project. All data persists locally using SwiftData.
+                            Organize inspections by project with weld number, location, and welder ID.
+                            Multiple measurements per project. All data stored locally — nothing leaves your device.
                         </p>
                     </div>
                     <div class="card" role="listitem">
                         <h3>🛠 Pipe Fittings Library</h3>
                         <p>
-                            Built-in reference library for standard pipe fittings (elbows, tees, reducers) with dimensions
-                            and specifications — a handy reference during field inspections.
+                            Searchable database of standard pipe fittings — elbows, tees, reducers, caps — with dimensions
+                            and specifications for quick field reference.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🔒 Fully Offline &amp; Private</h3>
+                        <p>
+                            Every feature works without internet. Zero data collection, no accounts, no analytics.
+                            Perfect for field inspections in remote locations with no connectivity.
                         </p>
                     </div>
                 </div>
             </section>
 
+            <!-- Video Demos -->
+            <section id="demos" class="section">
+                <h2>See It in Action</h2>
+                <p>Four real inspection workflows demonstrating WeldSight's core capabilities.</p>
+
+                <div class="grid3" role="list" style="grid-template-columns:repeat(auto-fit, minmax(280px, 1fr))">
+                    <div class="card" role="listitem" style="text-align:center">
+                        <video autoplay muted loop playsinline style="max-width:260px; width:100%; border-radius:12px; box-shadow:var(--shadow); margin-bottom:12px">
+                            <source src="assets/ws/demo-plate-porosity.mp4" type="video/mp4">
+                        </video>
+                        <h3>Butt Weld — Plate Thickness Calibration</h3>
+                        <p>Calibrate using the known plate thickness visible at the weld bevel edge, then measure a gas pore imperfection.</p>
+                    </div>
+                    <div class="card" role="listitem" style="text-align:center">
+                        <video autoplay muted loop playsinline style="max-width:260px; width:100%; border-radius:12px; box-shadow:var(--shadow); margin-bottom:12px">
+                            <source src="assets/ws/demo-hole-length.mp4" type="video/mp4">
+                        </video>
+                        <h3>Weld Length — Circular Hole Calibration</h3>
+                        <p>Use a known-diameter hole as the calibration reference to measure weld seam length accurately.</p>
+                    </div>
+                    <div class="card" role="listitem" style="text-align:center">
+                        <video autoplay muted loop playsinline style="max-width:260px; width:100%; border-radius:12px; box-shadow:var(--shadow); margin-bottom:12px">
+                            <source src="assets/ws/demo-macro-en5817.mp4" type="video/mp4">
+                        </video>
+                        <h3>T-Joint Macro — EN&nbsp;5817 Evaluation</h3>
+                        <p>Measure a T-joint macro specimen with the built-in EN&nbsp;ISO&nbsp;5817 illustrated reference guide.</p>
+                    </div>
+                    <div class="card" role="listitem" style="text-align:center">
+                        <video autoplay muted loop playsinline style="max-width:260px; width:100%; border-radius:12px; box-shadow:var(--shadow); margin-bottom:12px">
+                            <source src="assets/ws/demo-tools.mp4" type="video/mp4">
+                        </video>
+                        <h3>Tools — Pipe Fittings Library</h3>
+                        <p>Browse the searchable pipe fittings database for quick dimensional reference during field inspections.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
             <section id="how-it-works" class="section">
                 <h2>How It Works</h2>
-                <p>Four simple steps from photo to evaluation report.</p>
+                <p>Four steps from photo to pass/fail evaluation — no desktop software needed.</p>
 
                 <div class="grid3" role="list">
                     <div class="card" role="listitem">
                         <h3>1. Capture</h3>
                         <p>
-                            Use the built-in camera or import a photo from your library.
-                            Position the weld in frame and capture at high resolution. Use zoom for detail shots of imperfections.
+                            Photograph the weld with the built-in camera (up to 20× zoom) or import an existing photo.
+                            Make sure the calibration reference — plate edge, pipe surface, or ruler — is visible in the frame.
                         </p>
                     </div>
                     <div class="card" role="listitem">
                         <h3>2. Calibrate</h3>
                         <p>
-                            Place a calibration reference (ruler, gauge) in the image. Draw a line across the known length and enter the
-                            real-world dimension. The app calculates the pixel-to-mm ratio for accurate measurement.
+                            Draw a line across any known dimension in the photo: the plate thickness at the bevel edge,
+                            the pipe outer diameter, or a ruler. Enter the real-world value and the app establishes the pixel-to-mm ratio.
                         </p>
                     </div>
                     <div class="card" role="listitem">
                         <h3>3. Measure</h3>
                         <p>
-                            Measure weld dimensions directly on the photo — reinforcement height, undercut depth, misalignment offset,
-                            throat thickness, and more. Rotate and zoom freely while measuring.
+                            Tap to measure any weld dimension — reinforcement height, undercut depth, leg length, throat thickness,
+                            misalignment offset. Pan, zoom, and rotate freely while measuring.
                         </p>
                     </div>
                     <div class="card" role="listitem">
                         <h3>4. Evaluate</h3>
                         <p>
-                            Select the imperfection type and enter wall thickness. The app compares your measurement against
-                            EN&nbsp;ISO&nbsp;5817 limits and shows the quality level achieved (B, C, D, or non-conforming).
+                            Select the imperfection type and enter the wall thickness. The app compares your measurement against
+                            EN&nbsp;ISO&nbsp;5817 limits and shows the quality level achieved — B, C, D, or non-conforming.
                         </p>
                     </div>
                 </div>
             </section>
 
+            <!-- Use Cases -->
+            <section id="use-cases" class="section">
+                <h2>Real-World Use Cases</h2>
+                <p>WeldSight is designed for the environments where welding inspectors actually work.</p>
+
+                <div style="display:flex; flex-direction:column; gap:24px">
+                    <div class="card" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+                        <img src="assets/ws/scene-pipe-butt.webp" alt="Inspector photographing a pipe butt weld on site" loading="lazy" style="width:280px; border-radius:12px; box-shadow:var(--shadow)" />
+                        <div style="flex:1; min-width:240px">
+                            <h3>Pipeline Butt Weld Inspection</h3>
+                            <p>Photograph circumferential welds on pipe joints. Use the known pipe diameter or wall thickness for calibration. Measure reinforcement height and misalignment, then evaluate against EN&nbsp;ISO&nbsp;5817.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+                        <img src="assets/ws/scene-calibrate-fillet.webp" alt="Calibrating measurement on a fillet weld using plate thickness" loading="lazy" style="width:280px; border-radius:12px; box-shadow:var(--shadow)" />
+                        <div style="flex:1; min-width:240px">
+                            <h3>Fillet Weld — Calibrate with Plate Thickness</h3>
+                            <p>No ruler? No problem. The visible plate thickness at the cross-section edge serves as your calibration reference. Measure throat thickness and leg lengths directly on the photo.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+                        <img src="assets/ws/scene-evaluate-undercut.webp" alt="Evaluating weld undercut against EN ISO 5817" loading="lazy" style="width:280px; border-radius:12px; box-shadow:var(--shadow)" />
+                        <div style="flex:1; min-width:240px">
+                            <h3>Undercut &amp; Defect Evaluation</h3>
+                            <p>Measure undercut depth, excess weld metal, or any imperfection. The app instantly evaluates against all three EN&nbsp;ISO&nbsp;5817 quality levels with clear pass/fail results.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+                        <img src="assets/ws/scene-field-pipe.webp" alt="Field inspection of complex pipe assembly" loading="lazy" style="width:280px; border-radius:12px; box-shadow:var(--shadow)" />
+                        <div style="flex:1; min-width:240px">
+                            <h3>Field Inspection — Complex Pipe Assemblies</h3>
+                            <p>Inspect welds on tees, elbows, reducers, and flanged connections. Works fully offline — ideal for remote pipeline sites with no internet connectivity.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+                        <img src="assets/ws/scene-report-office.webp" alt="Reviewing weld inspection results at desk" loading="lazy" style="width:280px; border-radius:12px; box-shadow:var(--shadow)" />
+                        <div style="flex:1; min-width:240px">
+                            <h3>Documentation &amp; Reporting</h3>
+                            <p>Export measurement results and annotated photos for inspection records. All project data organized by weld number, location, and welder — ready for QA documentation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
             <section id="faq" class="section">
-                <h2>FAQ</h2>
+                <h2>Frequently Asked Questions</h2>
 
                 <details class="faqItem" open>
                     <summary>Does the app require an internet connection?</summary>
-                    <p>No. All features — camera, measurement, edge detection, and EN&nbsp;ISO&nbsp;5817 evaluation — work fully offline.</p>
+                    <p>No. All features — camera, calibration, measurement, and EN&nbsp;ISO&nbsp;5817 evaluation — work fully offline. No data is ever transmitted.</p>
                 </details>
 
                 <details class="faqItem">
-                    <summary>Does the app collect any data?</summary>
-                    <p>No. Zero data collection. All photos and measurements stay on your device. See our <a href="weldsight-privacy.html">Privacy Policy</a>.</p>
+                    <summary>What can I use as a calibration reference?</summary>
+                    <p>Anything with a known dimension visible in the photo: the plate thickness at the bevel edge, pipe outer diameter, a ruler, a gauge block, or even a coin. The app converts pixel distances to real-world millimeters based on your reference.</p>
                 </details>
 
                 <details class="faqItem">
                     <summary>What standards does it support?</summary>
-                    <p>WeldSight evaluates weld imperfections against EN&nbsp;ISO&nbsp;5817, covering quality levels B (stringent), C (intermediate), and D (moderate).</p>
+                    <p>WeldSight evaluates weld imperfections against EN&nbsp;ISO&nbsp;5817, covering quality levels B (stringent), C (intermediate), and D (moderate). Seven imperfection types are supported with illustrated reference guides.</p>
                 </details>
 
                 <details class="faqItem">
                     <summary>How accurate is the measurement?</summary>
-                    <p>Accuracy depends on your calibration reference and image quality. With a clearly visible ruler or gauge block in the photo, sub-millimeter precision is achievable.</p>
+                    <p>Accuracy depends on your calibration reference and image quality. With a clearly visible reference dimension and a well-focused photo, sub-millimeter precision is achievable.</p>
+                </details>
+
+                <details class="faqItem">
+                    <summary>Does the app collect any data?</summary>
+                    <p>No. Zero data collection — no analytics, no tracking, no accounts. All photos and measurements stay on your device. See our <a href="weldsight-privacy.html">Privacy Policy</a>.</p>
                 </details>
 
                 <details class="faqItem">
                     <summary>Does it work on iPad?</summary>
-                    <p>Yes. WeldSight is a universal app that runs on both iPhone and iPad.</p>
+                    <p>Yes. WeldSight is a universal app optimized for both iPhone and iPad.</p>
                 </details>
 
                 <details class="faqItem">
-                    <summary>Can I export my measurements?</summary>
-                    <p>Yes. Measurement results and project data can be exported as reports for documentation and record-keeping.</p>
+                    <summary>Who is WeldSight for?</summary>
+                    <p>Welding inspectors (CWI, CSWIP, IWI), quality control engineers, fabrication supervisors, and welding students — anyone who needs quick, standards-based weld evaluation on site.</p>
                 </details>
 
                 <details class="faqItem">
