@@ -1,184 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WC26 Travel Companion — Your 2026 World Cup Matchday Guide (iOS)</title>
-    <meta name="description" content="WC26 Travel Companion helps you plan and manage your 2026 World Cup matchdays with schedules, stadium maps, timelines, and offline tools." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WC26 Travel Companion — Your Offline 2026 World Cup Matchday Planner for iPhone</title>
+    <meta name="description" content="Plan every matchday of the 2026 FIFA World Cup with WC26 Travel Companion. 104 matches, 16 stadiums, GPS maps, match reminders, emergency contacts &amp; travel tools — all offline on your iPhone." />
+    <meta name="keywords" content="2026 World Cup, WC26, matchday planner, stadium map, travel companion, iPhone app, offline, soccer, football" />
     <link rel="canonical" href="https://30329277.github.io/wc26-support.html" />
 
-    <meta name="theme-color" content="#1a472a" />
+    <meta name="theme-color" content="#0b1221" />
+    <link rel="apple-touch-icon" href="wc26-apple-touch-icon.png" />
+    <link rel="icon" href="wc26-favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="wc26-favicon-58.png" type="image/png" sizes="58x58" />
+    <link rel="icon" href="wc26-favicon-40.png" type="image/png" sizes="40x40" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="WC26 Travel Companion" />
-    <meta property="og:description" content="Plan your 2026 World Cup matchdays — schedules, stadium maps, timelines, and travel tools. Built for iPhone." />
+    <meta property="og:title" content="WC26 Travel Companion — Offline 2026 World Cup Matchday Planner" />
+    <meta property="og:description" content="104 matches, 16 stadiums, GPS maps, match reminders &amp; travel tools — all offline on your iPhone. $1.99." />
     <meta property="og:url" content="https://30329277.github.io/wc26-support.html" />
+    <meta property="og:image" content="https://30329277.github.io/assets/wc26/scene-getting-there.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landing.css" />
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "WC26 Travel Companion",
-        "operatingSystem": "iOS",
+        "operatingSystem": "iOS 17+",
         "applicationCategory": "TravelApplication",
         "url": "https://30329277.github.io/wc26-support.html",
+        "description": "Offline matchday planner for the 2026 FIFA World Cup — 104 matches, 16 stadiums, GPS maps, reminders, and travel tools for iPhone.",
         "offers": {
             "@type": "Offer",
             "price": "1.99",
             "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "1"
         }
     }
     </script>
-
-    <style>
-        .hero-banner {
-            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 50%, #40916c 100%);
-            color: white;
-            padding: 40px 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .hero-banner h1 { color: white; }
-        .hero-banner p { color: rgba(255,255,255,0.85); }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin: 20px 0 30px;
-        }
-        .feature-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .feature-card h3 {
-            margin-bottom: 8px;
-            color: #1d1d1f;
-        }
-        .feature-card p {
-            font-size: 14px;
-            color: #666;
-            margin: 0;
-        }
-        .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-        .faq-section details {
-            background: white;
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-        .faq-section summary {
-            font-weight: 600;
-            cursor: pointer;
-            color: #1d1d1f;
-        }
-        .faq-section details p {
-            margin-top: 10px;
-            color: #555;
-        }
-        .cta-row {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .cta-btn {
-            display: inline-block;
-            padding: 10px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        .cta-primary {
-            background: white;
-            color: #1a472a;
-        }
-        .cta-ghost {
-            border: 1.5px solid rgba(255,255,255,0.5);
-            color: white;
-        }
-    </style>
 </head>
-<body>
-    <div class="container">
 
-        <div class="hero-banner">
-            <div class="badge">Offline • No ads • No tracking</div>
-            <h1>WC26 Travel Companion</h1>
-            <p>Your personal matchday guide for the 2026 World Cup across the USA, Mexico, and Canada.</p>
-            <div class="cta-row">
-                <a class="cta-btn cta-ghost" href="#features">Features</a>
-                <a class="cta-btn cta-ghost" href="mailto:wangning.engineer@outlook.com">Contact Support</a>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="topbar">
+        <div class="container">
+            <div class="row">
+                <a class="brand" href="wc26-support.html" aria-label="WC26 Travel Companion">
+                    <span class="logo" aria-hidden="true" style="background:linear-gradient(135deg, #2d6a4f, #40916c)"></span>
+                    <b>WC26 Travel Companion</b>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="wc26-privacy.html">Privacy</a>
+                </nav>
             </div>
         </div>
+    </header>
 
-        <div class="content">
-            <h2 id="features">Features</h2>
+    <main id="main" class="container">
+        <section class="hero">
+            <div class="heroGrid" style="grid-template-columns:1fr">
+                <div>
+                    <div class="kicker">
+                        <span class="badge">Offline · No ads · No tracking</span>
+                        <span>Built for fans on the ground</span>
+                    </div>
+                    <h1>Your personal matchday guide for the 2026 World Cup.</h1>
+                    <p class="lead">
+                        WC26 Travel Companion puts all 104 matches, 16 stadiums across 3 countries, GPS stadium maps,
+                        match-day timelines, and essential travel tools in your pocket — working entirely offline,
+                        with zero data collection.
+                    </p>
+                    <div class="ctaRow">
+                        <a class="btn btnGhost" href="#how-it-works">See how it works</a>
+                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contact support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>🏟️ Full Match Schedule</h3>
-                    <p>All 104 matches — 72 group stage and 32 knockout rounds — with real venues, dates, and kickoff times.</p>
+        <!-- App Preview Video -->
+        <section class="section">
+            <h2>App Preview</h2>
+            <div style="text-align:center; margin-bottom:24px">
+                <video autoplay muted loop playsinline style="max-width:300px; width:100%; border-radius:16px; box-shadow:var(--shadow)">
+                    <source src="assets/wc26/demo.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <!-- Illustrated Scenes -->
+        <section class="section">
+            <h2>Built for Every Step of Your Matchday</h2>
+            <p>From planning at home to navigating a foreign city on game day — see how real fans use the app.</p>
+
+            <div class="split" style="margin-top:20px">
+                <div class="figure">
+                    <img src="assets/wc26/scene-getting-there.webp" alt="Fan walking toward a World Cup stadium checking the WC26 app on iPhone for directions" loading="lazy" width="800" height="800" />
+                    <div class="figcap"><strong>Find your stadium.</strong> GPS-powered Near Me map shows your real-time distance to all 16 venues.</div>
                 </div>
-                <div class="feature-card">
-                    <h3>📋 Personal Matchdays</h3>
-                    <p>Add your tickets, get a customized matchday timeline with reminders for when to leave, arrive, and enter the stadium.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🔔 Match Reminders</h3>
-                    <p>Automatic local notifications — 1 day before and 2 hours before kickoff — so you never miss a match.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>📍 Near Me Map</h3>
-                    <p>See your live location relative to all 16 stadiums on an interactive map with distances to the nearest venues.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🚫 Prohibited Items</h3>
-                    <p>Know exactly what you can and can't bring into the stadium — avoid delays at security checkpoints.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🆘 Emergency Contacts</h3>
-                    <p>Police, hospital, and consulate information organized by host city — always one tap away.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>💱 Currency Reference</h3>
-                    <p>Quick reference for USD, CAD, and MXN with tipping customs for the three host countries.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🗣️ Matchday Phrases</h3>
-                    <p>Essential Spanish phrases for Mexico venues — transportation, food, stadium, and emergency situations.</p>
+                <div class="figure">
+                    <img src="assets/wc26/scene-schedule.webp" alt="Traveler at airport viewing 2026 World Cup match schedule on iPhone with countdown" loading="lazy" width="800" height="800" />
+                    <div class="figcap"><strong>Plan ahead.</strong> Browse 104 matches by team or group — countdown to your next game.</div>
                 </div>
             </div>
 
-            <h2 id="how-it-works">How It Works</h2>
-            <ol style="margin-bottom: 20px; padding-left: 20px;">
-                <li><strong>Browse the Schedule</strong> — Pick your team or browse by group/knockout phase.</li>
-                <li><strong>Add Your Matches</strong> — Tap a match to add it with your gate, section, and seat info.</li>
-                <li><strong>Get Your Timeline</strong> — Each match generates a personalized matchday timeline.</li>
-                <li><strong>Receive Reminders</strong> — Notifications alert you 1 day and 2 hours before kickoff.</li>
-                <li><strong>Use Offline Tools</strong> — Stadium maps, emergency info, currency, and phrases work without internet.</li>
-            </ol>
+            <div class="split">
+                <div class="figure">
+                    <img src="assets/wc26/scene-gate-check.webp" alt="Fan at stadium gate checking prohibited items list on iPhone before security" loading="lazy" width="800" height="800" />
+                    <div class="figcap"><strong>Breeze through security.</strong> Know exactly what's allowed before you reach the gate.</div>
+                </div>
+                <div class="figure">
+                    <img src="assets/wc26/scene-near-me.webp" alt="Tourist in city using GPS map on iPhone to find nearest World Cup stadium" loading="lazy" width="800" height="800" />
+                    <div class="figcap"><strong>Never get lost.</strong> Interactive map with all 16 stadiums and live distance calculations.</div>
+                </div>
+            </div>
 
+            <div style="display:flex; justify-content:center; margin-top:12px">
+                <div class="figure" style="max-width:540px">
+                    <img src="assets/wc26/scene-travel-tools.webp" alt="Fan using currency converter and Spanish phrases at Mexico street food stand" loading="lazy" width="800" height="800" />
+                    <div class="figcap"><strong>Travel across borders.</strong> Currency converter, tipping guide, and essential Spanish phrases for Mexico venues.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="section">
+            <h2>Everything You Need, Nothing You Don't</h2>
+            <p>Eight purpose-built tools for matchday — no social feeds, no ads, no accounts.</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>🏟️ Full Match Schedule</h3>
+                    <p>All 104 matches — 72 group stage and 32 knockout rounds — with real venues, dates, and kickoff times across the USA, Mexico, and Canada.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>📋 Personal Matchday Timeline</h3>
+                    <p>Add your tickets with gate, section, and seat info. Get a step-by-step timeline telling you when to leave, arrive, and enter the stadium.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🔔 Smart Match Reminders</h3>
+                    <p>Automatic local notifications — 1 day before and 2 hours before kickoff. Scheduled on-device, no server needed.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>📍 GPS Stadium Finder</h3>
+                    <p>Near Me uses your device GPS to show your live position alongside all 16 stadiums on an interactive MapKit map with real-time distances.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🚫 Prohibited Items Guide</h3>
+                    <p>Categorized list of banned and allowed items at stadium security — check before you pack, not at the gate.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🆘 Emergency Contacts</h3>
+                    <p>Police, hospitals, and consulate numbers organized by each of the 16 host cities across three countries. One tap away.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>💱 Currency &amp; Tipping</h3>
+                    <p>Quick reference for USD, CAD, and MXN with local tipping customs — essential when crossing borders between host countries.</p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🗣️ Matchday Phrases</h3>
+                    <p>Essential Spanish phrases for Mexico City, Guadalajara, and Monterrey venues — transportation, food, stadium, and emergencies with pronunciation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="section">
+            <h2>How It Works</h2>
+            <p>Five steps from download to matchday.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <span class="stepNum">1</span>
+                    <div><b>Browse the Schedule</b> Pick your team and the app locks to their group — showing only your team's 3 matches with correct opponents, stadiums, and times. Or browse all 12 groups and knockout rounds.</div>
+                </div>
+                <div class="step">
+                    <span class="stepNum">2</span>
+                    <div><b>Add Your Matches</b> Tap any match to add it to your personal matchday list. Optionally enter your gate, section, and seat row from your ticket.</div>
+                </div>
+                <div class="step">
+                    <span class="stepNum">3</span>
+                    <div><b>Get Your Timeline</b> Each match generates a personalized matchday timeline — when to leave your hotel, arrive at the stadium, clear security, and find your seat.</div>
+                </div>
+                <div class="step">
+                    <span class="stepNum">4</span>
+                    <div><b>Receive Reminders</b> Local notifications alert you 1 day and 2 hours before kickoff. No server, no push tokens — just your device's built-in scheduler.</div>
+                </div>
+                <div class="step">
+                    <span class="stepNum">5</span>
+                    <div><b>Use Offline Tools</b> GPS stadium maps, emergency contacts, currency converter, prohibited items, and Spanish phrases — all work without Wi-Fi or cellular data.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offline -->
+        <section class="section">
             <h2>Works Completely Offline</h2>
-            <p>Every feature works without an internet connection. No account required. No ads. No data collection. Perfect for traveling abroad where connectivity can be unreliable.</p>
+            <p>
+                Stadium Wi-Fi is unreliable. International roaming is expensive. That's why every feature in WC26 Travel Companion
+                works without any internet connection. Schedules, maps, timelines, emergency contacts, currency info, and phrases
+                are all bundled in the app. Your match data is stored locally on your device using Apple's SwiftData framework.
+                No account. No ads. No tracking. No data leaves your phone.
+            </p>
+        </section>
 
-            <h2 id="faq">FAQ</h2>
-            <div class="faq-section">
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <h2>FAQ</h2>
+
+            <div class="faq">
                 <details open>
                     <summary>Does the app require an internet connection?</summary>
                     <p>No. All schedules, stadium data, maps, and tools work fully offline. Location features use on-device GPS only.</p>
@@ -193,27 +234,29 @@
                 </details>
                 <details>
                     <summary>Are match times in my local timezone?</summary>
-                    <p>Yes. All kickoff times are stored as absolute timestamps and displayed in your device's current timezone automatically.</p>
+                    <p>Yes. All kickoff times are stored as absolute UTC timestamps and displayed in your device's current timezone automatically.</p>
                 </details>
                 <details>
                     <summary>Can I turn off notifications?</summary>
                     <p>Yes. You can deny notification permission when prompted, or disable it later in iOS Settings → WC26 Travel Companion → Notifications.</p>
                 </details>
                 <details>
+                    <summary>What iOS version is required?</summary>
+                    <p>iOS 17.0 or later. The app is built with SwiftUI, SwiftData, MapKit, CoreLocation, and UserNotifications — all native Apple frameworks.</p>
+                </details>
+                <details>
                     <summary>How do I contact support?</summary>
                     <p>Email <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a>. Typical response time is 24–48 hours.</p>
                 </details>
             </div>
+        </section>
+    </main>
 
-            <h2>Support</h2>
-            <p>For questions, feedback, or bug reports, contact:</p>
-            <p>📧 <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a></p>
-        </div>
-
-        <footer>
-            <a href="wc26-privacy.html">Privacy Policy</a> ·
-            <a href="index.html">Home</a>
-        </footer>
-    </div>
+    <footer style="text-align:center; padding:30px 0; color:var(--muted2); font-size:13px">
+        © 2026 Wang Ning. All rights reserved. ·
+        <a href="wc26-privacy.html">Privacy Policy</a> ·
+        <a href="mailto:wangning.engineer@outlook.com">Contact</a> ·
+        <a href="index.html">Home</a>
+    </footer>
 </body>
 </html>
