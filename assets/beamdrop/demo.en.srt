@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:03,000
+Step 1: Share from iPhone.
+
+2
+00:00:03,000 --> 00:00:09,000
+First launch: tap Allow to grant photo access.
+
+3
+00:00:10,000 --> 00:00:16,000
+Turn on your iPhone Personal Hotspot.
+
+4
+00:00:16,000 --> 00:00:22,000
+Tap refresh to show the BeamDrop URL.
+
+5
+00:00:22,000 --> 00:00:53,000
+Tap "Select Photos or Videos" and choose what to share.
+
+6
+00:00:54,000 --> 00:01:03,000
+Step 2: On Windows, connect to your iPhone hotspot.
+
+7
+00:01:04,000 --> 00:01:08,000
+Open a browser and enter the BeamDrop URL.
+
+8
+00:01:09,000 --> 00:01:30,000
+Preview files, select items, or tap Download All.
+
+9
+00:01:30,000 --> 00:01:35,000
+BeamDrop: iPhone to PC. No cables. No cloud.
