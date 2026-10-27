@@ -1,53 +1,611 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support — Tube Miter Calculator</title>
-    <meta name="description" content="Support for Tube Miter Calculator: tube miter, pointed and V-notch cut angles, compound cuts, board feet and stock cutting plans. Offline iOS shop tool." />
-    <link rel="canonical" href="https://30329277.github.io/Tube-Miter-Calculator-support.html" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Tube Miter Calculator — Support</h1>
-        <div class="content">
-            <p>Tube Miter Calculator is an offline shop-floor tool for iPhone and iPad. It calculates saw angles, edge lengths and setup drawings for tube and profile cuts, plus everyday woodworking and cutting-plan helpers.</p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <h2>Features</h2>
-            <ul>
-                <li><strong>Cut Assistant</strong> — Square / Miter, Parallel miters, Opposed miters, Pointed / Pointed, Pointed / V-notch and V-notch / V-notch. Shows long, short and center lengths, complementary and supplementary angles, and a dimensioned Live View that can be rotated and flipped.</li>
-                <li><strong>Calculator</strong> — basic arithmetic and degree-based trigonometry, with one-tap copy of the result.</li>
-                <li><strong>Compound Cuts</strong> — miter and blade-tilt settings for tapered boxes, pyramids and angled frames.</li>
-                <li><strong>Board Feet</strong> — lumber volume and cost, with an optional waste factor.</li>
-                <li><strong>Stock Optimizer</strong> — a practical cutting plan from raw bar length, kerf and end trim.</li>
-                <li><strong>Projects &amp; reports</strong> — save inputs to History and export a PNG report (Save to Photos or Share).</li>
-                <li><strong>Settings</strong> — metric (mm) or imperial (in) units, keep screen awake, clear temporary files, reset inputs.</li>
-            </ul>
+        <title>Tube Miter Calculator — Tube &amp; Pipe Miter, Pointed and V‑Notch Cut Calculator for iPhone &amp; iPad</title>
+        <meta
+            name="description"
+            content="Tube Miter Calculator is an offline iOS app for tube and pipe fit-up. Get saw miter angles, long / short / centre edge lengths and a dimensioned setup drawing for square‑miter, parallel and opposed miters, pointed and V‑notch cuts. Plus compound cuts, board feet and a stock cutting plan. No internet, no account."
+        />
+        <meta
+            name="keywords"
+            content="tube miter calculator, pipe miter angle, tube notch calculator, fish mouth cut, tube coping, saddle cut, pointed cut, V-notch cut, compound miter, board feet calculator, cut list optimizer, fabrication app, welding fit-up, handrail angle, roll cage tubing, offline iOS calculator"
+        />
+        <link rel="canonical" href="https://30329277.github.io/Tube-Miter-Calculator-support.html" />
 
-            <h2>Frequently Asked Questions</h2>
-            <h3>How are the angles defined?</h3>
-            <p>Miter angles are measured from a square cut: a square cut is 0°. The Live View also shows the complementary (90° − angle) or supplementary values, so you can match the scale on your saw.</p>
+        <meta name="theme-color" content="#0b1221" />
+        <link rel="apple-touch-icon" href="tmc-apple-touch-icon.png" />
+        <link rel="icon" href="tmc-favicon-120.png" type="image/png" sizes="120x120" />
+        <link rel="icon" href="tmc-favicon-58.png" type="image/png" sizes="58x58" />
+        <link rel="icon" href="tmc-favicon-40.png" type="image/png" sizes="40x40" />
 
-            <h3>How do I switch between millimetres and inches?</h3>
-            <p>Tap the gear icon on the Home screen and choose Metric or Imperial. Current values are converted automatically and the choice is remembered.</p>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Tube Miter Calculator — Miter &amp; Notch Angles for Tube and Pipe" />
+        <meta
+            property="og:description"
+            content="Offline iOS app for tube and pipe fit-up: miter angles, edge lengths and a dimensioned setup drawing for square, parallel, opposed, pointed and V-notch cuts."
+        />
+        <meta property="og:url" content="https://30329277.github.io/Tube-Miter-Calculator-support.html" />
+        <meta property="og:image" content="https://30329277.github.io/assets/tmc/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
 
-            <h3>Why can't I save a report to Photos?</h3>
-            <p>The app needs "Add Photos Only" permission. Enable it in iOS Settings → Privacy &amp; Security → Photos → Tube Miter Calculator.</p>
+        <link rel="stylesheet" href="landing.css" />
 
-            <h3>Does the app need an internet connection?</h3>
-            <p>No. All calculations and saved projects stay on your device.</p>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "Tube Miter Calculator",
+                        "operatingSystem": "iOS 17.0+",
+                        "applicationCategory": "UtilitiesApplication",
+                        "description": "Offline iOS shop-floor calculator for tube and pipe cuts. Computes saw miter angles, long / short / centre edge lengths and renders a dimensioned setup drawing for square-miter, parallel, opposed, pointed and V-notch cuts. Also includes compound cut settings, board feet and a stock cutting plan.",
+                        "url": "https://30329277.github.io/Tube-Miter-Calculator-support.html",
+                        "featureList": [
+                            "Square / miter cut calculation",
+                            "Parallel and opposed miters",
+                            "Pointed and V-notch (fish-mouth) cuts",
+                            "Dimensioned live view with rotate and flip",
+                            "Compound miter and blade tilt",
+                            "Board feet and cost estimate",
+                            "Stock cutting plan optimizer",
+                            "Metric and imperial units",
+                            "Works fully offline"
+                        ],
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "USD"
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "Wang Ning"
+                        }
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "How is the miter angle defined?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "The miter angle is measured from a square cut, so a square cut is 0 degrees. The live view also shows the complementary (90 minus angle) or supplementary values so you can match the scale printed on your saw."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "What is the difference between a pointed cut and a V-notch cut?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "A pointed cut tapers the tube end to a single point and is used when one tube meets another at an angle. A V-notch, or fish-mouth, cut removes a V-shaped saddle so the tube wraps around a round post or another tube — the classic joint for handrails, T-joints and roll cages."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "How do I switch between millimetres and inches?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Tap the gear icon on the home screen and choose Metric or Imperial. Existing values are converted automatically and the choice is remembered."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Does Tube Miter Calculator work without an internet connection?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Every calculation runs on the device and all saved projects stay on the device. There is no account, no analytics and no tracking."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Can I save a job and send the drawing to someone else?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Save the inputs to History with a project name and reload them later. Export PNG writes a report image you can save to Photos or share with the standard iOS share sheet."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
+    </head>
 
-            <h2>Safety Note</h2>
-            <p>Results are setup aids. Always confirm end identity, top/bottom face, blunt-edge side, scrap side and kerf, and check one first-off part before batch cutting.</p>
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
 
-            <h2>Contact</h2>
-            <p>Questions, bug reports or feature requests: <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a>. Typical response time is 24–48 hours.</p>
-        </div>
-        <footer>
-            <a href="Tube-Miter-Calculator-Privacy.html">Privacy Policy</a> ·
-            <a href="index.html">Home</a>
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <a class="brand" href="Tube-Miter-Calculator-support.html" aria-label="Tube Miter Calculator">
+                        <span class="logo" aria-hidden="true" style="background: linear-gradient(135deg, #007aff, #34c759)"></span>
+                        <b>Tube Miter Calculator</b>
+                    </a>
+                    <nav class="nav" aria-label="Primary">
+                        <a href="#features">Features</a>
+                        <a href="#demos">Demos</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#tutorial">Tutorial</a>
+                        <a href="#use-cases">Use Cases</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="Tube-Miter-Calculator-Privacy.html">Privacy</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="container">
+            <!-- Hero -->
+            <section class="hero">
+                <div class="heroGrid" style="grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: center">
+                    <div>
+                        <div class="kicker">
+                            <span class="badge">Offline • No account • No tracking</span>
+                            <span>Tube &amp; pipe fit-up in your pocket</span>
+                        </div>
+                        <h1>Pick the joint. Read the angle. Cut the tube once.</h1>
+                        <p class="lead">
+                            Tube Miter Calculator turns the awkward trigonometry of tube fit-up into three numbers you can
+                            dial straight into your saw: the <strong>miter angle</strong>, and the
+                            <strong>long / short / centre edge lengths</strong> of the cut. It draws the end profile to
+                            scale, lets you rotate and flip it to match your machine, and works entirely offline.
+                        </p>
+                        <div class="ctaRow" id="download">
+                            <a class="btn btnPrimary" href="#demos">Watch the 30‑second demo</a>
+                            <a class="btn btnGhost" href="#tutorial">Step‑by‑step guide</a>
+                            <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contact support</a>
+                        </div>
+                        <p class="heroNote">
+                            Built for tube and pipe work: handrails, roll cages, exhausts, frames, greenhouses and structural
+                            steel — plus the everyday shop maths (compound cuts, board feet, cutting plans).
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 12px; justify-content: center">
+                        <img
+                            src="assets/tmc/hero-1.webp"
+                            alt="Tube Miter Calculator home screen on iPhone showing the six modules"
+                            style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                        />
+                        <img
+                            src="assets/tmc/hero-2.webp"
+                            alt="Tube Miter Calculator Cut Assistant screen with miter angle and edge lengths"
+                            style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section id="features" class="section">
+                <h2>Key Features</h2>
+                <p>Six cut geometries and five shop calculators, all solving offline in a fraction of a second.</p>
+
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>∠ Six Cut Geometries</h3>
+                        <p>
+                            Square / Miter, Parallel miters, Opposed miters, Pointed / Pointed, Pointed / V‑notch and
+                            V‑notch / V‑notch. Each preset loads realistic defaults so you change one number, not six.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>📏 Long, Short &amp; Centre Lengths</h3>
+                        <p>
+                            The app reports all three edge lengths of the cut plus the complementary and supplementary
+                            angles, so you can match whatever scale your saw prints — 0° from square or 90° from square.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🖼 Dimensioned Live View</h3>
+                        <p>
+                            A full‑screen, drawn‑to‑scale end profile with dimension arrows. Rotate 90° / 180°, flip
+                            vertically and switch between original + complementary or original + supplementary labelling
+                            to match the part on your bench.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>◈ Compound Cuts</h3>
+                        <p>
+                            Miter angle and blade tilt for tapered boxes, pyramids and angled frames. Enter the number of
+                            sides, side slope, panel height and thickness — get saw settings, slant height and edge offset.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>⊞ Board Feet &amp; Cost</h3>
+                        <p>
+                            Lumber volume from thickness, width and length, with quantity, price per board foot and an
+                            optional waste factor. Metric or imperial.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>▥ Stock Optimizer</h3>
+                        <p>
+                            Give it the raw bar length, kerf and end trim plus your required pieces — it lays out a
+                            practical cutting plan and tells you what is left over.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>ƒ Shop Calculator</h3>
+                        <p>
+                            A purpose‑built keypad with degree‑based trigonometry (sin, cos, tan and inverses) and
+                            one‑tap copy of the result — no fighting the stock iOS calculator in gloves.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>💾 Projects &amp; PNG Reports</h3>
+                        <p>
+                            Save inputs to History under a project name, reload them on the next job, and export a PNG
+                            report to Photos or straight to the iOS share sheet.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🔒 Offline &amp; Private</h3>
+                        <p>
+                            No internet, no sign‑in, no analytics. Units (mm / in), keep‑screen‑awake and reset are the
+                            only settings — everything else happens on your device.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Demos -->
+            <section id="demos" class="section">
+                <h2>See It in Action</h2>
+                <p>Four short screen captures recorded on iPhone 17 Pro Max — no editing, no voiceover.</p>
+
+                <div class="grid3" role="list" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+                    <div class="card" role="listitem" style="text-align: center">
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            poster="assets/tmc/screen-cut-pt.webp"
+                            style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                        >
+                            <source src="assets/tmc/demo-cut.mp4" type="video/mp4" />
+                        </video>
+                        <h3>Switching cut geometries</h3>
+                        <p>Tap through all six presets — the drawing and every length update as you go.</p>
+                    </div>
+                    <div class="card" role="listitem" style="text-align: center">
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            poster="assets/tmc/screen-live.webp"
+                            style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                        >
+                            <source src="assets/tmc/demo-live.mp4" type="video/mp4" />
+                        </video>
+                        <h3>Live View: rotate, flip, re‑label</h3>
+                        <p>Open the full view, rotate 90°, flip vertically and switch the angle labelling.</p>
+                    </div>
+                    <div class="card" role="listitem" style="text-align: center">
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            poster="assets/tmc/screen-calc.webp"
+                            style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                        >
+                            <source src="assets/tmc/demo-calc.mp4" type="video/mp4" />
+                        </video>
+                        <h3>Shop calculator</h3>
+                        <p>100 × sin 30° = 50 on the built‑in keypad, then copy the result with one tap.</p>
+                    </div>
+                    <div class="card" role="listitem" style="text-align: center">
+                        <video
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            poster="assets/tmc/screen-stock.webp"
+                            style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                        >
+                            <source src="assets/tmc/demo-modules.mp4" type="video/mp4" />
+                        </video>
+                        <h3>The other shop modules</h3>
+                        <p>Compound cuts, board feet and the stock optimizer solve as you type.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section id="how-it-works" class="section">
+                <h2>How It Works</h2>
+                <p>Four steps from a joint on the bench to numbers on your saw.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div>
+                            <b>Pick the geometry</b>
+                            Open Cut Assistant and choose the preset that matches the joint: square / miter, parallel
+                            miters, opposed miters, pointed / pointed, pointed / V‑notch or V‑notch / V‑notch.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div>
+                            <b>Enter what you know</b>
+                            Tube diameter, wall or offset, and the angle between the tubes — or solve from a length
+                            instead. Every field converts between mm and inches.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div>
+                            <b>Read the drawing</b>
+                            Open the full‑screen Live View, rotate and flip it until it matches the part in your hand,
+                            and read the long / short / centre lengths directly off the dimension arrows.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div>
+                            <b>Save or send it</b>
+                            Save the job to History under a name, or export a PNG report to Photos / the share sheet so
+                            the shop has the same numbers you have.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tutorial (图文教程) -->
+            <section id="tutorial" class="section">
+                <h2>Step‑by‑Step Tutorial</h2>
+                <p>Every screen in the app, in the order you actually use it.</p>
+
+                <div class="split">
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/hero-1.webp" alt="Home screen with the six module tiles" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>1 · Home</b> — six tiles: Cut Assistant, Calculator, Compound Cuts, Board Feet,
+                            Stock Optimizer and Help &amp; Safety. The gear icon opens Settings (units, keep awake, reset).
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/hero-2.webp" alt="Cut Assistant with Square / Miter preset" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>2 · Cut Assistant</b> — choose the preset at the top, fill in the tube and joint values,
+                            and the results appear underneath as you type.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-cut-pt.webp" alt="Cut Assistant with the Pointed / Pointed preset" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>3 · Pointed cuts</b> — the shaped‑end presets add the taper fields and report the true
+                            point geometry, not an approximation.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-cut-pp.webp" alt="Cut Assistant with the Parallel miters preset" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>4 · Parallel miters</b> — both ends cut the same way; the app keeps the two ends in sync
+                            so the finished assembly closes up.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-live.webp" alt="Live View showing the dimensioned end profile" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>5 · Live View</b> — the end profile drawn to scale with dimension arrows and the
+                            cut‑angle readout.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-live-pp.webp" alt="Live View for the parallel miters preset" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>6 · Rotate &amp; flip</b> — Rotate 180°, Rotate 90° and Flip vertical orient the drawing
+                            to match your saw table or the part on the bench.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-live-vn.webp" alt="Live View with supplementary angle labelling" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>7 · Angle labelling</b> — switch between “Original + Complementary” and
+                            “Original + Supplementary” to match the scale on your machine.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-live-flip.webp" alt="Live View rotated 90 degrees and flipped vertically" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>8 · Vertical parts</b> — rotated and flipped, a V‑notch reads as the saddle you are
+                            actually going to cut.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-calc.webp" alt="Shop calculator keypad with trigonometric keys" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>9 · Calculator</b> — big keys, degree‑based trig, and copy the result with one tap.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-compound.webp" alt="Compound Cuts screen with saw settings" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>10 · Compound Cuts</b> — miter angle and blade tilt for tapered boxes, pyramids and
+                            angled frames, plus slant height and edge offset.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-boardfeet.webp" alt="Board Feet screen with volume and cost" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>11 · Board Feet</b> — volume, cost and an optional waste factor for lumber orders.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-stock.webp" alt="Stock Optimizer screen showing a cutting plan" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>12 · Stock Optimizer</b> — raw bar length, kerf and end trim in; a real cutting plan out.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <figure class="figure" style="margin: 16px 0 0">
+                    <img src="assets/tmc/screen-help.webp" alt="Help and Safety screen" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>13 · Help &amp; Safety</b> — definitions of every term used in the app, plus the pre‑cut
+                        checks: end identity, top / bottom face, blunt‑edge side, scrap side and kerf.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <!-- Use Cases -->
+            <section id="use-cases" class="section">
+                <h2>Real‑World Use Cases</h2>
+                <p>Where a miter calculation actually earns its keep.</p>
+
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 14px">
+                    <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+                        <img
+                            src="assets/tmc/case-handrail.webp"
+                            alt="Stainless steel handrail with a mitered tube joint"
+                            loading="lazy"
+                            style="width: 300px; border-radius: 12px; box-shadow: var(--shadow)"
+                        />
+                        <div style="flex: 1; min-width: 240px">
+                            <h3>Handrails &amp; Balustrades</h3>
+                            <p>
+                                Cut the rail to meet the post at the exact rake angle, or cope a fish‑mouth saddle so the
+                                tube wraps the post cleanly. Rotate the live view to see the joint the way you will hold
+                                it at the top of the stairs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+                        <img
+                            src="assets/tmc/case-rollcage.webp"
+                            alt="Roll cage tubing laid out on a welding table"
+                            loading="lazy"
+                            style="width: 300px; border-radius: 12px; box-shadow: var(--shadow)"
+                        />
+                        <div style="flex: 1; min-width: 240px">
+                            <h3>Roll Cages, Chassis &amp; Frames</h3>
+                            <p>
+                                Node-heavy tube structures are mostly pointed and V‑notch cuts. Set the joint angle once,
+                                get the long / short / centre lengths, and cut every tube at that node from the same
+                                numbers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+                        <img
+                            src="assets/tmc/case-shop.webp"
+                            alt="Fabricator checking a cut tube in the workshop"
+                            loading="lazy"
+                            style="width: 300px; border-radius: 12px; box-shadow: var(--shadow)"
+                        />
+                        <div style="flex: 1; min-width: 240px">
+                            <h3>Job‑Site Fit‑Up, No Signal</h3>
+                            <p>
+                                Remote sites, shipping containers and basement plant rooms have no reception. Everything
+                                in the app runs on the device, so the calculation is there when you need it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq">
+                    <details open>
+                        <summary>How is the miter angle defined?</summary>
+                        <p>
+                            The miter angle is measured from a square cut, so a square cut is 0°. The live view also shows
+                            the complementary (90° − angle) or supplementary values, so you can match the scale printed on
+                            your saw.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>What is the difference between a pointed cut and a V‑notch cut?</summary>
+                        <p>
+                            A <strong>pointed cut</strong> tapers the tube end to a single point and is used where one tube
+                            meets another at an angle. A <strong>V‑notch</strong> (fish‑mouth) cut removes a V‑shaped saddle
+                            so the tube wraps a round post or another tube — the classic joint for handrails, T‑joints and
+                            roll cages. The app handles both, and the pointed / V‑notch combination.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>How do I switch between millimetres and inches?</summary>
+                        <p>
+                            Tap the gear icon on the home screen and choose Metric or Imperial. Existing values are
+                            converted automatically and the choice is remembered.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Why can't I save a report to Photos?</summary>
+                        <p>
+                            The app needs “Add Photos Only” permission. Enable it in iOS Settings → Privacy &amp; Security
+                            → Photos → Tube Miter Calculator. You can always use the Share option instead.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Does the app need an internet connection?</summary>
+                        <p>
+                            No. All calculations and saved projects stay on your device. There is no account, no analytics
+                            and no tracking — see the <a href="Tube-Miter-Calculator-Privacy.html">Privacy Policy</a>.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can I save a job and come back to it?</summary>
+                        <p>
+                            Yes. Save the inputs to History under a project name and reload them later — for each module
+                            separately (Cut, Compound, Board Feet, Stock). Delete entries you no longer need from the same
+                            panel.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Does it work on iPad?</summary>
+                        <p>Yes. It is a universal app with a wider layout on iPad and full screen‑orientation support.</p>
+                    </details>
+                    <details>
+                        <summary>How accurate are the results?</summary>
+                        <p>
+                            The maths is exact for ideal geometry; real accuracy depends on how well your inputs match the
+                            material — measured diameter, wall thickness, joint angle and kerf. Always cut one first‑off
+                            part and check the fit before batch cutting.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>How do I contact support?</summary>
+                        <p>
+                            Email
+                            <a href="mailto:wangning.engineer@outlook.com">wangning.engineer@outlook.com</a>. Typical
+                            response time is 24–48 hours.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Safety -->
+            <section class="section">
+                <h2>Safety Note</h2>
+                <p>
+                    Results are setup aids. Always confirm end identity, top / bottom face, blunt‑edge side, scrap side
+                    and kerf, and check one first‑off part before batch cutting. Wear eye and hearing protection, and
+                    follow your machine’s manual.
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footerRow">
+                <span>© 2026 Wang Ning. All rights reserved.</span>
+                <span>
+                    <a href="Tube-Miter-Calculator-Privacy.html">Privacy Policy</a> ·
+                    <a href="index.html">Home</a> ·
+                    <a href="mailto:wangning.engineer@outlook.com">Contact</a>
+                </span>
+            </div>
         </footer>
-    </div>
-</body>
+    </body>
 </html>
