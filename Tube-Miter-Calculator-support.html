@@ -4,14 +4,14 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Tube Miter Calculator — Tube &amp; Pipe Miter, Pointed and V‑Notch Cut Calculator for iPhone &amp; iPad</title>
+        <title>Tube Miter Calculator — Miter Angle &amp; Complementary Angle Calculator for Tube and Pipe (iPhone &amp; iPad)</title>
         <meta
             name="description"
-            content="Tube Miter Calculator is an offline iOS app for tube and pipe fit-up. Get saw miter angles, long / short / centre edge lengths and a dimensioned setup drawing for square‑miter, parallel and opposed miters, pointed and V‑notch cuts. Plus compound cuts, board feet and a stock cutting plan. No internet, no account."
+            content="Stop mixing up complementary angles like 40° and 50°. Tube Miter Calculator is an offline iOS app that gives you the miter angle plus its complement and supplement, the long / short / centre edge lengths and a dimensioned setup drawing for every tube and pipe joint. Works without internet, no account."
         />
         <meta
             name="keywords"
-            content="tube miter calculator, pipe miter angle, tube notch calculator, fish mouth cut, tube coping, saddle cut, pointed cut, V-notch cut, compound miter, board feet calculator, cut list optimizer, fabrication app, welding fit-up, handrail angle, roll cage tubing, offline iOS calculator"
+            content="tube miter calculator, complementary miter angle, 40 degree vs 50 degree miter, saw angle vs drawing angle, miter saw scale conversion, reciprocal saw angle, pipe miter angle, tube notch calculator, fish mouth cut, V-notch cut, pointed cut, compound miter, board feet calculator, cut list optimizer, fabrication app, welding fit-up, carpentry angle calculator, DIY miter cuts, offline iOS calculator"
         />
         <link rel="canonical" href="https://30329277.github.io/Tube-Miter-Calculator-support.html" />
 
@@ -22,10 +22,10 @@
         <link rel="icon" href="tmc-favicon-40.png" type="image/png" sizes="40x40" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Tube Miter Calculator — Miter &amp; Notch Angles for Tube and Pipe" />
+        <meta property="og:title" content="Tube Miter Calculator — never mix up 40° and 50° again" />
         <meta
             property="og:description"
-            content="Offline iOS app for tube and pipe fit-up: miter angles, edge lengths and a dimensioned setup drawing for square, parallel, opposed, pointed and V-notch cuts."
+            content="Your drawing says 40 degrees, your saw scale says 50. Get every angle reading at once — plus long / short / centre edge lengths and a dimensioned setup drawing. Offline, no account."
         />
         <meta property="og:url" content="https://30329277.github.io/Tube-Miter-Calculator-support.html" />
         <meta property="og:image" content="https://30329277.github.io/assets/tmc/og-image.png" />
@@ -33,14 +33,51 @@
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Tube Miter Calculator — miter, pointed and V-notch angles for tube and pipe" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Tube Miter Calculator — Miter &amp; Notch Angles for Tube and Pipe" />
+        <meta name="twitter:title" content="Tube Miter Calculator — never mix up 40° and 50° again" />
         <meta
             name="twitter:description"
-            content="Offline iOS app for tube and pipe fit-up: miter angles, edge lengths and a dimensioned setup drawing for square, parallel, opposed, pointed and V-notch cuts."
+            content="Drawing says 40 degrees, saw scale says 50. See the angle, its complement and its supplement at once, plus long / short / centre edge lengths and a dimensioned drawing. Offline, no account."
         />
         <meta name="twitter:image" content="https://30329277.github.io/assets/tmc/og-image.png" />
 
         <link rel="stylesheet" href="landing.css" />
+
+        <style>
+            .convTable {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 14px;
+                margin-top: 4px;
+            }
+            .convTable th,
+            .convTable td {
+                border: 1px solid var(--border);
+                padding: 9px 11px;
+                text-align: left;
+                vertical-align: top;
+                line-height: 1.5;
+            }
+            .convTable th {
+                background: rgba(255, 255, 255, 0.04);
+                font-size: 13px;
+                color: var(--muted2);
+            }
+            .convTable td b {
+                white-space: nowrap;
+            }
+            .convTable tr td:last-child,
+            .convTable tr th:last-child {
+                white-space: nowrap;
+                text-align: right;
+            }
+            .whoList {
+                margin: 0;
+                padding-left: 20px;
+                color: var(--muted);
+                font-size: 14px;
+                line-height: 1.7;
+            }
+        </style>
 
         <script type="application/ld+json">
             {
@@ -51,9 +88,11 @@
                         "name": "Tube Miter Calculator",
                         "operatingSystem": "iOS 17.0+",
                         "applicationCategory": "UtilitiesApplication",
-                        "description": "Offline iOS shop-floor calculator for tube and pipe cuts. Computes saw miter angles, long / short / centre edge lengths and renders a dimensioned setup drawing for square-miter, parallel, opposed, pointed and V-notch cuts. Also includes compound cut settings, board feet and a stock cutting plan.",
+                        "description": "Offline iOS shop-floor calculator for tube and pipe cuts. Solves the drawing-angle vs saw-angle problem by showing the miter angle together with its complement and supplement, plus long / short / centre edge lengths and a dimensioned setup drawing for square-miter, parallel, opposed, pointed and V-notch cuts. Also includes compound cut settings, board feet and a stock cutting plan.",
                         "url": "https://30329277.github.io/Tube-Miter-Calculator-support.html",
                         "featureList": [
+                            "Miter angle with complementary and supplementary readings",
+                            "Original + Complementary and Original + Supplementary drawing labels",
                             "Square / miter cut calculation",
                             "Parallel and opposed miters",
                             "Pointed and V-notch (fish-mouth) cuts",
@@ -77,6 +116,22 @@
                     {
                         "@type": "FAQPage",
                         "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "The drawing says 40°, my saw reads 50°. Which one is right?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Both describe the same cut — they are complementary and add up to 90 degrees. The miter angle a is taken from a square cut, and 90 minus a is the same line read the other way. Setting the wrong one puts 10 degrees of error on each end and 20 degrees at the joint, which is why 40 and 50 trip people up. The app prints both readings side by side."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Do I set the angle or its complement on the saw?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "It depends on how the scale is graduated. If it reads 0 degrees at square, set the miter angle a. If it reads 90 degrees at square, set 90 minus a. Some protractors and layout tasks use the obtuse reading, 180 minus a. Live View can label the drawing either Original + Complementary or Original + Supplementary to match your scale."
+                                }
+                            },
                             {
                                 "@type": "Question",
                                 "name": "How is the miter angle defined?",
@@ -135,6 +190,7 @@
                         <b>Tube Miter Calculator</b>
                     </a>
                     <nav class="nav" aria-label="Primary">
+                        <a href="#angle-conversion">40° vs 50°</a>
                         <a href="#features">Features</a>
                         <a href="#demos">Demos</a>
                         <a href="#how-it-works">How It Works</a>
@@ -154,23 +210,26 @@
                     <div>
                         <div class="kicker">
                             <span class="badge">Offline • No account • No tracking</span>
-                            <span>Tube &amp; pipe fit-up in your pocket</span>
+                            <span>Drawing angle ≠ saw angle? Solved.</span>
                         </div>
-                        <h1>Pick the joint. Read the angle. Cut the tube once.</h1>
+                        <h1>Your drawing says 40°. Your saw says 50°. Both are right.</h1>
                         <p class="lead">
-                            Tube Miter Calculator turns the awkward trigonometry of tube fit-up into three numbers you can
-                            dial straight into your saw: the <strong>miter angle</strong>, and the
-                            <strong>long / short / centre edge lengths</strong> of the cut. It draws the end profile to
-                            scale, lets you rotate and flip it to match your machine, and works entirely offline.
+                            The drawing gives you one angle, your machine's scale reads another, and somewhere between
+                            them sits a mental <strong>90 − 40 = 50</strong> you have to do in your head, in gloves,
+                            before the blade goes down. Tube Miter Calculator does that conversion for you and shows
+                            <strong>the angle, its complement and its supplement</strong> side by side — next to the
+                            long / short / centre edge lengths and a dimensioned drawing you can rotate to match the
+                            machine in front of you.
                         </p>
                         <div class="ctaRow" id="download">
-                            <a class="btn btnPrimary" href="#demos">Watch the demos</a>
+                            <a class="btn btnPrimary" href="#angle-conversion">Why 40° and 50° go wrong</a>
+                            <a class="btn btnGhost" href="#demos">Watch the demos</a>
                             <a class="btn btnGhost" href="#tutorial">Step‑by‑step guide</a>
-                            <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contact support</a>
                         </div>
                         <p class="heroNote">
-                            Built for tube and pipe work: handrails, roll cages, exhausts, frames, greenhouses and structural
-                            steel — plus the everyday shop maths (compound cuts, board feet, cutting plans).
+                            For shop floor, structural steel erectors, handrail and roll cage builders, carpenters and
+                            joiners, and DIY renovators — plus the everyday maths (compound cuts, board feet, cutting
+                            plans). Works entirely offline, metric or imperial.
                         </p>
                     </div>
                     <div style="display: flex; gap: 12px; justify-content: center">
@@ -188,6 +247,129 @@
                 </div>
             </section>
 
+            <!-- Pain point -->
+            <section id="angle-conversion" class="section">
+                <h2>The angle on your drawing is not the number on your saw</h2>
+                <p>
+                    Every trade hits this: the plan, the sketch or the tube layout gives an angle measured one way,
+                    and the mitre saw, cold saw, chop saw, bandsaw table or mitre gauge in front of you is graduated
+                    the other way. One reading is from a square cut, another is from the fence line, another is the
+                    obtuse counterpart. You convert in your head — and when the two numbers look almost
+                    interchangeable, that conversion is exactly where parts die.
+                </p>
+
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>🏗 Shop floor &amp; structural crews</h3>
+                        <p>
+                            Handrails, balustrades, greenhouse frames, site railings. The section drawing gives the
+                            included angle; the machine wants something else. One shouting-match later somebody does
+                            <b>90 − 47.5</b> on a dusty phone keypad.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🔧 Fabrication &amp; motorsport</h3>
+                        <p>
+                            Roll cages, chassis nodes, exhausts. Each node has two different cut angles, and each one
+                            has a complement you also need — one node becomes four numbers to keep straight before
+                            anything gets notched.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🪚 Carpenters, joiners &amp; DIY</h3>
+                        <p>
+                            Angled frames, tapered boxes, picture frames, crown and skirting returns. Some gauges read
+                            from square, some read from the fence, and the add-on of 90° switching mid-job is how
+                            expensive hardwood turns into offcuts.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 12px">
+                    <h3>Why 40° and 50° are the dangerous pair</h3>
+                    <p>
+                        <b>40° and 50° are complementary</b> (they add up to 90°), so both look completely reasonable
+                        next to the same joint — and they differ by only <b>10°</b>. Twice that error shows up at the
+                        joint, because both ends of the assembly were cut.
+                    </p>
+                    <p style="margin-top: 8px">
+                        It is the worst zone for mental maths:
+                    </p>
+                    <ul class="whoList">
+                        <li>
+                            <b>45° ↔ 45°</b> — the flip is invisible, so nobody notices anything either way.
+                        </li>
+                        <li>
+                            <b>30° ↔ 60°</b> — far apart, a mistake is usually obvious to the eye.
+                        </li>
+                        <li>
+                            <b>40° ↔ 50°, 35° ↔ 55°, 47.5° ↔ 42.5°</b> — close enough to look interchangeable, different
+                            enough to scrap the part. This is where the errors actually happen.
+                        </li>
+                    </ul>
+                    <p style="margin-top: 8px">
+                        And it is not only 90°: some layout tasks work with the supplementary reading too, so
+                        <b>180 − a</b> joins the list. Three plausible numbers, one correct setting, one tube.
+                    </p>
+                </div>
+
+                <div class="split" style="margin-top: 12px">
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-cut-pt.webp" alt="Cut Assistant results listing the cut angle, its complement and its supplement" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>Every reading, listed</b> — the result block prints the angle, the complementary values
+                            and the supplementary values together, so the number you dial is already on screen.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="margin: 0">
+                        <img src="assets/tmc/screen-live-vn.webp" alt="Live View labelling both the original angle and the supplementary angle on the drawing" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>Or drawn on the part</b> — switch between <i>Original + Complementary</i> and
+                            <i>Original + Supplementary</i> and read whichever scale your machine prints straight off
+                            the drawing.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="card" style="margin-top: 12px">
+                    <h3>What you get for one input, worked example a = 40°</h3>
+                    <table class="convTable">
+                        <thead>
+                            <tr>
+                                <th>Reading</th>
+                                <th>What it is</th>
+                                <th>When you need it</th>
+                                <th>a = 40°</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Miter angle a</b></td>
+                                <td>Deviation from a square cut (a square cut is 0°)</td>
+                                <td>Scales and gauges graduated from square</td>
+                                <td><b>40°</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Complement 90 − a</b></td>
+                                <td>The reciprocal reading of the same cut</td>
+                                <td>Scales where 90° means square, and fence-line readings</td>
+                                <td><b>50°</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>Supplement 180 − a</b></td>
+                                <td>The obtuse counterpart of the same line</td>
+                                <td>Layout, protractors and included-angle readings</td>
+                                <td><b>140°</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px">
+                        You still choose which number your machine wants — the point is that you no longer have to
+                        <em>derive</em> it, mid-job, with the blade spinning down.
+                    </p>
+                </div>
+            </section>
+
             <!-- Key Features -->
             <section id="features" class="section">
                 <h2>Key Features</h2>
@@ -202,10 +384,11 @@
                         </p>
                     </div>
                     <div class="card" role="listitem">
-                        <h3>📏 Long, Short &amp; Centre Lengths</h3>
+                        <h3>📏 Never derive 90 − a by hand</h3>
                         <p>
-                            The app reports all three edge lengths of the cut plus the complementary and supplementary
-                            angles, so you can match whatever scale your saw prints — 0° from square or 90° from square.
+                            Angle, <strong>complement (90 − a)</strong> and <strong>supplement (180 − a)</strong> are
+                            printed together for every cut, alongside the long / short / centre edge lengths — so you
+                            can match whatever scale your saw prints, whether it reads 0° or 90° at square.
                         </p>
                     </div>
                     <div class="card" role="listitem">
@@ -527,6 +710,28 @@
 
                 <div class="faq">
                     <details open>
+                        <summary>The drawing says 40°, my saw reads 50°. Which one is right?</summary>
+                        <p>
+                            Both describe the same cut — they are complementary (they add up to 90°). The miter angle
+                            <strong>a</strong> is taken from a square cut, and <strong>90 − a</strong> is the same line
+                            read the other way. That is exactly why 40/50 trips people up: the two numbers look
+                            interchangeable, but setting the wrong one puts 10° of error on each end and 20° at the
+                            joint. The app prints both readings side by side so you never have to derive the second one
+                            on the shop floor.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Do I set the angle or its complement on the saw?</summary>
+                        <p>
+                            It depends on how your machine's scale is graduated. If the scale reads
+                            <strong>0° at square</strong>, set the miter angle <strong>a</strong>. If it reads
+                            <strong>90° at square</strong> (fence-line graduation), set <strong>90 − a</strong>. Some
+                            protractors and layout tasks use the obtuse reading, <strong>180 − a</strong>. In Live View
+                            use the <i>Original + Complementary</i> / <i>Original + Supplementary</i> button to label the
+                            drawing the same way your scale is printed, then always prove it on an offcut first.
+                        </p>
+                    </details>
+                    <details>
                         <summary>How is the miter angle defined?</summary>
                         <p>
                             The miter angle is measured from a square cut, so a square cut is 0°. The live view also shows
@@ -599,8 +804,10 @@
             <section class="section">
                 <h2>Safety Note</h2>
                 <p>
-                    Results are setup aids. Always confirm end identity, top / bottom face, blunt‑edge side, scrap side
-                    and kerf, and check one first‑off part before batch cutting. Wear eye and hearing protection, and
+                    Results are setup aids. Before every batch: confirm <strong>which way your scale is graduated</strong>
+                    (0° at square or 90° at square), then confirm end identity, top / bottom face, blunt‑edge side, scrap
+                    side and kerf, and check one first‑off part. Especially with near-symmetric pairs such as 40° / 50°,
+                    a quick test cut costs a minute; the wrong one costs the tube. Wear eye and hearing protection, and
                     follow your machine’s manual.
                 </p>
             </section>
