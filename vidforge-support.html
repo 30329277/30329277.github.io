@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>VidForge — Batch Video Converter, Repairer, Compressor &amp; Merger for Windows</title>
+        <meta
+            name="description"
+            content="VidForge is a rule-based batch video toolkit for Windows: convert a whole folder to MP4, repair half-finished downloads, compress without visible loss, clip and merge — with parallel workers, stream copy when possible and one output folder for the whole queue. Local FFmpeg, no upload, no account, free on the Microsoft Store."
+        />
+        <meta
+            name="keywords"
+            content="batch video converter windows, convert hevc to h264 batch, batch compress mp4, video compression without quality loss, merge mp4 without re-encoding, join video files lossless, split video into equal parts, repair incomplete mp4 download, repair qbittorrent !qb file, repair .part file, ffmpeg gui windows, batch video processing, parallel video conversion, clip video segments batch, video toolkit windows"
+        />
+        <link rel="canonical" href="https://30329277.github.io/vidforge-support.html" />
+
+        <meta name="theme-color" content="#0b1221" />
+        <link rel="apple-touch-icon" href="vidforge-apple-touch-icon.png" />
+        <link rel="icon" href="vidforge-favicon-120.png" type="image/png" sizes="120x120" />
+        <link rel="icon" href="vidforge-favicon-58.png" type="image/png" sizes="58x58" />
+        <link rel="icon" href="vidforge-favicon-40.png" type="image/png" sizes="40x40" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="VidForge — six video tools, one queue, nine files at a time" />
+        <meta
+            property="og:description"
+            content="Convert, repair, compress, clip, merge and split in batches on Windows. 4 files in parallel, stream copy when the codec allows it, one output folder for the whole queue. Local FFmpeg — nothing is uploaded."
+        />
+        <meta property="og:url" content="https://30329277.github.io/vidforge-support.html" />
+        <meta property="og:image" content="https://30329277.github.io/assets/vidforge/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="VidForge batch converting nine video files to MP4 in five seconds" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VidForge — six video tools, one queue" />
+        <meta
+            name="twitter:description"
+            content="Batch convert, repair, compress, clip, merge and split on Windows. Parallel workers, lossless stream copy, local FFmpeg. Free on the Microsoft Store."
+        />
+        <meta name="twitter:image" content="https://30329277.github.io/assets/vidforge/og-image.png" />
+
+        <link rel="stylesheet" href="landing.css" />
+
+        <style>
+            .toolTable {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 14px;
+                margin-top: 4px;
+            }
+            .toolTable th,
+            .toolTable td {
+                border: 1px solid var(--border);
+                padding: 9px 11px;
+                text-align: left;
+                vertical-align: top;
+                line-height: 1.5;
+            }
+            .toolTable th {
+                background: rgba(255, 255, 255, 0.04);
+                font-size: 13px;
+                color: var(--muted2);
+            }
+            .toolTable td b {
+                white-space: nowrap;
+            }
+            .checkList {
+                margin: 0;
+                padding-left: 20px;
+                color: var(--muted);
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            .badgeSoft {
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 999px;
+                border: 1px solid var(--border);
+                font-size: 12px;
+                color: var(--muted2);
+                white-space: nowrap;
+            }
+            .shots {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 16px;
+                align-items: start;
+            }
+            .shots figure {
+                margin: 0;
+            }
+            .shots img {
+                width: 100%;
+                display: block;
+            }
+            code {
+                font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+                font-size: 0.92em;
+                background: rgba(255, 255, 255, 0.07);
+                border-radius: 5px;
+                padding: 1px 5px;
+            }
+            .loopGrid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 16px;
+            }
+            .loopGrid video {
+                width: 100%;
+                border-radius: 12px;
+                border: 1px solid var(--border);
+                display: block;
+                margin-bottom: 10px;
+                background: #0f1726;
+            }
+        </style>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "SoftwareApplication",
+                        "name": "VidForge",
+                        "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+                        "applicationCategory": "MultimediaApplication",
+                        "applicationSubCategory": "Video converter / batch processing",
+                        "description": "Rule-based batch video toolkit for Windows. Converts folders of clips to MP4, repairs half-finished downloads (!qb, .part, .bc!, .xltd), compresses with quality-aware bitrate estimates, clips segments from many files with JSON presets, merges without re-encoding when streams match, and splits long recordings into equal parts — all on local FFmpeg with parallel workers.",
+                        "url": "https://30329277.github.io/vidforge-support.html",
+                        "featureList": [
+                            "Batch convert a folder to MP4 with smart copy / re-encode",
+                            "Parallel workers (1-8) with a single shared queue",
+                            "Repair incomplete downloads to playable MP4",
+                            "Quality-aware compression that skips clips with no headroom",
+                            "Lossless merge when codec, size and fps match",
+                            "Clip multiple segments per file, export / import JSON",
+                            "Split into equal parts, precise or keyframe copy",
+                            "Bundled FFmpeg, fully offline, no upload, no account"
+                        ],
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "USD",
+                            "availability": "https://schema.org/PreOrder"
+                        },
+                        "author": {
+                            "@type": "Person",
+                            "name": "Wang Ning"
+                        }
+                    },
+                    {
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "Is VidForge free?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. VidForge is free on the Microsoft Store. There is no account, no subscription, no watermark and no upload quota."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Does VidForge upload my videos anywhere?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "No. Everything runs on a bundled FFmpeg build inside the app, on your own machine. The app makes no network requests at all — see the privacy policy."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Why is batch conversion so fast?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Two reasons: files whose streams are already MP4-compatible are stream-copied instead of re-encoded, and the ones that must be re-encoded run in parallel (4 workers by default). A batch of nine mixed clips typically finishes in seconds rather than minutes."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Can it repair a half-downloaded file?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Point it at the finished part of a download — .!qb, .part, .bc!, .xltd, .emule.td or any partial MP4 — and VidForge rebuilds a playable MP4 by stream copy, falling back to a re-encode only if the original timestamps are unusable. It can only recover what was actually downloaded."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Will merging re-encode and lose quality?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Only when it has to. VidForge compares codec, resolution, frame rate and pixel format; if they match, the files are concatenated without re-encoding, so quality is untouched. Mismatched inputs are re-encoded so the result still plays."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Do I need to install FFmpeg separately?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "No. FFmpeg and ffprobe ship inside the app. Nothing is added to your PATH and nothing is downloaded at runtime."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Does it support HEVC / H.265 and NVENC?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. In smart mode, H.264 files are stream-copied and HEVC clips are re-encoded to H.264 for compatibility. Hardware NVENC is detected automatically and can be used for compression and fallback encodes; CPU x265 is also available."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Can I use it on a laptop without a discrete GPU?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes. Hardware encoding is optional — the app falls back to libx264 / libx265. Stream copy and repair do not need an encoder at all."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "What happens to my original files?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "They are never modified. Results are written to the output folder you choose; when that field is left empty, each result is written next to its source, and split runs always create a per-video subfolder."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "How do I get help?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Email 30329277@qq.com with the app version and, if possible, the last lines from the log pane. Typical response time is 24-48 hours."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
+    </head>
+
+    <body>
+        <a class="skip" href="#main">Skip to content</a>
+
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <a class="brand" href="vidforge-support.html" aria-label="VidForge">
+                        <span class="logo" aria-hidden="true" style="background: linear-gradient(135deg, #2f7cff, #4cc2ff)"></span>
+                        <b>VidForge</b>
+                    </a>
+                    <nav class="nav" aria-label="Primary">
+                        <a href="#why-batch">Why batch</a>
+                        <a href="#features">Features</a>
+                        <a href="#demo">Demo</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#tutorial">Tutorial</a>
+                        <a href="#use-cases">Use Cases</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="vidforge-privacy.html">Privacy</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="container">
+            <!-- Hero -->
+            <section class="hero">
+                <div class="heroGrid">
+                    <div>
+                        <div class="kicker">
+                            <span class="badge">Windows • Local FFmpeg • No account</span>
+                            <span>Six tools, one queue.</span>
+                        </div>
+                        <h1>Nine clips to MP4 in five seconds — without touching nine dialogs.</h1>
+                        <p class="lead">
+                            Most video apps are built around <strong>one clip at a time</strong>: pick a file, pick a preset,
+                            pick an output name, wait, repeat. VidForge is built around the folder. Drop in a whole
+                            batch, set the output folder <strong>once</strong>, and it decides per file what actually needs
+                            work — <strong>stream copy</strong> when the codec already fits, a real re-encode only when it
+                            does not — while <strong>four files run in parallel</strong> behind one progress bar.
+                        </p>
+                        <p class="lead" style="margin-top: 10px">
+                            Convert, repair, compress, clip, merge, split. Same rules, same queue, same log.
+                        </p>
+                        <div class="ctaRow" id="download">
+                            <a class="btn btnPrimary" href="#get-the-app">Microsoft Store — coming soon</a>
+                            <a class="btn btnGhost" href="#demo">Watch the tour</a>
+                            <a class="btn btnGhost" href="#tutorial">Step-by-step guide</a>
+                            <a class="btn btnGhost" href="vidforge-privacy.html">Privacy policy</a>
+                        </div>
+                        <p class="heroNote">
+                            Free. No account, no watermark, no upload quota — the videos never leave your PC. Built for
+                            people who process <em>folders</em>: phone and action-cam footage, screen recordings,
+                            half-finished downloads, long streams that need cutting into chapters.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 12px; justify-content: center; align-items: center">
+                        <img
+                            src="assets/vidforge/screen-batch.webp"
+                            alt="VidForge batch convert tab converting nine video files to MP4 with four parallel workers"
+                            style="width: 76%; border-radius: 14px; box-shadow: var(--shadow)"
+                        />
+                        <img
+                            src="assets/vidforge/icon.webp"
+                            alt="VidForge app icon"
+                            style="width: 20%; border-radius: 22px; box-shadow: var(--shadow)"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pain point / differentiation -->
+            <section id="why-batch" class="section">
+                <h2>Editing apps optimise for one clip. Batches are a different problem</h2>
+                <p>
+                    A batch is not “the same job, repeated”. It is a queue with mixed inputs: some files are already
+                    H.264, some are HEVC from a phone, one is a container with a broken tail, three need to be joined,
+                    and all of them need to end up in the same folder with sensible names. Handing that to a
+                    timeline-based editor means doing the boring part — the file management — by hand, one dialog at
+                    a time.
+                </p>
+
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>🗂 The per-file dialog tax</h3>
+                        <p>
+                            Export a 20-clip folder from a typical editor and you confirm the same preset, the same
+                            bitrate and the same output folder twenty times. VidForge asks once, for the whole queue.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>⏳ Re-encoding what never needed it</h3>
+                        <p>
+                            Half of a typical batch is already in the target format. VidForge checks the codec first and
+                            <b>stream-copies</b> those files — a 45-second clip lands in under a second, bit for bit
+                            identical.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🧊 Waiting on one core</h3>
+                        <p>
+                            One export at a time leaves the machine idle. The queue runs <b>1–8 workers in parallel</b>
+                            with per-file progress, per-file status and one shared cancel.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 12px">
+                    <h3>What “rule-based” actually means</h3>
+                    <p>
+                        Every tab is a set of rules, not a wizard: which files, what to do with each one, where the
+                        result goes, and what to do when the input is not ideal. Nothing is decided silently — the log
+                        prints the decision it took for every single file.
+                    </p>
+                    <table class="toolTable">
+                        <thead>
+                            <tr>
+                                <th>Job</th>
+                                <th>The rule VidForge applies</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Convert</b></td>
+                                <td>
+                                    H.264 inside an MP4-compatible container → stream copy. HEVC or anything else →
+                                    re-encode that file only. Audio that will not decode → retry video-only instead of
+                                    failing the batch.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Compress</b></td>
+                                <td>
+                                    Estimate bits per pixel from resolution and frame rate. If the file has less than
+                                    ~10% headroom, <b>skip it</b> — re-encoding would only cost time and quality.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Merge</b></td>
+                                <td>
+                                    Compare codec, resolution, frame rate (±0.01) and pixel format. Match → lossless
+                                    concat. Mismatch → re-encode so the join still works.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Clip</b></td>
+                                <td>
+                                    Extract each segment by stream copy, fall back to re-encode per segment, then
+                                    concatenate — with a full re-encode only if the copy path fails outright.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Repair</b></td>
+                                <td>
+                                    Rebuild the container index by stream copy. Re-encode only when the timestamps are
+                                    beyond saving.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Split</b></td>
+                                <td>
+                                    Equal parts by count; either a precise re-encode cut, or a fast keyframe copy into a
+                                    per-video subfolder — never overwriting the source.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section id="features" class="section">
+                <h2>Key Features</h2>
+                <p>Six tools, plus the queue machinery that makes them usable on a folder instead of a file.</p>
+
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>⇄ Batch Convert to MP4</h3>
+                        <p>
+                            Add files or a whole folder, choose an output folder once, and convert the queue with
+                            smart copy / re-encode. HEVC phone footage becomes universally playable H.264 without
+                            touching the clips that were already fine.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🛠 Video Repair</h3>
+                        <p>
+                            Feed it the leftover of an interrupted download — <code>.!qb</code>, <code>.part</code>,
+                            <code>.bc!</code>, <code>.xltd</code>, <code>.emule.td</code> — and get a playable MP4
+                            back. A 45-second clip is repaired in about a second, by stream copy.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🗜 High-Quality Compress</h3>
+                        <p>
+                            Quality-aware compression with a bit-per-pixel estimate, so clips that cannot shrink are
+                            skipped instead of damaged. Manual override for size, bitrate, CRF or NVENC CQ —
+                            and a batch summary at the end.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>✂ Clip &amp; Merge</h3>
+                        <p>
+                            Independent segment sets for many files at once, compact time entry
+                            (<code>0101</code> = 00:01:01), drag to reorder, keyframe align, GPU fallback, and
+                            JSON import / export so a repeatable cut becomes a reusable preset.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>⇉ Merge Videos</h3>
+                        <p>
+                            Join recordings into one file in the order you set, with repeat count, custom output name,
+                            mp4 / mkv / mov container, optional CPU HEVC, and all audio and subtitle streams kept when
+                            copying.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>⧉ Split Video</h3>
+                        <p>
+                            Split by parts count with presets, an optional precise cut, and automatic
+                            <code>&lt;name&gt;_split</code> subfolders so a long recording can be carved into
+                            chapters without collisions.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>⚡ Parallel workers</h3>
+                        <p>
+                            1 to 8 files at a time behind a single queue and a single progress bar. Per-file status
+                            (Queued / Converting / Done / Skipped) and one Cancel that stops the whole batch cleanly.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🧠 Smart mode</h3>
+                        <p>
+                            Copy when possible, re-encode only when needed, choose the codec that fits the target, and
+                            keep the original when a compression pass would gain nothing.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🔒 Offline &amp; private</h3>
+                        <p>
+                            Bundled FFmpeg, no telemetry, no network calls, no account. Logs stay in
+                            <code>%LOCALAPPDATA%</code>. See the
+                            <a href="vidforge-privacy.html">privacy policy</a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Demo -->
+            <section id="demo" class="section">
+                <h2>See It in Action</h2>
+                <p>
+                    A single unscripted session: nine mixed clips converted, four files compressed, three clips
+                    merged and one broken download repaired. The clock in the log is real — no speed-up, only the
+                    pause between steps trimmed.
+                </p>
+
+                <figure class="figure" style="margin: 14px 0 18px">
+                    <video
+                        controls
+                        muted
+                        playsinline
+                        preload="metadata"
+                        poster="assets/vidforge/demo-poster.webp"
+                        style="width: 100%; border-radius: 14px; border: 1px solid var(--border); background: #0f1726"
+                    >
+                        <source src="assets/vidforge/demo-tour.mp4" type="video/mp4" />
+                        Your browser does not support embedded video — the screenshots below show the same steps.
+                    </video>
+                    <figcaption class="figcap">
+                        <b>Full tour (54 s, muted)</b> — batch convert with 4 workers, smart mode, compression, lossless
+                        merge, download repair.
+                    </figcaption>
+                </figure>
+
+                <div class="loopGrid">
+                    <div class="card">
+                        <video autoplay muted loop playsinline poster="assets/vidforge/loop-convert-poster.webp">
+                            <source src="assets/vidforge/loop-convert.mp4" type="video/mp4" />
+                        </video>
+                        <h3>Nine files, four at a time</h3>
+                        <p>
+                            H.264 clips are stream-copied, the single HEVC clip is re-encoded, the queue drains in about
+                            five seconds.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <video autoplay muted loop playsinline poster="assets/vidforge/loop-compress-poster.webp">
+                            <source src="assets/vidforge/loop-compress.mp4" type="video/mp4" />
+                        </video>
+                        <h3>Compression that knows when to stop</h3>
+                        <p>
+                            Four clips in, 2.86 MB → 1.85 MB out — and the summary tells you the exact saving per file.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <video autoplay muted loop playsinline poster="assets/vidforge/loop-repair-poster.webp">
+                            <source src="assets/vidforge/loop-repair.mp4" type="video/mp4" />
+                        </video>
+                        <h3>Broken download, repaired</h3>
+                        <p>
+                            A <code>.mp4.!qb</code> leftover becomes a playable MP4 by stream copy — the intact footage
+                            is never re-encoded.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section id="how-it-works" class="section">
+                <h2>How It Works</h2>
+                <p>Four steps, and only the first two change per batch.</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div>
+                            <b>Add a folder, not a file</b>
+                            Open the tab you need and drop in everything at once — <i>Add Files</i> for a hand-picked
+                            queue, <i>Add Folder</i> for a whole card. Every row gets a checkbox, a path and its own
+                            status.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div>
+                            <b>Point at one output folder</b>
+                            Type it once for the whole queue. Leave it empty and each result is written next to its
+                            source — split runs always create a per-video subfolder so nothing is overwritten.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div>
+                            <b>Set the rules, then start</b>
+                            Smart mode, parallel workers, compression quality, merge order, segment list. One click
+                            starts the queue with per-file progress and a live log.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div>
+                            <b>Read the log, not a dialog</b>
+                            Every file reports what happened: copied, re-encoded, skipped, repaired. Failures are
+                            isolated to that file — the rest of the batch keeps going.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tutorial -->
+            <section id="tutorial" class="section">
+                <h2>Step‑by‑Step Tutorial</h2>
+                <p>Every tab in the order you would use it, from a messy folder to finished files.</p>
+
+                <div class="shots">
+                    <figure class="figure">
+                        <img src="assets/vidforge/screen-batch.webp" alt="Batch Convert MP4 tab with nine files queued, smart mode on and four parallel workers" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>1 · Batch Convert MP4</b> — the workhorse. <i>Smart mode</i> keeps H.264 as a stream copy
+                            and re-encodes only the HEVC clip. <i>Parallel 4</i> is the default; raise it to 8 on a
+                            desktop. Output folder typed once, applies to all nine rows.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="assets/vidforge/screen-split.webp" alt="Split Video tab with split mode, parts count and precise cut option" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>2 · Split Video</b> — equal parts by count with presets for the common sizes. Leave
+                            <i>Precise cut</i> off for a fast keyframe copy; switch it on when every part must start on
+                            an exact second. Each video gets its own <code>&lt;name&gt;_split</code> folder.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="assets/vidforge/screen-compress.webp" alt="High-Quality Compress tab with smart compression and manual parameter override" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>3 · High-Quality Compress</b> — <i>Compress Selected (Smart)</i> estimates the headroom
+                            per file and skips the ones that cannot shrink. The manual block below overrides size,
+                            bitrate, CRF or NVENC CQ when you need an exact target.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="assets/vidforge/screen-clip.webp" alt="Clip and Merge tab with per-file segment list and JSON export" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>4 · Clip &amp; Merge</b> — a segment list per file, entered as <code>00:10–00:25</code> or
+                            the compact <code>0101</code> form. Reorder by drag, keep keyframe alignment for speed, and
+                            export the whole set as JSON to reuse it on the next batch.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="assets/vidforge/screen-merge.webp" alt="Merge Videos tab with three ordered files and lossless stream copy status" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>5 · Merge Videos</b> — order the list, set a repeat count and an output name. When codec,
+                            size, fps and pixel format match, the status line says <i>merge losslessly</i>; otherwise the
+                            mismatched input is re-encoded so the join still plays.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="assets/vidforge/screen-repair.webp" alt="Video Repair tab showing a qbittorrent !qb file repaired to MP4 by stream copy" loading="lazy" />
+                        <figcaption class="figcap">
+                            <b>6 · Video Repair</b> — drop in the <code>.!qb</code> / <code>.part</code> /
+                            <code>.bc!</code> leftover, press <i>Repair Selected</i>. Status turns
+                            <i>Repaired (stream copy)</i>; the log confirms the output path and size. Use
+                            <i>Copy network files first</i> when the source sits on a NAS.
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Use cases -->
+            <section id="use-cases" class="section">
+                <h2>Real‑World Use Cases</h2>
+                <p>Where batch processing saves an afternoon, not a minute.</p>
+
+                <div class="grid3" role="list">
+                    <div class="card" role="listitem">
+                        <h3>📱 Phone &amp; action-cam footage</h3>
+                        <p>
+                            iPhones and recent Android flagships record HEVC. A folder of holiday clips becomes a folder
+                            of H.264 MP4s that play anywhere — TV, car head unit, an older editor — with the
+                            already-H.264 files passed through untouched.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🧲 Half-finished downloads</h3>
+                        <p>
+                            qBittorrent leaves <code>.!qb</code>, eMule leaves <code>.part</code>,
+                            browsers leave <code>.crdownload</code> siblings. If the video itself was mostly complete,
+                            that leftover is recoverable — the app rebuilds the index and you keep the footage.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🎥 Screen recordings &amp; streams</h3>
+                        <p>
+                            OBS and capture tools produce 2–4 GB files that need cutting into chapters. Split by parts,
+                            or clip the interesting segments from a dozen recordings in one pass with a JSON preset.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🗄 Archive compression</h3>
+                        <p>
+                            Big MP4 libraries usually have 20–40% of wasted bitrate. The bpp estimate compresses what has
+                            headroom, skips what does not, and prints a total “saved 35%” summary so you know it was
+                            worth the electricity.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🎬 Multi-part recordings</h3>
+                        <p>
+                            Cameras that stop at 4 GB, or recordings split across sessions, merge back into one file
+                            without re-encoding when the parameters match — the quality of the original, one file out.
+                        </p>
+                    </div>
+                    <div class="card" role="listitem">
+                        <h3>🏫 Course &amp; meeting material</h3>
+                        <p>
+                            A term of lecture recordings: compress the heavy ones, merge the two-part sessions, split
+                            the three-hour ones per topic, and keep every output name predictable.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq">
+                    <details open>
+                        <summary>Is VidForge free?</summary>
+                        <p>
+                            Yes. It is free on the Microsoft Store — no account, no subscription, no watermark and no
+                            upload quota.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Does it upload my videos anywhere?</summary>
+                        <p>
+                            No. All processing happens on a bundled FFmpeg build inside the app, on your machine. There
+                            is no telemetry and no network access at all — see the
+                            <a href="vidforge-privacy.html">privacy policy</a>.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Why is batch conversion so fast?</summary>
+                        <p>
+                            Because most of the work is skipped. Files already in an MP4-compatible stream are
+                            <strong>stream-copied</strong> — no decode, no encode, no quality change — and only the
+                            genuine conversions are re-encoded, in parallel. Nine mixed clips finished in about five
+                            seconds in the demo above.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Will it overwrite or modify my originals?</summary>
+                        <p>
+                            Never. Results are written to the output folder you choose; if you leave it empty, each
+                            result is written next to its source, and split runs always create a per-video subfolder.
+                            Your source files are only ever read.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can it repair a half-downloaded video?</summary>
+                        <p>
+                            Usually, yes — as long as the downloaded bytes contain a readable stream. VidForge rebuilds
+                            the container index by stream copy, falling back to re-encode if the timestamps are beyond
+                            saving. It can only recover what was actually downloaded: a file that stopped at 30% will
+                            play for roughly 30% of its length.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Will merging re-encode and lose quality?</summary>
+                        <p>
+                            Only when the inputs disagree. VidForge compares codec, resolution, frame rate (with a
+                            ±0.01 tolerance) and pixel format; if they match, the files are concatenated as-is, so the
+                            output is bit-for-bit the same video. Mismatched inputs are re-encoded so the result still
+                            plays.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Do I need to install FFmpeg?</summary>
+                        <p>
+                            No. FFmpeg and ffprobe ship inside the app. Nothing is added to your PATH and nothing is
+                            downloaded at runtime.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Does it support HEVC / H.265 and NVENC?</summary>
+                        <p>
+                            Yes. In smart mode H.264 is copied and HEVC is re-encoded to H.264 for compatibility.
+                            Hardware NVENC is detected automatically for compression and fallback encodes, and CPU
+                            x265 is available as an option.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can I run it on a laptop without a discrete GPU?</summary>
+                        <p>
+                            Yes. Hardware encoding is optional — the app falls back to libx264 / libx265. Stream copy
+                            and repair need no encoder at all, so they work at full speed on integrated graphics.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>What are the system requirements?</summary>
+                        <p>
+                            Windows 10 or Windows 11, 64-bit. Around 200 MB of disk space for the app and its FFmpeg
+                            build. No GPU required; a discrete NVIDIA card simply makes compression faster.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>How do I get help?</summary>
+                        <p>
+                            Email <a href="mailto:30329277@qq.com">30329277@qq.com</a> with the app version and, if you
+                            can, the last lines from the log pane. Typical response time is 24–48 hours.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Requirements -->
+            <section class="section">
+                <h2>System Requirements</h2>
+                <table class="toolTable">
+                    <tbody>
+                        <tr>
+                            <td><b>OS</b></td>
+                            <td>Windows 10 / Windows 11, 64-bit</td>
+                        </tr>
+                        <tr>
+                            <td><b>Disk</b></td>
+                            <td>~200 MB for the app and the bundled FFmpeg build, plus room for your outputs</td>
+                        </tr>
+                        <tr>
+                            <td><b>GPU</b></td>
+                            <td>Optional. NVENC is used when present; otherwise CPU x264 / x265</td>
+                        </tr>
+                        <tr>
+                            <td><b>Network</b></td>
+                            <td>Not required at all — except when your source files live on a NAS (use <i>Copy network files first</i>)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Input</b></td>
+                            <td>MP4, MOV, MKV, AVI and anything else the bundled FFmpeg can decode — including partial downloads</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="get-the-app" class="section">
+                <h2>Get the app</h2>
+                <p>
+                    VidForge is in Microsoft Store certification. This page will link to the store listing as soon as
+                    it goes live — until then, the
+                    <a href="vidforge-privacy.html">privacy policy</a> is already published.
+                </p>
+                <div class="ctaRow" style="margin-top: 12px">
+                    <span class="btn btnPrimary" style="opacity: 0.75; cursor: default">Microsoft Store — pending certification</span>
+                    <a class="btn btnGhost" href="index.html">All apps &amp; support</a>
+                    <a class="btn btnGhost" href="mailto:30329277@qq.com?subject=VidForge">Email support</a>
+                </div>
+                <p style="margin-top: 12px">
+                    <!-- TODO: replace the placeholder above with
+                         https://apps.microsoft.com/detail/<store-id> once the listing is approved. -->
+                    <span class="badgeSoft">Windows 10 / 11 · 64-bit</span>
+                    <span class="badgeSoft">Free</span>
+                    <span class="badgeSoft">Bundled FFmpeg</span>
+                    <span class="badgeSoft">No account</span>
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footerRow">
+                <span>© 2026 Wang Ning. All rights reserved.</span>
+                <span>
+                    <a href="vidforge-privacy.html">Privacy Policy</a> ·
+                    <a href="index.html">Home</a> ·
+                    <a href="mailto:30329277@qq.com">Contact</a>
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>
