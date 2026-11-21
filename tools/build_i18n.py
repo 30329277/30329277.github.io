@@ -30,6 +30,7 @@ DEFAULT_SITE = "https://30329277.github.io"
 DEFAULT_EMAIL = "wangning.engineer@outlook.com"
 DEFAULT_LANGS = {
     "en": {"name": "English", "locale": "en_US", "dir": "ltr", "prefix": "", "asset_prefix": ""},
+    "de": {"name": "Deutsch", "locale": "de_DE", "dir": "ltr", "prefix": "de/", "asset_prefix": ""},
     "fr": {"name": "Français", "locale": "fr_FR", "dir": "ltr", "prefix": "fr/", "asset_prefix": ""},
     "es": {"name": "Español", "locale": "es_ES", "dir": "ltr", "prefix": "es/", "asset_prefix": ""},
     "ar": {"name": "العربية", "locale": "ar_AR", "dir": "rtl", "prefix": "ar/", "asset_prefix": ""},
@@ -37,6 +38,11 @@ DEFAULT_LANGS = {
     "ko": {"name": "한국어", "locale": "ko_KR", "dir": "ltr", "prefix": "ko/", "asset_prefix": ""},
 }
 DEFAULT_SUGGEST = {
+    "de": {
+        "message": "Ihr Browser ist auf Deutsch eingestellt. Möchten Sie diese Seite auf Deutsch lesen?",
+        "cta": "Auf Deutsch wechseln", "dismiss": "Auf Englisch bleiben",
+        "tz": ["Europe/Berlin", "Europe/Vienna", "Europe/Zurich", "Europe/Luxembourg"],
+    },
     "fr": {
         "message": "Votre navigateur est configuré en français. Préférez-vous lire cette page en français ?",
         "cta": "Passer en français", "dismiss": "Rester en anglais",
@@ -111,7 +117,9 @@ def build_pack(pack_path, written):
                 raise SystemExit("[error] %s: %s caption count mismatch" % (name, lang))
 
     def raw(lang, key):
-        return strings[lang].get(key, en.get(key, ""))
+        # Pack strings are plain text; an "&amp;" there is a markup artifact and
+        # would be double-escaped downstream (title/meta/JSON-LD).
+        return strings[lang].get(key, en.get(key, "")).replace("&amp;", "&")
 
     def plain(lang, key):
         # FAQ JSON-LD must stay valid JSON: resolve fragment placeholders to
