@@ -1,0 +1,216 @@
+<!doctype html>
+<!-- GENERATED FILE — do not edit by hand. Source: i18n/beamdrop-support.json + this template. Rebuild: python tools/build_beamdrop_i18n.py -->
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="keywords" content="{{keywords}}" />
+    <link rel="canonical" href="{{canonical}}" />
+{{hreflang_tags}}
+
+    <meta name="theme-color" content="#0b1221" />
+    <link rel="apple-touch-icon" href="{{base}}beamdrop-apple-touch-icon.png" />
+    <link rel="icon" href="{{base}}beamdrop-favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="{{base}}beamdrop-favicon-58.png" type="image/png" sizes="58x58" />
+    <link rel="icon" href="{{base}}beamdrop-favicon-40.png" type="image/png" sizes="40x40" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{og_locale}}" />
+    <meta property="og:title" content="{{og_title}}" />
+    <meta property="og:description" content="{{og_description}}" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:image" content="{{site}}/assets/beamdrop/beamdrop-04-select.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="{{base}}landing.css" />
+    <script src="{{base}}i18n.js" defer></script>
+
+    <script type="application/ld+json">
+    {{jsonld_app}}
+    </script>
+
+    <script type="application/ld+json">
+    {{jsonld_faq}}
+    </script>
+{{suggest_data}}
+</head>
+
+<body>
+    <a class="skip" href="#main">{{skip}}</a>
+{{suggest_banner}}
+
+    <header class="topbar">
+        <div class="container">
+            <div class="row">
+                <a class="brand" href="{{base}}beamdrop-support.html" aria-label="BeamDrop">
+                    <span class="logo" aria-hidden="true" style="background:linear-gradient(135deg, #0a84ff, #34c7ff)"></span>
+                    <b>BeamDrop</b>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#how-it-works">{{nav_how}}</a>
+                    <a href="#features">{{nav_features}}</a>
+                    <a href="#faq">{{nav_faq}}</a>
+                    <a href="{{base}}beamdrop-privacy.html">{{nav_privacy}}</a>
+                </nav>
+                {{lang_switch}}
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <section class="hero">
+            <div class="heroGrid" style="grid-template-columns:1fr">
+                <div>
+                    <div class="kicker">
+                        <span class="badge">{{badge}}</span>
+                        <span>{{kicker}}</span>
+                    </div>
+                    <h1>{{h1}}</h1>
+                    <p class="lead">{{lead}}</p>
+                    <div class="ctaRow" id="download">
+                        <a class="btn btnPrimary" href="https://apps.apple.com/app/beamdrop/id6776451257" target="_blank" rel="noopener">{{cta_store}}</a>
+                        <a class="btn btnGhost" href="#how-it-works">{{cta_how}}</a>
+                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">{{cta_support}}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Preview Video -->
+        <section class="section">
+            <h2>{{video_h2}}</h2>
+            <p>{{video_p}}</p>
+            <div style="text-align:center; margin-top:16px">
+                <video controls muted playsinline poster="{{img_prefix}}beamdrop-04-select.webp" style="max-width:300px; width:100%; border-radius:16px; box-shadow:var(--shadow)">
+                    <source src="{{base}}assets/beamdrop/demo.mp4" type="video/mp4">
+                    <track kind="captions" src="{{base}}assets/beamdrop/demo.{{lang}}.vtt" srclang="{{lang}}" label="{{track_label}}" default>
+                    {{video_fallback}}
+                </video>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="section">
+            <h2>{{how_h2}}</h2>
+            <p>{{how_p}}</p>
+
+            <h3 style="margin-top:8px">{{on_iphone}}</h3>
+            <div class="split" style="margin-top:12px">
+                <div class="figure">
+                    <img src="{{img_prefix}}beamdrop-01-allow.webp" alt="{{img1_alt}}" loading="lazy" width="600" height="1299" />
+                    <div class="figcap"><strong>{{step1_title}}</strong> {{step1_text}}</div>
+                </div>
+                <div class="figure">
+                    <img src="{{img_prefix}}beamdrop-02-hotspot.webp" alt="{{img2_alt}}" loading="lazy" width="600" height="1299" />
+                    <div class="figcap"><strong>{{step2_title}}</strong> {{step2_text}}</div>
+                </div>
+            </div>
+
+            <div class="split">
+                <div class="figure">
+                    <img src="{{img_prefix}}beamdrop-03-url.webp" alt="{{img3_alt}}" loading="lazy" width="600" height="1299" />
+                    <div class="figcap"><strong>{{step3_title}}</strong> {{step3_text}}</div>
+                </div>
+                <div class="figure">
+                    <img src="{{img_prefix}}beamdrop-04-select.webp" alt="{{img4_alt}}" loading="lazy" width="600" height="1299" />
+                    <div class="figcap"><strong>{{step4_title}}</strong> {{step4_text}}</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top:8px">{{on_computer}}</h3>
+            <div class="split" style="margin-top:12px">
+                <div class="figure">
+                    <img src="{{img_prefix}}beamdrop-05-connect.webp" alt="{{img5_alt}}" loading="lazy" width="600" height="1299" />
+                    <div class="figcap"><strong>{{step5_title}}</strong> {{step5_text}}</div>
+                </div>
+                <div class="figure">
+                    <img src="{{img_prefix}}beamdrop-06-download.webp" alt="{{img6_alt}}" loading="lazy" width="600" height="1299" />
+                    <div class="figcap"><strong>{{step6_title}}</strong> {{step6_text}}</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="section">
+            <h2>{{features_h2}}</h2>
+            <p>{{features_p}}</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem"><h3>{{f1_title}}</h3><p>{{f1_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f2_title}}</h3><p>{{f2_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f3_title}}</h3><p>{{f3_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f4_title}}</h3><p>{{f4_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f5_title}}</h3><p>{{f5_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f6_title}}</h3><p>{{f6_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f7_title}}</h3><p>{{f7_text}}</p></div>
+                <div class="card" role="listitem"><h3>{{f8_title}}</h3><p>{{f8_text}}</p></div>
+            </div>
+        </section>
+
+        <!-- Privacy -->
+        <section class="section">
+            <h2>{{privacy_h2}}</h2>
+            <p>{{privacy_p}}</p>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <h2>{{faq_h2}}</h2>
+
+            <div class="faq">
+                <details open>
+                    <summary>{{q1}}</summary>
+                    <p>{{a1}}</p>
+                </details>
+                <details>
+                    <summary>{{q2}}</summary>
+                    <p>{{a2}}</p>
+                </details>
+                <details>
+                    <summary>{{q3}}</summary>
+                    <p>{{a3}}</p>
+                </details>
+                <details>
+                    <summary>{{q4}}</summary>
+                    <p>{{a4}}</p>
+                </details>
+                <details>
+                    <summary>{{q5}}</summary>
+                    <p>{{a5}}</p>
+                </details>
+                <details>
+                    <summary>{{q6}}</summary>
+                    <p>{{a6}}</p>
+                </details>
+                <details>
+                    <summary>{{q7}}</summary>
+                    <p>{{a7}}</p>
+                </details>
+                <details>
+                    <summary>{{q8}}</summary>
+                    <p>{{a8}}</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="get-the-app" class="section">
+            <h2>{{get_h2}}</h2>
+            <p>{{get_p}}</p>
+            <div class="ctaRow" style="margin-top: 12px">
+                <a class="btn btnPrimary" href="https://apps.apple.com/app/beamdrop/id6776451257" target="_blank" rel="noopener">{{get_cta}}</a>
+                <a class="btn btnGhost" href="{{base}}index.html">{{get_home}}</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align:center; padding:30px 0; color:var(--muted2); font-size:13px">
+        © 2026 Wang Ning. {{rights}} ·
+        <a href="{{base}}beamdrop-privacy.html">{{privacy_label}}</a> ·
+        <a href="mailto:wangning.engineer@outlook.com">{{footer_contact}}</a> ·
+        <a href="{{base}}index.html">{{footer_home}}</a>
+    </footer>
+</body>
+</html>
