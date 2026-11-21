@@ -1,0 +1,604 @@
+<!doctype html>
+<!-- GENERATED FILE — do not edit by hand. Source: i18n/tmc-support.json + this template. Rebuild: python tools/build_i18n.py -->
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="keywords" content="{{keywords}}" />
+    <link rel="canonical" href="{{canonical}}" />
+{{hreflang_tags}}
+
+    <meta name="theme-color" content="#0b1221" />
+    <link rel="apple-touch-icon" href="{{base}}tmc-apple-touch-icon.png" />
+    <link rel="icon" href="{{base}}tmc-favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="{{base}}tmc-favicon-58.png" type="image/png" sizes="58x58" />
+    <link rel="icon" href="{{base}}tmc-favicon-40.png" type="image/png" sizes="40x40" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{og_locale}}" />
+    <meta property="og:title" content="{{og_title}}" />
+    <meta property="og:description" content="{{og_description}}" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:image" content="{{site}}/assets/tmc/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{og_image_alt}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{twitter_title}}" />
+    <meta name="twitter:description" content="{{twitter_description}}" />
+    <meta name="twitter:image" content="{{site}}/assets/tmc/og-image.png" />
+
+    <link rel="stylesheet" href="{{base}}landing.css" />
+    <script src="{{base}}i18n.js" defer></script>
+
+    <style>
+        .convTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .convTable th,
+        .convTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .convTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .convTable td b {
+            white-space: nowrap;
+        }
+        .convTable tr td:last-child,
+        .convTable tr th:last-child {
+            white-space: nowrap;
+            text-align: right;
+        }
+        .whoList {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {{jsonld_app}}
+    </script>
+
+    <script type="application/ld+json">
+    {{jsonld_faq}}
+    </script>
+{{suggest_data}}
+</head>
+
+<body>
+    <a class="skip" href="#main">{{skip}}</a>
+{{suggest_banner}}
+
+    <header class="topbar">
+        <div class="container">
+            <div class="row">
+                <a class="brand" href="{{base}}Tube-Miter-Calculator-support.html" aria-label="Tube Miter Calculator">
+                    <span class="logo" aria-hidden="true" style="background: linear-gradient(135deg, #007aff, #34c759)"></span>
+                    <b>Tube Miter Calculator</b>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#angle-conversion">{{nav_angle}}</a>
+                    <a href="#features">{{nav_features}}</a>
+                    <a href="#demos">{{nav_demos}}</a>
+                    <a href="#how-it-works">{{nav_how}}</a>
+                    <a href="#tutorial">{{nav_tutorial}}</a>
+                    <a href="#use-cases">{{nav_use}}</a>
+                    <a href="#faq">{{nav_faq}}</a>
+                    <a href="{{base}}Tube-Miter-Calculator-Privacy.html">{{nav_privacy}}</a>
+                </nav>
+                {{lang_switch}}
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="heroGrid">
+                <div>
+                    <div class="kicker">
+                        <span class="badge">{{badge}}</span>
+                        <span>{{kicker2}}</span>
+                    </div>
+                    <h1>{{h1}}</h1>
+                    <p class="lead">
+                        {{lead}}
+                    </p>
+                    <div class="ctaRow" id="download">
+                        <a class="btn btnPrimary" href="https://apps.apple.com/us/app/tube-miter-calculator/id6783591130" target="_blank" rel="noopener">
+                            {{cta_store}}
+                        </a>
+                        <a class="btn btnGhost" href="#angle-conversion">{{cta_why}}</a>
+                        <a class="btn btnGhost" href="#demos">{{cta_demos}}</a>
+                        <a class="btn btnGhost" href="#tutorial">{{cta_tutorial}}</a>
+                    </div>
+                    <p class="heroNote">
+                        {{heroNote}}
+                    </p>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="{{base}}assets/tmc/hero-1.webp"
+                        alt="{{alt_hero1}}"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="{{base}}assets/tmc/hero-2.webp"
+                        alt="{{alt_hero2}}"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain point -->
+        <section id="angle-conversion" class="section">
+            <h2>{{h2_pain}}</h2>
+            <p>
+                {{p_pain}}
+            </p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>{{pain1t}}</h3>
+                    <p>
+                        {{pain1d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{pain2t}}</h3>
+                    <p>
+                        {{pain2d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{pain3t}}</h3>
+                    <p>
+                        {{pain3d}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 12px">
+                <h3>{{h3_danger}}</h3>
+                <p>
+                    {{p_danger1}}
+                </p>
+                <p style="margin-top: 8px">
+                    {{p_danger2}}
+                </p>
+                <ul class="whoList">
+                    <li>
+                        {{li1}}
+                    </li>
+                    <li>
+                        {{li2}}
+                    </li>
+                    <li>
+                        {{li3}}
+                    </li>
+                </ul>
+                <p style="margin-top: 8px">
+                    {{p_danger3}}
+                </p>
+            </div>
+
+            <div class="split" style="margin-top: 12px">
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-cut-pt.webp" alt="{{alt_f1}}" loading="lazy" />
+                    <figcaption class="figcap">
+                        {{fp1}}
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-live-vn.webp" alt="{{alt_f2}}" loading="lazy" />
+                    <figcaption class="figcap">
+                        {{fp2}}
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="card" style="margin-top: 12px">
+                <h3>{{h3_worked}}</h3>
+                <table class="convTable">
+                    <thead>
+                        <tr>
+                            <th>{{th_c1}}</th>
+                            <th>{{th_c2}}</th>
+                            <th>{{th_c3}}</th>
+                            <th>{{th_c4}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{tb1}}</td>
+                            <td>{{tc1b}}</td>
+                            <td>{{tc1c}}</td>
+                            <td><b>40°</b></td>
+                        </tr>
+                        <tr>
+                            <td>{{tb2}}</td>
+                            <td>{{tc2b}}</td>
+                            <td>{{tc2c}}</td>
+                            <td><b>50°</b></td>
+                        </tr>
+                        <tr>
+                            <td>{{tb3}}</td>
+                            <td>{{tc3b}}</td>
+                            <td>{{tc3c}}</td>
+                            <td><b>140°</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 10px">
+                    {{p_after_table}}
+                </p>
+            </div>
+        </section>
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>{{h2_features}}</h2>
+            <p>{{p_features}}</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>{{f1t}}</h3>
+                    <p>
+                        {{f1d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f2t}}</h3>
+                    <p>
+                        {{f2d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f3t}}</h3>
+                    <p>
+                        {{f3d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f4t}}</h3>
+                    <p>
+                        {{f4d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f5t}}</h3>
+                    <p>
+                        {{f5d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f6t}}</h3>
+                    <p>
+                        {{f6d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f7t}}</h3>
+                    <p>
+                        {{f7d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f8t}}</h3>
+                    <p>
+                        {{f8d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f9t}}</h3>
+                    <p>
+                        {{f9d}}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demos -->
+        <section id="demos" class="section">
+            <h2>{{h2_demos}}</h2>
+            <p>
+                {{p_demos}}
+            </p>
+
+            <div class="grid3" role="list" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+                <div class="card" role="listitem" style="text-align: center">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="{{base}}assets/tmc/screen-cut-pt.webp"
+                        style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                    >
+                        <source src="{{base}}assets/tmc/demo-cut.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v1t}}</h3>
+                    <p>{{v1d}}</p>
+                </div>
+                <div class="card" role="listitem" style="text-align: center">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="{{base}}assets/tmc/screen-live.webp"
+                        style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                    >
+                        <source src="{{base}}assets/tmc/demo-live.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v2t}}</h3>
+                    <p>{{v2d}}</p>
+                </div>
+                <div class="card" role="listitem" style="text-align: center">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="{{base}}assets/tmc/screen-calc.webp"
+                        style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                    >
+                        <source src="{{base}}assets/tmc/demo-calc.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v3t}}</h3>
+                    <p>{{v3d}}</p>
+                </div>
+                <div class="card" role="listitem" style="text-align: center">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="{{base}}assets/tmc/screen-stock.webp"
+                        style="max-width: 240px; width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 12px"
+                    >
+                        <source src="{{base}}assets/tmc/demo-modules.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v4t}}</h3>
+                    <p>{{v4d}}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="section">
+            <h2>{{h2_how}}</h2>
+            <p>{{p_how}}</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="stepNum">1</div>
+                    <div>{{st1d}}</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">2</div>
+                    <div>{{st2d}}</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">3</div>
+                    <div>{{st3d}}</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">4</div>
+                    <div>{{st4d}}</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial (图文教程) -->
+        <section id="tutorial" class="section">
+            <h2>{{h2_tutorial}}</h2>
+            <p>{{p_tutorial}}</p>
+
+            <div class="split">
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/hero-1.webp" alt="{{altt1}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg1}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/hero-2.webp" alt="{{altt2}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg2}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-cut-pt.webp" alt="{{altt3}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg3}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-cut-pp.webp" alt="{{altt4}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg4}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-live.webp" alt="{{altt5}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg5}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-live-pp.webp" alt="{{altt6}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg6}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-live-vn.webp" alt="{{altt7}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg7}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-live-flip.webp" alt="{{altt8}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg8}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-calc.webp" alt="{{altt9}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg9}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-compound.webp" alt="{{altt10}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg10}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-boardfeet.webp" alt="{{altt11}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg11}}</figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/tmc/screen-stock.webp" alt="{{altt12}}" loading="lazy" />
+                    <figcaption class="figcap">{{fg12}}</figcaption>
+                </figure>
+            </div>
+
+            <figure class="figure" style="margin: 16px 0 0">
+                <img src="{{base}}assets/tmc/screen-help.webp" alt="{{altt13}}" loading="lazy" />
+                <figcaption class="figcap">
+                    {{fg13}}
+                </figcaption>
+            </figure>
+        </section>
+        <!-- Use Cases -->
+        <section id="use-cases" class="section">
+            <h2>{{h2_use}}</h2>
+            <p>{{p_use}}</p>
+
+            <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 14px">
+                <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+                    <img
+                        src="{{base}}assets/tmc/case-handrail.webp"
+                        alt="{{altu1}}"
+                        loading="lazy"
+                        style="width: 300px; border-radius: 12px; box-shadow: var(--shadow)"
+                    />
+                    <div style="flex: 1; min-width: 240px">
+                        <h3>{{u1t}}</h3>
+                        <p>
+                            {{u1d}}
+                        </p>
+                    </div>
+                </div>
+                <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+                    <img
+                        src="{{base}}assets/tmc/case-rollcage.webp"
+                        alt="{{altu2}}"
+                        loading="lazy"
+                        style="width: 300px; border-radius: 12px; box-shadow: var(--shadow)"
+                    />
+                    <div style="flex: 1; min-width: 240px">
+                        <h3>{{u2t}}</h3>
+                        <p>
+                            {{u2d}}
+                        </p>
+                    </div>
+                </div>
+                <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap">
+                    <img
+                        src="{{base}}assets/tmc/case-shop.webp"
+                        alt="{{altu3}}"
+                        loading="lazy"
+                        style="width: 300px; border-radius: 12px; box-shadow: var(--shadow)"
+                    />
+                    <div style="flex: 1; min-width: 240px">
+                        <h3>{{u3t}}</h3>
+                        <p>
+                            {{u3d}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <h2>{{h2_faq}}</h2>
+
+            <div class="faq">
+                <details open>
+                    <summary>{{q1}}</summary>
+                    <p>{{a1}}</p>
+                </details>
+                <details>
+                    <summary>{{q2}}</summary>
+                    <p>{{a2}}</p>
+                </details>
+                <details>
+                    <summary>{{q3}}</summary>
+                    <p>{{a3}}</p>
+                </details>
+                <details>
+                    <summary>{{q4}}</summary>
+                    <p>{{a4}}</p>
+                </details>
+                <details>
+                    <summary>{{q5}}</summary>
+                    <p>{{a5}}</p>
+                </details>
+                <details>
+                    <summary>{{q6}}</summary>
+                    <p>{{a6}}</p>
+                </details>
+                <details>
+                    <summary>{{q7}}</summary>
+                    <p>{{a7}}</p>
+                </details>
+                <details>
+                    <summary>{{q8}}</summary>
+                    <p>{{a8}}</p>
+                </details>
+                <details>
+                    <summary>{{q9}}</summary>
+                    <p>{{a9}}</p>
+                </details>
+                <details>
+                    <summary>{{q10}}</summary>
+                    <p>{{a10}}</p>
+                </details>
+                <details>
+                    <summary>{{q11}}</summary>
+                    <p>{{a11}}</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Safety -->
+        <section class="section">
+            <h2>{{h2_safety}}</h2>
+            <p>
+                {{p_safety}}
+            </p>
+        </section>
+
+    <section id="get-the-app" class="section">
+        <h2>{{h2_get}}</h2>
+        <p>{{p_get}}</p>
+        <div class="ctaRow" style="margin-top: 12px">
+            <a class="btn btnPrimary" href="https://apps.apple.com/us/app/tube-miter-calculator/id6783591130" target="_blank" rel="noopener">{{cta_open}}</a>
+            <a class="btn btnGhost" href="{{base}}index.html">{{cta_apps}}</a>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footerRow">
+            <span>{{rights}}</span>
+            <span>
+                <a href="{{base}}Tube-Miter-Calculator-Privacy.html">{{privacy_label}}</a> ·
+                <a href="{{base}}index.html">{{footer_home}}</a> ·
+                <a href="mailto:wangning.engineer@outlook.com">{{footer_contact}}</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>

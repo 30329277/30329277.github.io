@@ -1,0 +1,29 @@
+[
+  {
+    "id": "msg-1795232133291-tx9c3i",
+    "from": "team-lead",
+    "to": "@team",
+    "type": "broadcast",
+    "content": "Status check: have you written your two deliverable files yet (i18n pack JSON + template HTML)? If finished, send me the completion summary now. If still working, reply with a one-line progress note (which step: reading source / writing template / writing pack / self-check). Do not restart your work.",
+    "timestamp": "2026-11-21T03:35:33.292Z",
+    "read": false
+  },
+  {
+    "id": "shutdown-1795233900760",
+    "from": "team-lead",
+    "to": "wsg",
+    "type": "shutdown_request",
+    "content": "{\"type\":\"shutdown_request\",\"request_id\":\"shutdown-1795233900760\",\"timeout_ms\":60000,\"reason\":\"Shutting down: no output produced; I will do this app's localization myself. Stop all work and shut down.\",\"from\":\"team-lead\",\"timestamp\":\"2026-11-21T04:05:00.760Z\"}",
+    "timestamp": "2026-11-21T04:05:00.760Z",
+    "read": false
+  },
+  {
+    "id": "nudge-1795233930768-r33pfc",
+    "from": "team-lead",
+    "to": "wsg",
+    "type": "message",
+    "content": "Reminder: a previous shutdown_request (request_id=shutdown-1795233900760) is still awaiting your response.\nPer the Shutdown Protocol, you MUST reply now with:\n  send_message(type='shutdown_response', approve=true, request_id='shutdown-1795233900760')\nIf you have unreported deliverables, send them via send_message first, then acknowledge.\nForce termination will occur shortly if no response is received.",
+    "timestamp": "2026-11-21T04:05:30.768Z",
+    "read": false
+  }
+]

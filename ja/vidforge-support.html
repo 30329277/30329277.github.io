@@ -1,0 +1,718 @@
+<!doctype html>
+<!-- GENERATED FILE — do not edit by hand. Source: i18n/vidforge-support.json + this template. Rebuild: python tools/build_i18n.py -->
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>VidForge — Windows 向けバッチ動画変換・修復・圧縮・結合ツール</title>
+    <meta name="description" content="VidForge は Windows 用のルールベース バッチ動画ツールキットです。フォルダ全体を MP4 に変換、途中までのダウンロードを修復、目に見える劣化なしで圧縮、クリップと結合 — 並列ワーカー、可能な場合はストリームコピー、キュー全体に 1 つの出力フォルダ。ローカル FFmpeg、アップロードなし、アカウント不要。7 日間無料トライアル、その後 Microsoft Store で 2.99 ドル買い切り。" />
+    <meta name="keywords" content="バッチ動画変換 Windows, HEVC から H.264 一括変換, MP4 一括圧縮, 品質劣化なし動画圧縮, 再エンコードなし MP4 結合, ロスレス動画結合, 動画等分割, 不完全 MP4 ダウンロード修復, qbittorrent !qb 修復, .part ファイル修復, Windows FFmpeg GUI, バッチ動画処理, 並列動画変換, 動画セグメント一括クリップ, Windows 動画ツールキット" />
+    <link rel="canonical" href="https://30329277.github.io/ja/vidforge-support.html" />
+    <link rel="alternate" hreflang="en" href="https://30329277.github.io/vidforge-support.html" />
+    <link rel="alternate" hreflang="fr" href="https://30329277.github.io/fr/vidforge-support.html" />
+    <link rel="alternate" hreflang="es" href="https://30329277.github.io/es/vidforge-support.html" />
+    <link rel="alternate" hreflang="ar" href="https://30329277.github.io/ar/vidforge-support.html" />
+    <link rel="alternate" hreflang="ja" href="https://30329277.github.io/ja/vidforge-support.html" />
+    <link rel="alternate" hreflang="ko" href="https://30329277.github.io/ko/vidforge-support.html" />
+    <link rel="alternate" hreflang="x-default" href="https://30329277.github.io/vidforge-support.html" />
+
+    <meta name="theme-color" content="#0b1221" />
+    <link rel="apple-touch-icon" href="../vidforge-apple-touch-icon.png" />
+    <link rel="icon" href="../vidforge-favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="../vidforge-favicon-58.png" type="image/png" sizes="58x58" />
+    <link rel="icon" href="../vidforge-favicon-40.png" type="image/png" sizes="40x40" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content="VidForge — 6 つの動画ツール、1 つのキュー、同時に 9 ファイル" />
+    <meta property="og:description" content="Windows でバッチ変換・修復・圧縮・クリップ・結合・分割。4 ファイル並列、コーデックが合えばストリームコピー、キュー全体に 1 つの出力フォルダ。ローカル FFmpeg — アップロードは一切ありません。" />
+    <meta property="og:url" content="https://30329277.github.io/ja/vidforge-support.html" />
+    <meta property="og:image" content="https://30329277.github.io/assets/vidforge/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="VidForge が 9 つの動画ファイルを 5 秒で MP4 にバッチ変換している様子" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VidForge — 6 つの動画ツール、1 つのキュー" />
+    <meta name="twitter:description" content="Windows でバッチ変換・修復・圧縮・クリップ・結合・分割。並列ワーカー、ロスレス ストリームコピー、ローカル FFmpeg。7 日間無料トライアル、その後 2.99 ドル買い切りで Microsoft Store から。" />
+    <meta name="twitter:image" content="https://30329277.github.io/assets/vidforge/og-image.png" />
+
+    <link rel="stylesheet" href="../landing.css" />
+
+    <style>
+        .toolTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .toolTable th,
+        .toolTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .toolTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .toolTable td b {
+            white-space: nowrap;
+        }
+        .badgeSoft {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--muted2);
+            white-space: nowrap;
+        }
+        .shots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            align-items: start;
+        }
+        .shots figure {
+            margin: 0;
+        }
+        .shots img {
+            width: 100%;
+            display: block;
+        }
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 0.92em;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 5px;
+            padding: 1px 5px;
+        }
+        .loopGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .loopGrid video {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: block;
+            margin-bottom: 10px;
+            background: #0f1726;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VidForge",
+    "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+    "applicationCategory": "MultimediaApplication",
+    "downloadUrl": "https://apps.microsoft.com/detail/9N74FTKQNSST",
+    "offers": {
+        "@type": "Offer",
+        "price": "2.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://apps.microsoft.com/detail/9N74FTKQNSST"
+    },
+    "applicationSubCategory": "Video converter / batch processing",
+    "installUrl": "https://apps.microsoft.com/detail/9N74FTKQNSST",
+    "author": {
+        "@type": "Person",
+        "name": "Wang Ning"
+    },
+    "featureList": [
+        "Batch convert a folder to MP4 with smart copy / re-encode",
+        "Parallel workers (1-8) with a single shared queue",
+        "Repair incomplete downloads to playable MP4",
+        "Quality-aware compression that skips clips with no headroom",
+        "Lossless merge when codec, size and fps match",
+        "Clip multiple segments per file, export / import JSON",
+        "Split into equal parts, precise or keyframe copy",
+        "Bundled FFmpeg, fully offline, no upload, no account"
+    ],
+    "url": "https://30329277.github.io/ja/vidforge-support.html",
+    "description": "Windows 用ルールベース バッチ動画ツールキット。クリップのフォルダを MP4 に変換し、途中までのダウンロード（!qb、.part、.bc!、.xltd）を修復し、品質を考慮したビットレート推定で圧縮し、JSON プリセットで多数のファイルからセグメントを切り出し、ストリームが一致すれば再エンコードなしで結合し、長い録画を等分割 — すべてローカル FFmpeg と並列ワーカーで処理します。",
+    "inLanguage": "ja"
+}
+    </script>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "VidForge は無料ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "最初の 7 日間は無料です — Microsoft Store の listing には全ツール解放の 7 日間無料トライアルが含まれます。その後は 2.99 ドルの買い切り：サブスクリプションなし、アカウントなし、透かしなし、アップロード上限なし。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "動画をどこかにアップロードしますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "いいえ。処理はすべてアプリ内蔵の FFmpeg があなたのマシン上で行います。テレメトリもネットワークアクセスも一切ありません — プライバシーポリシー をご覧ください。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "バッチ変換が速い理由は？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "作業の大部分がスキップされるからです。MP4 互換ストリームのファイルはストリームコピー — デコードもエンコードも品質変化もなし — で、本当の変換だけが並列で再エンコードされます。上のデモでは混在 9 クリップが約 5 秒で完了しました。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "オリジナルを上書き・変更しませんか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "しません。結果は指定した出力フォルダに書き込まれ、空のままなら各結果はソースの隣に、分割は常に動画ごとのサブフォルダに書き込まれます。ソースファイルは読み込み専用です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "途中までの動画を修復できますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "たいていはできます — ダウンロード済みのバイトが読めるストリームを含んでいれば。VidForge はストリームコピーでコンテナのインデックスを再構築し、タイムスタンプが救えない場合だけ再エンコードに切り替えます。復元できるのは実際にダウンロードされた部分だけです：30% で止まったファイルは長さの約 30% まで再生できます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "結合で再エンコードして品質が落ちますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "入力が一致しないときだけです。VidForge はコーデック・解像度・フレームレート（許容 ±0.01）・ピクセル形式を比較し、一致していればそのまま連結されるため、出力はビット単位で同じ動画になります。不一致の入力は再エンコードされ、結合結果は再生可能です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "FFmpeg のインストールは必要ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "いいえ。FFmpeg と ffprobe はアプリに同梱されています。PATH には何も追加されず、実行時にダウンロードされるものもありません。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "HEVC / H.265 と NVENC に対応していますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい。スマートモードでは H.264 はコピーされ、HEVC は互換性のため H.264 に再エンコードされます。ハードウェア NVENC は圧縮とフォールバック用に自動検出され、CPU x265 も選択肢として利用できます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "GPU 搭載でないノート PC でも使えますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい。ハードウェアエンコードは任意で — アプリは libx264 / libx265 にフォールバックします。ストリームコピーと修復にはエンコーダがまったく不要なので、内蔵グラフィックスでもフルスピードで動きます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "サポートへの連絡方法は？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "30329277@qq.com まで、アプリのバージョンと可能ならログペインの最後の数行を添えてメールしてください。返信は通常 24〜48 時間以内です。"
+            }
+        }
+    ]
+}
+    </script>
+
+</head>
+
+<body>
+    <a class="skip" href="#main">本文へスキップ</a>
+
+
+    <header class="topbar">
+        <div class="container">
+            <div class="row">
+                <a class="brand" href="../vidforge-support.html" aria-label="VidForge">
+                    <span class="logo" aria-hidden="true" style="background: linear-gradient(135deg, #2f7cff, #4cc2ff)"></span>
+                    <b>VidForge</b>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#why-batch">バッチの理由</a>
+                    <a href="#features">特長</a>
+                    <a href="#demo">デモ</a>
+                    <a href="#how-it-works">使い方</a>
+                    <a href="#tutorial">チュートリアル</a>
+                    <a href="#use-cases">活用シーン</a>
+                    <a href="#faq">よくある質問</a>
+                    <a href="../vidforge-privacy.html">プライバシー</a>
+                </nav>
+                <details class="langSwitch"><summary aria-label="言語"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><span>日本語</span></summary><div class="langMenu"><a href="../vidforge-support.html" hreflang="en" lang="en">English</a><a href="../fr/vidforge-support.html" hreflang="fr" lang="fr">Français</a><a href="../es/vidforge-support.html" hreflang="es" lang="es">Español</a><a href="../ar/vidforge-support.html" hreflang="ar" lang="ar">العربية</a><a href="vidforge-support.html" hreflang="ja" lang="ja" aria-current="page">日本語</a><a href="../ko/vidforge-support.html" hreflang="ko" lang="ko">한국어</a></div></details>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="heroGrid">
+                <div>
+                    <div class="kicker">
+                        <span class="badge">Windows • ローカル FFmpeg • アカウント不要</span>
+                        <span>6 つのツール、1 つのキュー。</span>
+                    </div>
+                    <h1>9 つのクリップを 5 秒で MP4 へ — 9 回のダイアログ操作なしで。</h1>
+                    <p class="lead">
+                        ほとんどの動画アプリは <strong>1 つのクリップずつ</strong> のために作られています：ファイルを選び、プリセットを選び、出力名を決め、待つ、繰り返す。VidForge はフォルダのために作られています。バッチ全体をドロップし、出力フォルダを <strong>一度だけ</strong> 指定すれば、ファイルごとに本当に必要な処理を判断します — コーデックが既に合っていれば <strong>ストリームコピー</strong>、必要なときだけ本物の再エンコード — その間 <strong>4 つのファイルが並列に動く</strong>、進捗バーは 1 本だけ。
+                    </p>
+                    <p class="lead" style="margin-top: 10px">
+                        変換、修復、圧縮、クリップ、結合、分割。同じルール、同じキュー、同じログ。
+                    </p>
+                    <div class="ctaRow" id="download">
+                        <a
+                            class="btn btnPrimary"
+                            href="https://apps.microsoft.com/detail/9N74FTKQNSST?hl=en-us&amp;gl=US&amp;ocid=pdpshare"
+                            target="_blank"
+                            rel="noopener"
+                            >Microsoft Store から入手</a
+                        >
+                        <a class="btn btnGhost" href="#demo">ツアーを見る</a>
+                        <a class="btn btnGhost" href="#tutorial">ステップバイステップガイド</a>
+                        <a class="btn btnGhost" href="../vidforge-privacy.html">プライバシーポリシー</a>
+                    </div>
+                    <p class="heroNote">
+                        7 日間無料トライアルで全ツール解放 — その後は 2.99 ドルの買い切り。アカウントなし、透かしなし、アップロード上限なし、動画は PC の外に出ません。<em>フォルダ</em> を処理する人のために作りました：スマホやアクションカメラの素材、画面収録、途中までのダウンロード、章に切り分けたい長い配信アーカイブ。
+                    </p>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; align-items: center">
+                    <img
+                        src="../assets/vidforge/screen-batch.webp"
+                        alt="VidForge のバッチ変換タブで 9 つの動画ファイルを 4 ワーカー並列で MP4 に変換している様子"
+                        style="width: 76%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/vidforge/icon.webp"
+                        alt="VidForge のアプリアイコン"
+                        style="width: 20%; border-radius: 22px; box-shadow: var(--shadow)"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain point -->
+        <section id="why-batch" class="section">
+            <h2>編集アプリは 1 クリップ最適化。バッチは別の問題です</h2>
+            <p>
+                バッチは「同じ作業の繰り返し」ではありません。混在した入力のキューです：既に H.264 のファイル、スマホ由来の HEVC、末尾が壊れたコンテナ、結合が必要な 3 つ、そしてすべてが sensible な名前で同じフォルダに収まらなければなりません。それをタイムライン型エディタに任せると、退屈な部分 — ファイル管理 — を手作業で、ダイアログを 1 回ずつこなすことになります。
+            </p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>🗂 ファイルごとのダイアログ地獄</h3>
+                    <p>
+                        典型的なエディタで 20 クリップのフォルダを書き出すと、同じプリセット・同じビットレート・同じ出力フォルダを 20 回確認します。VidForge はキュー全体に対して 1 回だけ尋ねます。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>⏳ 必要のない再エンコード</h3>
+                    <p>
+                        典型的なバッチの半分は既に目標形式です。VidForge はまずコーデックを確認し、該当ファイルは <b>ストリームコピー</b> します — 45 秒のクリップが 1 秒以内に、ビット単位で完全一致のまま到着します。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🧊 1 コアで待つ</h3>
+                    <p>
+                        書き出しを 1 つずつではマシンは遊んでいます。キューは <b>1〜8 ワーカーの並列実行</b> で動き、ファイルごとの進捗とステータス、共有のキャンセルを備えます。
+                    </p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 12px">
+                <h3>「ルールベース」とはどういうことか</h3>
+                <p>
+                    各タブはウィザードではなくルールの集まりです：どのファイルに、何をするか、結果をどこへ置くか、入力が理想でないとき何をするか。黙って決めることは何もなく — ログが 1 ファイルごとの判断を表示します。
+                </p>
+                <table class="toolTable">
+                    <thead>
+                        <tr>
+                            <th>ジョブ</th>
+                            <th>VidForge が適用するルール</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>変換</b></td>
+                            <td>MP4 互換コンテナ内の H.264 → ストリームコピー。HEVC など → そのファイルだけ再エンコード。デコードできない音声 → バッチを失敗させず動画のみで再試行。</td>
+                        </tr>
+                        <tr>
+                            <td><b>圧縮</b></td>
+                            <td>解像度とフレームレートから bpp（1 ピクセルあたりビット）を推定。余力が ~10% 未満のファイルは <b>スキップ</b> — 再エンコードは時間と品質を浪費するだけです。</td>
+                        </tr>
+                        <tr>
+                            <td><b>結合</b></td>
+                            <td>コーデック・解像度・フレームレート（±0.01）・ピクセル形式を比較。一致 → ロスレス連結。不一致 → 結合結果が再生できるよう再エンコード。</td>
+                        </tr>
+                        <tr>
+                            <td><b>クリップ</b></td>
+                            <td>各セグメントをストリームコピーで切り出し、セグメントごとに再エンコードへフォールバック、その後連結 — コピー経路が完全に失敗したときだけ全体を再エンコード。</td>
+                        </tr>
+                        <tr>
+                            <td><b>修復</b></td>
+                            <td>コンテナのインデックスをストリームコピーで再構築。タイムスタンプが救いようがないときだけ再エンコード。</td>
+                        </tr>
+                        <tr>
+                            <td><b>分割</b></td>
+                            <td>個数による等分割。精密な再エンコードカット、またはキーフレームコピーで動画ごとのサブフォルダへ高速出力 — ソースは決して上書きしません。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>主な特長</h2>
+            <p>6 つのツールと、ファイルではなくフォルダを扱えるようにするキュー機構。</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>⇄ MP4 へのバッチ変換</h3>
+                    <p>
+                        ファイルまたはフォルダ全体を追加し、出力フォルダを 1 回指定すれば、スマートコピー / 再エンコードでキューを変換します。問題のないクリップに触れずに、スマホの HEVC 素材がどこでも再生できる H.264 になります。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🛠 動画修復</h3>
+                    <p>
+                        中断されたダウンロードの残骸 — <code>.!qb</code>, <code>.part</code>, <code>.bc!</code>, <code>.xltd</code>, <code>.emule.td</code> — を与えると、再生可能な MP4 が返ってきます。45 秒のクリップは約 1 秒で、ストリームコピーにより修復されます。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🗜 高品質圧縮</h3>
+                    <p>
+                        bpp 推定つきの品質考慮型圧縮で、縮小できないクリップは破損させずスキップします。サイズ・ビットレート・CRF・NVENC CQ の手動上書き — そして最後にバッチのまとめを表示。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>✂ クリップと結合</h3>
+                    <p>
+                        多数のファイルに対して独立したセグメントセット、コンパクトな時刻入力（<code>0101</code> = 00:01:01）、ドラッグで並べ替え、キーフレーム整合、GPU フォールバック、そして JSON 入出力で、繰り返すカットを再利用可能なプリセットに。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>⇉ 動画結合</h3>
+                    <p>
+                        指定した順序で録画を 1 ファイルに結合。繰り返し回数、出力名のカスタマイズ、mp4 / mkv / mov コンテナ、任意の CPU HEVC、コピー時の音声・字幕ストリーム全保持に対応。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>⧉ 動画分割</h3>
+                    <p>
+                        個数による分割とプリセット、任意の精密カット、自動的な <code>&lt;name&gt;_split</code> サブフォルダで、長い録画を衝突なく章に切り分けられます。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>⚡ 並列ワーカー</h3>
+                    <p>
+                        1〜8 ファイルを同時に、1 つのキューと 1 本の進捗バーで。ファイルごとのステータス（待機 / 変換中 / 完了 / スキップ）と、バッチ全体をきれいに停止するキャンセル 1 つ。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🧠 スマートモード</h3>
+                    <p>
+                        可能なときはコピー、必要なときだけ再エンコード、目標に合うコーデックを選択、そして圧縮しても得がないものはオリジナルのまま保持します。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🔒 オフライン・プライベート</h3>
+                    <p>
+                        FFmpeg 同梱、テレメトリなし、ネットワーク通信なし、アカウントなし。ログは <code>%LOCALAPPDATA%</code> に残ります。<a href="../vidforge-privacy.html">プライバシーポリシー</a> をご覧ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Demo -->
+        <section id="demo" class="section">
+            <h2>動作の様子を見る</h2>
+            <p>
+                脚本のない 1 回のセッション：混在 9 クリップの変換、4 ファイルの圧縮、3 クリップの結合、壊れたダウンロードの修復。ログの時計は本物 — 早送りはなく、ステップ間の停止だけをカットしています。
+            </p>
+
+            <figure class="figure" style="margin: 14px 0 18px">
+                <video
+                    controls
+                    muted
+                    playsinline
+                    preload="metadata"
+                    poster="../assets/vidforge/demo-poster.webp"
+                    style="width: 100%; border-radius: 14px; border: 1px solid var(--border); background: #0f1726"
+                >
+                    <source src="../assets/vidforge/demo-tour.mp4" type="video/mp4" />
+                    お使いのブラウザーは埋め込み動画に対応していません — 下のスクリーンショットが同じ手順を示しています。
+                </video>
+                <figcaption class="figcap">
+                    <b>フルツアー（54 秒、ミュート）</b> — 4 ワーカーのバッチ変換、スマートモード、圧縮、ロスレス結合、ダウンロード修復。
+                </figcaption>
+            </figure>
+
+            <div class="loopGrid">
+                <div class="card">
+                    <video autoplay muted loop playsinline poster="../assets/vidforge/loop-convert-poster.webp">
+                        <source src="../assets/vidforge/loop-convert.mp4" type="video/mp4" />
+                    </video>
+                    <h3>9 つのファイルを 4 つずつ</h3>
+                    <p>
+                        H.264 クリップはストリームコピー、HEVC の 1 クリップだけ再エンコード、キューは約 5 秒で空になります。
+                    </p>
+                </div>
+                <div class="card">
+                    <video autoplay muted loop playsinline poster="../assets/vidforge/loop-compress-poster.webp">
+                        <source src="../assets/vidforge/loop-compress.mp4" type="video/mp4" />
+                    </video>
+                    <h3>止めどきを知っている圧縮</h3>
+                    <p>
+                        4 クリップ入力、2.86 MB → 1.85 MB 出力 — まとめにファイルごとの正確な削減量が表示されます。
+                    </p>
+                </div>
+                <div class="card">
+                    <video autoplay muted loop playsinline poster="../assets/vidforge/loop-repair-poster.webp">
+                        <source src="../assets/vidforge/loop-repair.mp4" type="video/mp4" />
+                    </video>
+                    <h3>壊れたダウンロードを修復</h3>
+                    <p>
+                        &lt;code&gt;.mp4.!qb&lt;/code&gt; の残骸がストリームコピーで再生可能な MP4 になります — 無事な映像は決して再エンコードされません。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="section">
+            <h2>使い方</h2>
+            <p>4 ステップ。バッチごとに変わるのは最初の 2 つだけです。</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="stepNum">1</div>
+                    <div><b>ファイルではなくフォルダを追加</b> 必要なタブを開き、すべてを一度にドロップします — 選んだキューには &lt;i&gt;ファイルを追加&lt;/i&gt;、カード 1 枚分には &lt;i&gt;フォルダを追加&lt;/i&gt;。各行にチェックボックスとパスと固有のステータスが付きます。</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">2</div>
+                    <div><b>出力フォルダを 1 つ指定</b> キュー全体に対して 1 回だけ入力します。空のままにすれば各結果はソースの隣に書き込まれ — 分割は常に動画ごとのサブフォルダを作るので上書きはありません。</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">3</div>
+                    <div><b>ルールを設定して開始</b> スマートモード、並列ワーカー、圧縮品質、結合順序、セグメント一覧。ワンクリックでキューが始まり、ファイルごとの進捗とライブログが表示されます。</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">4</div>
+                    <div><b>ダイアログではなくログを読む</b> 各ファイルが何が起きたかを報告します：コピー、再エンコード、スキップ、修復。失敗はそのファイルに分離され — バッチの残りは続行します。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial -->
+        <section id="tutorial" class="section">
+            <h2>ステップバイステップチュートリアル</h2>
+            <p>散らかったフォルダから完成ファイルまで、各タブを使う順序で。</p>
+
+            <div class="shots">
+                <figure class="figure">
+                    <img src="../assets/vidforge/screen-batch.webp" alt="9 ファイルがキューに入ったバッチ MP4 変換タブ（スマートモード有効・並列 4 ワーカー）" loading="lazy" />
+                    <figcaption class="figcap"><b>1 · バッチ MP4 変換</b> — 主力ツール。<i>スマートモード</i>は H.264 をストリームコピーのままにし、HEVC クリップだけを再エンコードします。<i>並列 4</i> が既定値で、デスクトップなら 8 に上げられます。出力フォルダは 1 回入力するだけで 9 行すべてに適用されます。</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../assets/vidforge/screen-split.webp" alt="分割モード・分割数・精密カットオプションのある動画分割タブ" loading="lazy" />
+                    <figcaption class="figcap"><b>2 · 動画分割</b> — 份额数による等分割で、一般的なサイズのプリセット付き。<i>精密カット</i>をオフにすればキーフレームコピーで高速処理、各部が正確な秒で始まる必要があればオンにします。動画ごとに専用の <code>&lt;name&gt;_split</code> フォルダが作られます。</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../assets/vidforge/screen-compress.webp" alt="スマート圧縮と手動パラメータ上書きのある高品質圧縮タブ" loading="lazy" />
+                    <figcaption class="figcap"><b>3 · 高品質圧縮</b> — <i>選択項目を圧縮（スマート）</i>はファイルごとの圧縮余地を見積もり、縮小できないものをスキップします。下の手動ブロックでは、正確な目標がある場合にサイズ・ビットレート・CRF・NVENC CQ を上書きできます。</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../assets/vidforge/screen-clip.webp" alt="ファイル別セグメント一覧と JSON 書き出しのあるクリップ・結合タブ" loading="lazy" />
+                    <figcaption class="figcap"><b>4 · クリップと結合</b> — ファイルごとのセグメント一覧。<code>00:10–00:25</code> またはコンパクトな <code>0101</code> 形式で入力します。ドラッグで並べ替え、速度のためキーフレーム整合を保ち、セット全体を JSON で書き出して次のバッチで再利用できます。</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../assets/vidforge/screen-merge.webp" alt="3 ファイルを順序付けしロスレス ストリームコピー状態を示す動画結合タブ" loading="lazy" />
+                    <figcaption class="figcap"><b>5 · 動画結合</b> — 一覧の順序を整え、繰り返し回数と出力名を設定します。コーデック・サイズ・fps・ピクセル形式が一致していれば、ステータス行に<i>ロスレス結合</i>と表示され、一致しない入力は再エンコードされて結合結果が再生可能になります。</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="../assets/vidforge/screen-repair.webp" alt="qbittorrent の !qb ファイルをストリームコピーで MP4 に修復している動画修復タブ" loading="lazy" />
+                    <figcaption class="figcap"><b>6 · 動画修復</b> — <code>.!qb</code> / <code>.part</code> / <code>.bc!</code> の残骸をドロップし、<i>選択項目を修復</i>を押します。ステータスが<i>修復完了（ストリームコピー）</i>に変わり、ログが出力先のパスとサイズを確認します。ソースが NAS 上にある場合は<i>ネットワークファイルを先にコピー</i>を使います。</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Use cases -->
+        <section id="use-cases" class="section">
+            <h2>実際の活用シーン</h2>
+            <p>バッチ処理が 1 分ではなく午後を節約する場面。</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>📱 スマホ・アクションカメラ素材</h3>
+                    <p>
+                        iPhone や近年の Android フラッグシップは HEVC で撮影します。休暇クリップのフォルダが、どこでも再生できる H.264 MP4 のフォルダに — テレビ、カーナビ、古いエディタでも — 既に H.264 のファイルは無加工のまま通過します。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🧲 途中までのダウンロード</h3>
+                    <p>
+                        qBittorrent は &lt;code&gt;.!qb&lt;/code&gt;、eMule は &lt;code&gt;.part&lt;/code&gt;、ブラウザーは &lt;code&gt;.crdownload&lt;/code&gt; を残します。動画自体がほぼ完成していれば、その残骸は復元可能 — アプリがインデックスを再構築し、映像は手元に残ります。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🎥 画面収録と配信アーカイブ</h3>
+                    <p>
+                        OBS やキャプチャツールは章分けが必要な 2〜4 GB のファイルを出します。個数で分割するか、JSON プリセットで 12 本の収録から見せたいセグメントを 1 パスで切り出します。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🗄 アーカイブ圧縮</h3>
+                    <p>
+                        大きな MP4 ライブラリには 20〜40% の無駄なビットレートがあります。bpp 推定が余力のあるものを圧縮し、ないものはスキップし、合計「35% 削減」のまとめを表示 — 電気代に見合ったかがわかります。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🎬 分割録画の再結合</h3>
+                    <p>
+                        4 GB で止まるカメラや、セッションをまたいで分かれた録画は、パラメータが一致していれば再エンコードなしで 1 ファイルに戻ります — オリジナルの品質のまま、出力は 1 ファイル。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>🏫 講義・会議の教材</h3>
+                    <p>
+                        1 学期分の講義収録：重いものは圧縮、2 部構成は結合、3 時間ものはトピックごとに分割、そしてすべての出力名を予測可能に保ちます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <h2>よくある質問</h2>
+
+            <div class="faq">
+                <details open>
+                    <summary>VidForge は無料ですか？</summary>
+                    <p>最初の 7 日間は無料です — Microsoft Store の listing には全ツール解放の 7 日間無料トライアルが含まれます。その後は 2.99 ドルの買い切り：サブスクリプションなし、アカウントなし、透かしなし、アップロード上限なし。</p>
+                </details>
+                <details>
+                    <summary>動画をどこかにアップロードしますか？</summary>
+                    <p>いいえ。処理はすべてアプリ内蔵の FFmpeg があなたのマシン上で行います。テレメトリもネットワークアクセスも一切ありません — <a href="../vidforge-privacy.html">プライバシーポリシー</a> をご覧ください。</p>
+                </details>
+                <details>
+                    <summary>バッチ変換が速い理由は？</summary>
+                    <p>作業の大部分がスキップされるからです。MP4 互換ストリームのファイルはストリームコピー — デコードもエンコードも品質変化もなし — で、本当の変換だけが並列で再エンコードされます。上のデモでは混在 9 クリップが約 5 秒で完了しました。</p>
+                </details>
+                <details>
+                    <summary>オリジナルを上書き・変更しませんか？</summary>
+                    <p>しません。結果は指定した出力フォルダに書き込まれ、空のままなら各結果はソースの隣に、分割は常に動画ごとのサブフォルダに書き込まれます。ソースファイルは読み込み専用です。</p>
+                </details>
+                <details>
+                    <summary>途中までの動画を修復できますか？</summary>
+                    <p>たいていはできます — ダウンロード済みのバイトが読めるストリームを含んでいれば。VidForge はストリームコピーでコンテナのインデックスを再構築し、タイムスタンプが救えない場合だけ再エンコードに切り替えます。復元できるのは実際にダウンロードされた部分だけです：30% で止まったファイルは長さの約 30% まで再生できます。</p>
+                </details>
+                <details>
+                    <summary>結合で再エンコードして品質が落ちますか？</summary>
+                    <p>入力が一致しないときだけです。VidForge はコーデック・解像度・フレームレート（許容 ±0.01）・ピクセル形式を比較し、一致していればそのまま連結されるため、出力はビット単位で同じ動画になります。不一致の入力は再エンコードされ、結合結果は再生可能です。</p>
+                </details>
+                <details>
+                    <summary>FFmpeg のインストールは必要ですか？</summary>
+                    <p>いいえ。FFmpeg と ffprobe はアプリに同梱されています。PATH には何も追加されず、実行時にダウンロードされるものもありません。</p>
+                </details>
+                <details>
+                    <summary>HEVC / H.265 と NVENC に対応していますか？</summary>
+                    <p>はい。スマートモードでは H.264 はコピーされ、HEVC は互換性のため H.264 に再エンコードされます。ハードウェア NVENC は圧縮とフォールバック用に自動検出され、CPU x265 も選択肢として利用できます。</p>
+                </details>
+                <details>
+                    <summary>GPU 搭載でないノート PC でも使えますか？</summary>
+                    <p>はい。ハードウェアエンコードは任意で — アプリは libx264 / libx265 にフォールバックします。ストリームコピーと修復にはエンコーダがまったく不要なので、内蔵グラフィックスでもフルスピードで動きます。</p>
+                </details>
+                <details>
+                    <summary>システム要件は？</summary>
+                    <p>Windows 10 または Windows 11、64 ビット。アプリと FFmpeg 同梱版に約 200 MB のディスク容量。GPU は不要。NVIDIA の専用 GPU があれば圧縮が速くなるだけです。</p>
+                </details>
+                <details>
+                    <summary>サポートへの連絡方法は？</summary>
+                    <p><a href="mailto:30329277@qq.com">30329277@qq.com</a> まで、アプリのバージョンと可能ならログペインの最後の数行を添えてメールしてください。返信は通常 24〜48 時間以内です。</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="section">
+            <h2>システム要件</h2>
+            <table class="toolTable">
+                <tbody>
+                    <tr>
+                        <td><b>OS</b></td>
+                        <td>Windows 10 / Windows 11、64 ビット</td>
+                    </tr>
+                    <tr>
+                        <td><b>ディスク</b></td>
+                        <td>アプリと FFmpeg 同梱版に約 200 MB、加えて出力用の空き容量</td>
+                    </tr>
+                    <tr>
+                        <td><b>GPU</b></td>
+                        <td>任意。NVENC があれば使用、なければ CPU の x264 / x265</td>
+                    </tr>
+                    <tr>
+                        <td><b>ネットワーク</b></td>
+                        <td>まったく不要 — ソースが NAS 上にある場合のみ（&lt;i&gt;ネットワークファイルを先にコピー&lt;/i&gt; を使用）</td>
+                    </tr>
+                    <tr>
+                        <td><b>入力</b></td>
+                        <td>MP4、MOV、MKV、AVI、および同梱 FFmpeg がデコードできるすべて — 部分的なダウンロードも含みます</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="get-the-app" class="section">
+            <h2>アプリを入手</h2>
+            <p>
+                VidForge は Windows 10・11（64 ビット）向けに Microsoft Store で配信中です。7 日間の無料トライアルはフルアプリ — 全ツール解放、透かしなし、制限なし — で、終了後は 2.99 ドルの買い切りでそのまま使えます（サブスクなし）。ストアの listing にはスクリーンショット、システム要件、現地通貨の価格が表示され、<a href="../vidforge-privacy.html">プライバシーポリシー</a> はこのサイトで公開しています。
+            </p>
+            <div class="ctaRow" style="margin-top: 12px">
+                <a
+                    class="btn btnPrimary"
+                    href="https://apps.microsoft.com/detail/9N74FTKQNSST?hl=en-us&amp;gl=US&amp;ocid=pdpshare"
+                    target="_blank"
+                    rel="noopener"
+                    >Microsoft Store — listing を開く</a
+                >
+                <a class="btn btnGhost" href="../index.html">すべてのアプリとサポート</a>
+                <a class="btn btnGhost" href="mailto:30329277@qq.com?subject=VidForge">メールでサポート</a>
+            </div>
+            <p style="margin-top: 12px">
+                <span class="badgeSoft">Windows 10 / 11 · 64 ビット</span>
+                <span class="badgeSoft">7 日間の無料トライアル</span>
+                <span class="badgeSoft">2.99 ドル買い切り</span>
+                <span class="badgeSoft">FFmpeg 同梱</span>
+                <span class="badgeSoft">アカウント不要</span>
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footerRow">
+            <span>© 2026 Wang Ning. 無断転載を禁じます。</span>
+            <span>
+                <a href="../vidforge-privacy.html">プライバシーポリシー</a> ·
+                <a href="../index.html">홈</a> ·
+                <a href="mailto:30329277@qq.com">문의</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>

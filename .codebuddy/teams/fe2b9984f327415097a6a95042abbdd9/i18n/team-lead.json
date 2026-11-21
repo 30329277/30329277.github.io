@@ -1,0 +1,56 @@
+[
+  {
+    "id": "timeout-1795233958870-op1egj",
+    "from": "cnc",
+    "to": "team-lead",
+    "type": "message",
+    "content": "[System] Shutdown timeout: \"cnc\" did not acknowledge the shutdown_request (request_id=shutdown-1795233898867) within 60s and has been force-terminated. Any unreported deliverables from this teammate may have been lost. You can proceed with team_delete or continue with the remaining teammates.",
+    "timestamp": "2026-11-21T04:05:58.870Z",
+    "read": true
+  },
+  {
+    "id": "timeout-1795233959327-pc8mo1",
+    "from": "tte",
+    "to": "team-lead",
+    "type": "message",
+    "content": "[System] Shutdown timeout: \"tte\" did not acknowledge the shutdown_request (request_id=shutdown-1795233899319) within 60s and has been force-terminated. Any unreported deliverables from this teammate may have been lost. You can proceed with team_delete or continue with the remaining teammates.",
+    "timestamp": "2026-11-21T04:05:59.327Z",
+    "read": true
+  },
+  {
+    "id": "timeout-1795233959786-x4h6qw",
+    "from": "tmc",
+    "to": "team-lead",
+    "type": "message",
+    "content": "[System] Shutdown timeout: \"tmc\" did not acknowledge the shutdown_request (request_id=shutdown-1795233899784) within 60s and has been force-terminated. Any unreported deliverables from this teammate may have been lost. You can proceed with team_delete or continue with the remaining teammates.",
+    "timestamp": "2026-11-21T04:05:59.786Z",
+    "read": true
+  },
+  {
+    "id": "timeout-1795233960262-5v63ch",
+    "from": "wc26",
+    "to": "team-lead",
+    "type": "message",
+    "content": "[System] Shutdown timeout: \"wc26\" did not acknowledge the shutdown_request (request_id=shutdown-1795233900260) within 60s and has been force-terminated. Any unreported deliverables from this teammate may have been lost. You can proceed with team_delete or continue with the remaining teammates.",
+    "timestamp": "2026-11-21T04:06:00.262Z",
+    "read": true
+  },
+  {
+    "id": "timeout-1795233960763-lyzq80",
+    "from": "wsg",
+    "to": "team-lead",
+    "type": "message",
+    "content": "[System] Shutdown timeout: \"wsg\" did not acknowledge the shutdown_request (request_id=shutdown-1795233900760) within 60s and has been force-terminated. Any unreported deliverables from this teammate may have been lost. You can proceed with team_delete or continue with the remaining teammates.",
+    "timestamp": "2026-11-21T04:06:00.763Z",
+    "read": true
+  },
+  {
+    "id": "timeout-1795233961284-3ppmzq",
+    "from": "vidforge",
+    "to": "team-lead",
+    "type": "message",
+    "content": "[System] Shutdown timeout: \"vidforge\" did not acknowledge the shutdown_request (request_id=shutdown-1795233901278) within 60s and has been force-terminated. Any unreported deliverables from this teammate may have been lost. You can proceed with team_delete or continue with the remaining teammates.",
+    "timestamp": "2026-11-21T04:06:01.284Z",
+    "read": true
+  }
+]

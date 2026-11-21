@@ -1,0 +1,53 @@
+{
+  "name": "i18n",
+  "mainConversationId": "fe2b9984f327415097a6a95042abbdd9",
+  "workspacePath": "d:/PythonProject/30329277.github.io",
+  "createdAt": "2026-11-21T02:41:59.039Z",
+  "options": {
+    "workspacePath": "d:/PythonProject/30329277.github.io"
+  },
+  "members": [
+    {
+      "memberId": "cnc@i18n",
+      "name": "cnc",
+      "role": "CNC 页面多语言化",
+      "sessionId": "15f65af62dff4b2ead4a3b454aaad590",
+      "status": "running"
+    },
+    {
+      "memberId": "tte@i18n",
+      "name": "tte",
+      "role": "Tick Tock Earth 页面多语言化",
+      "sessionId": "bb17424c8cd148ceb5f19309270026d9",
+      "status": "running"
+    },
+    {
+      "memberId": "wc26@i18n",
+      "name": "wc26",
+      "role": "WC26 页面多语言化",
+      "sessionId": "7bc6134dea494d4f8f3eea9b0b5f6b30",
+      "status": "running"
+    },
+    {
+      "memberId": "wsg@i18n",
+      "name": "wsg",
+      "role": "WeldGauge 页面多语言化",
+      "sessionId": "85c34c4b1ee04014b451a16b5aa57d40",
+      "status": "running"
+    },
+    {
+      "memberId": "tmc@i18n",
+      "name": "tmc",
+      "role": "Tube Miter 页面多语言化",
+      "sessionId": "94412977006b4ae1be2a8a31086aa544",
+      "status": "running"
+    },
+    {
+      "memberId": "vidforge@i18n",
+      "name": "vidforge",
+      "role": "VidForge 页面多语言化",
+      "sessionId": "91986a2670de46bca3f789c9263daa34",
+      "status": "running"
+    }
+  ]
+}

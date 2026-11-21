@@ -1,0 +1,594 @@
+<!doctype html>
+<!-- GENERATED FILE — do not edit by hand. Source: i18n/vidforge-support.json + this template. Rebuild: python tools/build_i18n.py -->
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <meta name="keywords" content="{{keywords}}" />
+    <link rel="canonical" href="{{canonical}}" />
+{{hreflang_tags}}
+
+    <meta name="theme-color" content="#0b1221" />
+    <link rel="apple-touch-icon" href="{{base}}vidforge-apple-touch-icon.png" />
+    <link rel="icon" href="{{base}}vidforge-favicon-120.png" type="image/png" sizes="120x120" />
+    <link rel="icon" href="{{base}}vidforge-favicon-58.png" type="image/png" sizes="58x58" />
+    <link rel="icon" href="{{base}}vidforge-favicon-40.png" type="image/png" sizes="40x40" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{og_locale}}" />
+    <meta property="og:title" content="{{og_title}}" />
+    <meta property="og:description" content="{{og_description}}" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:image" content="{{site}}/assets/vidforge/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{og_image_alt}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{twitter_title}}" />
+    <meta name="twitter:description" content="{{twitter_description}}" />
+    <meta name="twitter:image" content="{{site}}/assets/vidforge/og-image.png" />
+
+    <link rel="stylesheet" href="{{base}}landing.css" />
+
+    <style>
+        .toolTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .toolTable th,
+        .toolTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .toolTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .toolTable td b {
+            white-space: nowrap;
+        }
+        .badgeSoft {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--muted2);
+            white-space: nowrap;
+        }
+        .shots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            align-items: start;
+        }
+        .shots figure {
+            margin: 0;
+        }
+        .shots img {
+            width: 100%;
+            display: block;
+        }
+        code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 0.92em;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 5px;
+            padding: 1px 5px;
+        }
+        .loopGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .loopGrid video {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: block;
+            margin-bottom: 10px;
+            background: #0f1726;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {{jsonld_app}}
+    </script>
+
+    <script type="application/ld+json">
+    {{jsonld_faq}}
+    </script>
+{{suggest_data}}
+</head>
+
+<body>
+    <a class="skip" href="#main">{{skip}}</a>
+{{suggest_banner}}
+
+    <header class="topbar">
+        <div class="container">
+            <div class="row">
+                <a class="brand" href="{{base}}vidforge-support.html" aria-label="VidForge">
+                    <span class="logo" aria-hidden="true" style="background: linear-gradient(135deg, #2f7cff, #4cc2ff)"></span>
+                    <b>VidForge</b>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#why-batch">{{nav_why}}</a>
+                    <a href="#features">{{nav_features}}</a>
+                    <a href="#demo">{{nav_demo}}</a>
+                    <a href="#how-it-works">{{nav_how}}</a>
+                    <a href="#tutorial">{{nav_tutorial}}</a>
+                    <a href="#use-cases">{{nav_use}}</a>
+                    <a href="#faq">{{nav_faq}}</a>
+                    <a href="{{base}}vidforge-privacy.html">{{nav_privacy}}</a>
+                </nav>
+                {{lang_switch}}
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="heroGrid">
+                <div>
+                    <div class="kicker">
+                        <span class="badge">{{badge}}</span>
+                        <span>{{kicker2}}</span>
+                    </div>
+                    <h1>{{h1}}</h1>
+                    <p class="lead">
+                        {{lead1}}
+                    </p>
+                    <p class="lead" style="margin-top: 10px">
+                        {{lead2}}
+                    </p>
+                    <div class="ctaRow" id="download">
+                        <a
+                            class="btn btnPrimary"
+                            href="https://apps.microsoft.com/detail/9N74FTKQNSST?hl=en-us&amp;gl=US&amp;ocid=pdpshare"
+                            target="_blank"
+                            rel="noopener"
+                            >{{cta_store}}</a
+                        >
+                        <a class="btn btnGhost" href="#demo">{{cta_demo}}</a>
+                        <a class="btn btnGhost" href="#tutorial">{{cta_tutorial}}</a>
+                        <a class="btn btnGhost" href="{{base}}vidforge-privacy.html">{{cta_privacy}}</a>
+                    </div>
+                    <p class="heroNote">
+                        {{heroNote}}
+                    </p>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; align-items: center">
+                    <img
+                        src="{{base}}assets/vidforge/screen-batch.webp"
+                        alt="{{alt_hero1}}"
+                        style="width: 76%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="{{base}}assets/vidforge/icon.webp"
+                        alt="{{alt_hero2}}"
+                        style="width: 20%; border-radius: 22px; box-shadow: var(--shadow)"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain point -->
+        <section id="why-batch" class="section">
+            <h2>{{h2_pain}}</h2>
+            <p>
+                {{p_pain}}
+            </p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>{{pc1t}}</h3>
+                    <p>
+                        {{pc1d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{pc2t}}</h3>
+                    <p>
+                        {{pc2d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{pc3t}}</h3>
+                    <p>
+                        {{pc3d}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 12px">
+                <h3>{{h3_rules}}</h3>
+                <p>
+                    {{p_rules}}
+                </p>
+                <table class="toolTable">
+                    <thead>
+                        <tr>
+                            <th>{{th_r1}}</th>
+                            <th>{{th_r2}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>{{rl1n}}</b></td>
+                            <td>{{rl1d}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{rl2n}}</b></td>
+                            <td>{{rl2d}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{rl3n}}</b></td>
+                            <td>{{rl3d}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{rl4n}}</b></td>
+                            <td>{{rl4d}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{rl5n}}</b></td>
+                            <td>{{rl5d}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{rl6n}}</b></td>
+                            <td>{{rl6d}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>{{h2_features}}</h2>
+            <p>{{p_features}}</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>{{f1t}}</h3>
+                    <p>
+                        {{f1d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f2t}}</h3>
+                    <p>
+                        {{f2d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f3t}}</h3>
+                    <p>
+                        {{f3d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f4t}}</h3>
+                    <p>
+                        {{f4d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f5t}}</h3>
+                    <p>
+                        {{f5d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f6t}}</h3>
+                    <p>
+                        {{f6d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f7t}}</h3>
+                    <p>
+                        {{f7d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f8t}}</h3>
+                    <p>
+                        {{f8d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{f9t}}</h3>
+                    <p>
+                        {{f9d}}
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Demo -->
+        <section id="demo" class="section">
+            <h2>{{h2_demos}}</h2>
+            <p>
+                {{p_demos}}
+            </p>
+
+            <figure class="figure" style="margin: 14px 0 18px">
+                <video
+                    controls
+                    muted
+                    playsinline
+                    preload="metadata"
+                    poster="{{base}}assets/vidforge/demo-poster.webp"
+                    style="width: 100%; border-radius: 14px; border: 1px solid var(--border); background: #0f1726"
+                >
+                    <source src="{{base}}assets/vidforge/demo-tour.mp4" type="video/mp4" />
+                    {{video_fallback}}
+                </video>
+                <figcaption class="figcap">
+                    {{figcap_demo}}
+                </figcaption>
+            </figure>
+
+            <div class="loopGrid">
+                <div class="card">
+                    <video autoplay muted loop playsinline poster="{{base}}assets/vidforge/loop-convert-poster.webp">
+                        <source src="{{base}}assets/vidforge/loop-convert.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v1t}}</h3>
+                    <p>
+                        {{v1d}}
+                    </p>
+                </div>
+                <div class="card">
+                    <video autoplay muted loop playsinline poster="{{base}}assets/vidforge/loop-compress-poster.webp">
+                        <source src="{{base}}assets/vidforge/loop-compress.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v2t}}</h3>
+                    <p>
+                        {{v2d}}
+                    </p>
+                </div>
+                <div class="card">
+                    <video autoplay muted loop playsinline poster="{{base}}assets/vidforge/loop-repair-poster.webp">
+                        <source src="{{base}}assets/vidforge/loop-repair.mp4" type="video/mp4" />
+                    </video>
+                    <h3>{{v3t}}</h3>
+                    <p>
+                        {{v3d}}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="section">
+            <h2>{{h2_how}}</h2>
+            <p>{{p_how}}</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="stepNum">1</div>
+                    <div>{{st1d}}</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">2</div>
+                    <div>{{st2d}}</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">3</div>
+                    <div>{{st3d}}</div>
+                </div>
+                <div class="step">
+                    <div class="stepNum">4</div>
+                    <div>{{st4d}}</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial -->
+        <section id="tutorial" class="section">
+            <h2>{{h2_tutorial}}</h2>
+            <p>{{p_tutorial}}</p>
+
+            <div class="shots">
+                <figure class="figure">
+                    <img src="{{base}}assets/vidforge/screen-batch.webp" alt="{{altt1}}" loading="lazy" />
+                    <figcaption class="figcap">{{fp1}}</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="{{base}}assets/vidforge/screen-split.webp" alt="{{altt2}}" loading="lazy" />
+                    <figcaption class="figcap">{{fp2}}</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="{{base}}assets/vidforge/screen-compress.webp" alt="{{altt3}}" loading="lazy" />
+                    <figcaption class="figcap">{{fp3}}</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="{{base}}assets/vidforge/screen-clip.webp" alt="{{altt4}}" loading="lazy" />
+                    <figcaption class="figcap">{{fp4}}</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="{{base}}assets/vidforge/screen-merge.webp" alt="{{altt5}}" loading="lazy" />
+                    <figcaption class="figcap">{{fp5}}</figcaption>
+                </figure>
+                <figure class="figure">
+                    <img src="{{base}}assets/vidforge/screen-repair.webp" alt="{{altt6}}" loading="lazy" />
+                    <figcaption class="figcap">{{fp6}}</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Use cases -->
+        <section id="use-cases" class="section">
+            <h2>{{h2_use}}</h2>
+            <p>{{p_use}}</p>
+
+            <div class="grid3" role="list">
+                <div class="card" role="listitem">
+                    <h3>{{u1t}}</h3>
+                    <p>
+                        {{u1d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{u2t}}</h3>
+                    <p>
+                        {{u2d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{u3t}}</h3>
+                    <p>
+                        {{u3d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{u4t}}</h3>
+                    <p>
+                        {{u4d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{u5t}}</h3>
+                    <p>
+                        {{u5d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{u6t}}</h3>
+                    <p>
+                        {{u6d}}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <h2>{{h2_faq}}</h2>
+
+            <div class="faq">
+                <details open>
+                    <summary>{{q1}}</summary>
+                    <p>{{a1}}</p>
+                </details>
+                <details>
+                    <summary>{{q2}}</summary>
+                    <p>{{a2}}</p>
+                </details>
+                <details>
+                    <summary>{{q3}}</summary>
+                    <p>{{a3}}</p>
+                </details>
+                <details>
+                    <summary>{{q4}}</summary>
+                    <p>{{a4}}</p>
+                </details>
+                <details>
+                    <summary>{{q5}}</summary>
+                    <p>{{a5}}</p>
+                </details>
+                <details>
+                    <summary>{{q6}}</summary>
+                    <p>{{a6}}</p>
+                </details>
+                <details>
+                    <summary>{{q7}}</summary>
+                    <p>{{a7}}</p>
+                </details>
+                <details>
+                    <summary>{{q8}}</summary>
+                    <p>{{a8}}</p>
+                </details>
+                <details>
+                    <summary>{{q9}}</summary>
+                    <p>{{a9}}</p>
+                </details>
+                <details>
+                    <summary>{{q10}}</summary>
+                    <p>{{a10}}</p>
+                </details>
+                <details>
+                    <summary>{{q11}}</summary>
+                    <p>{{a11}}</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="section">
+            <h2>{{h2_req}}</h2>
+            <table class="toolTable">
+                <tbody>
+                    <tr>
+                        <td>{{rh1}}</td>
+                        <td>{{req_os}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{rh2}}</td>
+                        <td>{{req_disk}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{rh3}}</td>
+                        <td>{{req_gpu}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{rh4}}</td>
+                        <td>{{req_net}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{rh5}}</td>
+                        <td>{{req_in}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="get-the-app" class="section">
+            <h2>{{h2_get}}</h2>
+            <p>
+                {{p_get}}
+            </p>
+            <div class="ctaRow" style="margin-top: 12px">
+                <a
+                    class="btn btnPrimary"
+                    href="https://apps.microsoft.com/detail/9N74FTKQNSST?hl=en-us&amp;gl=US&amp;ocid=pdpshare"
+                    target="_blank"
+                    rel="noopener"
+                    >{{cta_open}}</a
+                >
+                <a class="btn btnGhost" href="{{base}}index.html">{{cta_apps}}</a>
+                <a class="btn btnGhost" href="mailto:30329277@qq.com?subject=VidForge">{{cta_email}}</a>
+            </div>
+            <p style="margin-top: 12px">
+                <span class="badgeSoft">{{bg1}}</span>
+                <span class="badgeSoft">{{bg2}}</span>
+                <span class="badgeSoft">{{bg3}}</span>
+                <span class="badgeSoft">{{bg4}}</span>
+                <span class="badgeSoft">{{bg5}}</span>
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footerRow">
+            <span>{{rights}}</span>
+            <span>
+                <a href="{{base}}vidforge-privacy.html">{{privacy_label}}</a> ·
+                <a href="{{base}}index.html">{{footer_home}}</a> ·
+                <a href="mailto:30329277@qq.com">{{footer_contact}}</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>

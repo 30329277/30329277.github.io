@@ -1,6 +1,25 @@
 {
   "site": "https://30329277.github.io",
   "page": "beamdrop-support.html",
+  "template": "i18n/beamdrop-support.template.html",
+  "privacy_page": "beamdrop-privacy.html",
+  "og_image": "assets/beamdrop/beamdrop-04-select.webp",
+  "asset_dir": "assets/beamdrop",
+  "app": {
+    "name": "BeamDrop",
+    "operating_system": "iOS 17+",
+    "application_category": "UtilitiesApplication",
+    "download_url": "https://apps.apple.com/app/beamdrop/id6776451257",
+    "price": "0.99",
+    "price_currency": "USD",
+    "rating": { "value": "5", "count": "1" },
+    "faq_schema": [1, 2, 3, 5]
+  },
+  "fragments": {
+    "url": "<code>http://172.20.10.1:8080</code>",
+    "select_label": "<span class=\"kbd\">Select Photos or Videos</span>",
+    "download_all": "<span class=\"kbd\">Download All</span>"
+  },
   "languages": {
     "en": { "name": "English",  "locale": "en_US", "dir": "ltr", "prefix": "",     "asset_prefix": "" },
     "fr": { "name": "Français", "locale": "fr_FR", "dir": "ltr", "prefix": "fr/",  "asset_prefix": "" },
