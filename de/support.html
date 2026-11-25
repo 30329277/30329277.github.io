@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CNC Workpiece Calculator — Mittelung, Passungen, Toleranzen &amp; Gewicht (iOS)</title>
-    <meta name="description" content="CNC Workpiece Calculator ist ein Offline-Tool für iPhone/iPad für tastgestützte Mittelung (Kreis/Rechteck/Ellipse/Nut), ISO-Außen-Innen-Passungen, allgemeine Toleranzen und Rohteil-Gewichtsschätzung." />
+    <title>CNC Workpiece Calculator — Ebenheit, Rundform, Mittelung, Passungen &amp; Gewicht (iOS)</title>
+    <meta name="description" content="Ebenheit und Rundform nach der minimalen Zone aus Messuhrwerten, direkt am iPhone — kein Excel, kein Solver. Dazu Tasten-Mittelung, ISO-Passungen, allgemeine Toleranzen und Rohteilgewicht. Komplett offline, ohne Konto." />
+    <meta name="keywords" content="Ebenheit berechnen, Rundform, minimale Zone, Messuhr, Rundheit, Toleranz, CNC, Werkstück, Passungen, ISO, Mittelung, Gewicht, offline iOS App, Werkstattmetrologie" />
     <link rel="canonical" href="https://30329277.github.io/de/support.html" />
     <link rel="alternate" hreflang="en" href="https://30329277.github.io/support.html" />
     <link rel="alternate" hreflang="de" href="https://30329277.github.io/de/support.html" />
@@ -27,14 +28,51 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
-    <meta property="og:title" content="CNC Workpiece Calculator" />
-    <meta property="og:description" content="Offline-CNC-Helfer für Mittelung, ISO-Passungen, allgemeine Toleranzen und Gewichtsschätzung — für iPhone und iPad." />
+    <meta property="og:title" content="CNC Workpiece Calculator — Ebenheit &amp; Rundform ohne Tabellenkalkulation" />
+    <meta property="og:description" content="Messuhrwerte hinein, minimale Zone für Ebenheit und Rundform heraus — mit Nivellierhinweisen, Diagrammen und PNG-Berichten per Tipp. Dazu Mittelung, ISO-Passungen, Toleranzen und Gewicht. Offline, ohne Konto." />
     <meta property="og:url" content="https://30329277.github.io/de/support.html" />
     <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="../landing.css" />
     <script src="../i18n.js" defer></script>
+
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -49,11 +87,104 @@
         "price": "0",
         "priceCurrency": "USD"
     },
+    "featureList": [
+        "Minimum-zone flatness from dial readings (single ring, double ring, polar X/Y/Z, rectangular X/Y/Z)",
+        "Per-point rigid-body leveling advice with predicted improvement",
+        "Circularity from diameters, radii, indicator readings or X/Y points",
+        "Algebraic, geometric and minimum-zone circle fitting side by side",
+        "Excel-compatible diameter difference and center correction vector",
+        "Layout, deviation, residual, 3D plane, contour and center charts",
+        "PNG report export (chart + highlighted results) and CSV point export",
+        "Probe-based centering for circle, rectangle, ellipse, slot and double circle",
+        "ISO shaft-hole fit checks",
+        "General size and geometric tolerance references",
+        "Stock weight estimation with material presets",
+        "Metric and imperial units",
+        "Works fully offline"
+    ],
     "url": "https://30329277.github.io/de/support.html",
-    "description": "CNC Workpiece Calculator ist ein Offline-Tool für iPhone/iPad für tastgestützte Mittelung (Kreis/Rechteck/Ellipse/Nut), ISO-Außen-Innen-Passungen, allgemeine Toleranzen und Rohteil-Gewichtsschätzung.",
+    "description": "CNC Workpiece Calculator ist ein Offline-Werkzeug für iPhone/iPad für Zerspaner und Prüfer. Der Geometry-Tab berechnet die minimale Zone der Ebenheit aus Messuhrwerten (einfacher/doppelter Ring, polare oder kartesische Eingabe) mit Nivellierhinweisen pro Punkt sowie die Rundform aus Durchmessern, Radien, Messuhrwerten oder X/Y-Punkten mit algebraischen, geometrischen und Minimal-Zonen-Kreisfits. Dazu Tasten-Mittelung, ISO-Passungen, allgemeine Toleranzen und Gewichtsschätzung.",
     "inLanguage": "de"
 }
     </script>
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Kann sie mein Excel-Ebenheitsmakro mit Solver ersetzen?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Am Maschinenplatz: ja. Der Geometry-Tab löst dieselbe Minimal-Z-Band-Aufgabe mit einem zweiphasigen Simplex-LP-Solver, auf dem Gerät, in unter einer Sekunde. Er meldet den Ebenheitswert, den Ausgangsbereich, die Verbesserung durch Nivellieren, die angepasste Ebene und Nivellierhinweise pro Punkt. Für prüfpflichtige Dokumentation lassen sich die Punkte als CSV exportieren und in eigenen Tools weiterverarbeiten."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Welche Rundformzahl meldet sie — der alte Durchmesserunterschied oder die minimale Zone?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Beide, bewusst getrennt: der Durchmesserunterschied im algebraisch angepassten Zentrum (klassische Arbeitsmappen-Konvention) und die minimale radiale Zone (der engere, normgerechte Wert)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Wie gebe ich Messuhrwerte für Rundform ein?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In den Modus „Messuhr“ wechseln, den Durchmesser, bei dem die Messuhr null zeigt, als Ø-Referenz eingeben, dann jede vorzeichenbehaftete Anzeige. Die Messuhr-Richtungseinstellung passt dazu, wie die Messuhr montiert ist (Nadel oben = größerer oder kleinerer Radius)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Worauf basieren die Nivellierhinweise?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Auf der angepassten Minimal-Band-Ebene. Pro Punkt zeigt die App die vorgeschlagene Starrkörper-Korrektur und das vorhergesagte Residuum danach — die Verbesserung, die allein durch Auflegen oder Neu-Nivellieren zu erwarten ist, vor jeder Bearbeitung."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Kann ich Ergebnisse für Prüfprotokolle exportieren?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Ein Tipp erzeugt ein 1200×800-PNG mit Diagramm und hervorgehobener Ergebnistafel, gespeichert in Fotos oder dem Teilen-Menü. Die Messpunkte exportieren als CSV zur Weiterverarbeitung."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Braucht die App das Internet?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. Alle Berechnungen, Diagramme, gespeicherten Sitzungen und Exporte laufen offline."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Sammelt sie irgendwelche Daten?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es werden keine Entwickler-Analytics- oder Tracking-SDKs verwendet. Die vollständige Richtlinie finden Sie auf der Datenschutz-Seite."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Kann ich sie auf dem iPad nutzen?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja — die Oberfläche ist für iPhone- und iPad-Workflows gebaut."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Wo melde ich einen Fehler oder wünsche eine Funktion?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Schreiben Sie an wangning.engineer@outlook.com."
+            }
+        }
+    ]
+}
 
 </head>
 
@@ -69,6 +200,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">Geometry</a>
                     <a href="#features">Funktionen</a>
                     <a href="#tutorial">Anleitung</a>
                     <a href="#faq">FAQ</a>
@@ -81,43 +213,132 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
                     <div class="kicker">
                         <span class="badge">Offline • Kein Konto • Kein Tracking</span>
-                        <span>Für CNC-Einrichtung und Prüfung gemacht</span>
+                        <span>Neu: Ebenheit &amp; Rundform aus Messuhrwerten</span>
                     </div>
-                    <h1>Schneller mitteln. Passungen &amp; Toleranzen berechnen. Rohteilgewicht schätzen.</h1>
+                    <h1>Ebenheit und Rundform — ohne den Weg zum Tabellenblatt.</h1>
                     <p class="lead">
-                        CNC Workpiece Calculator ist eine praktische iPhone/iPad-Werkzeugkiste für Zerspaner: tastgestützte Mittelung über mehrere Formen, ISO-artige Passungsprüfungen für Welle/Bohrung, allgemeine Toleranzreferenzen und schnelle Gewichtsschätzung für gängige Werkstoffe.
+                        Der klassische Workflow ist vertraut: Messuhrwerte notieren, zum Büro-PC laufen, das Excel-Makro öffnen, Solver starten, Zahlen ins Protokoll kopieren. CNC Workpiece Calculator 1.0.2 legt diese ganze Schleife in die Hosentasche — ein Minimal-Zonen-Solver für Ebenheit und ein dreifacher Rundform-Fitter, die in unter einer Sekunde auf dem Gerät laufen, neben den bereits vorhandenen Werkzeugen für Mittelung, Passungen, Toleranzen und Gewicht.
                     </p>
                     <div class="ctaRow" id="download">
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             Im App Store ansehen
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">Workflow ansehen</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Support kontaktieren</a>
+                        <a class="btn btnGhost" href="#geometry">Zum neuen Geometry-Tab</a>
+                        <a class="btn btnGhost" href="#tutorial">Schritt-für-Schritt-Anleitung</a>
                     </div>
+                    <p class="heroNote">
+                        Für CNC-Einrichtung und Prüfung, Lohnfertiger, Qualitätsingenieure und Schulung. Läuft komplett offline auf iPhone und iPad — kein Konto, keine Werbung, kein Tracking, kein Netz nötig.
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="../assets/cnc-hero-illustration.webp"
-                            alt="Illustration der CNC-Werkstückmittelung und Messung"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="../assets/cnc-geo-flatness.jpg"
+                        alt="Ebenheitsergebnis mit hervorgehobenem Schlüsselwert"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/cnc-geo-circularity.jpg"
+                        alt="Rundformergebnis mit Diagramm des gefitteten Kreises"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>Was es Ihnen abnimmt</h2>
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>Geometry <span class="newTag">NEU IN 1.0.2</span></h2>
             <p>
-                Reduzieren Sie manuelle Rechnerei bei Einrichtung und Prüfung. Bleiben Sie im Fluss mit verlässlichen Berechnungen auf dem Gerät — direkt an der Maschine.
+                Ebenheit und Rundform sind die schmerzhaften Prüfaufgaben. Die Messung selbst dauert mit der Messuhr zwei Minuten — die Rechnerei ist das Problem: eine Minimal-Zonen-Aufgabe, die niemand von Hand löst, meist delegiert an ein Excel-Makro mit Solver, das auf einem einzigen PC liegt, bewacht von Dateisperren und Makro-Warnungen.
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>Schritt</th>
+                            <th>Excel + Solver</th>
+                            <th>CNC Workpiece Calculator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Werte eingeben</b></td>
+                            <td>In ein Raster am Büro-PC tippen</td>
+                            <td>Eigene Zifferntastatur direkt an der Maschine, iPhone oder iPad</td>
+                        </tr>
+                        <tr>
+                            <td><b>Ebenheit</b></td>
+                            <td>Solver starten und auf Konvergenz hoffen</td>
+                            <td>Zweiphasiger Simplex-LP, sofort, mit Konvergenzstatus</td>
+                        </tr>
+                        <tr>
+                            <td><b>Nivellieren</b></td>
+                            <td>Keile von Hand aus der Flächengleichung ableiten</td>
+                            <td>Nivellierhinweise pro Punkt mit vorhergesagter Verbesserung</td>
+                        </tr>
+                        <tr>
+                            <td><b>Rundform</b></td>
+                            <td>Eine Arbeitsmappen-Konvention, ein Ergebnis</td>
+                            <td>Algebraische, geometrische und Minimal-Zonen-Fits Seite an Seite</td>
+                        </tr>
+                        <tr>
+                            <td><b>Bericht</b></td>
+                            <td>Screenshot der Tabelle</td>
+                            <td>PNG mit einem Tipp (Diagramm + Ergebnisse) oder CSV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-flatness.jpg" alt="Ebenheitsergebniskarte mit hervorgehobenem Minimal-Zonen-Wert" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>Ebenheit, vier Eingabemodi</b> — einfacher Ring, doppelter Ring (außen + innen), polar X/Y/Z oder kartesisch X/Y/Z. Die Ergebniskarte stellt den Ebenheitswert zuerst und hervorgehoben dar, gefolgt vom Ausgangsbereich, der Verbesserung durch Nivellieren, der angepassten Ebene, der Kipprichtung und Nivellierhinweisen pro Punkt.
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-circularity.jpg" alt="Rundformergebniskarte und Diagramm des gefitteten Kreises" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>Rundform, vier Eingabemodi</b> — gemessene Durchmesser (klassische Arbeitsmappe), Radien, Messuhrwerte gegen einen Ø-Referenzwert oder rohe X/Y-Punkte. Das Center-Diagramm zeigt jeden Punkt und den angepassten Kreis mit dem Korrekturvektor.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>Drei Kreis-Fits, ehrlich benannt</h3>
+                    <p>
+                        Algebraische Kleinst-Quadrate, geometrischer Best-Fit und eine Nelder–Mead-Suche nach der minimalen Zone laufen gemeinsam. Der Excel-kompatible Durchmesserunterschied und die engere Minimal-Zonen-Auslenkung werden getrennt ausgewiesen — kein Streit mehr zwischen alten und neuen Konventionen.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Sechs Diagrammansichten</h3>
+                    <p>
+                        Layout, Abweichung ×10, Residuen, 3D-Ebene, Kontur und Zoom auf den Mittelpunkt — live umschaltbar, während die Punkte hereinkommen. Ausgewählte Punkte werden hervorgehoben, die Ansicht skaliert sich selbst auf Ihre Daten.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Export, der zum Workflow passt</h3>
+                    <p>
+                        Ein Tipp erzeugt ein 1200×800-PNG mit Diagramm und Ergebnistafel — direkt in Fotos oder das Teilen-Menü. Punkte exportieren als CSV. Gespeicherte Sitzungen lassen sich später über das Mehr-Panel wieder laden.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>Was es sonst noch kann</h2>
+            <p>
+                Der Geometry-Tab gesellt sich zu den Werkzeugen, die die App schon mitbrachte — alles offline, alles auf dem Gerät.
             </p>
 
             <div class="grid3" role="list">
@@ -134,47 +355,76 @@
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Gewichtsschätzung</h3>
-                    <p>
-                        Gewicht für gängige Formen (Platte, Rohr, Stab, Ring…) mit Materialvorlagen, Stückzahl und metrischen/imperialen Einheiten schätzen.
-                    </p>
-                </div>
-                <div class="card" role="listitem">
                     <h3>Allgemeine Toleranzen</h3>
                     <p>
                         Referenz für Maß- und Formtoleranzen (Ebenheit/Planheit, Perpendicularität, Rundlauf usw.) mit klaren Ergebnissen für die Werkstatt.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Für iPhone &amp; iPad gebaut</h3>
+                    <h3>Gewichtsschätzung</h3>
                     <p>
-                        Touchfreundliche Eingaben und tab-basierte Werkzeuge, damit Sie zwischen Mittelung, Passungen, Gewicht und Toleranzen wechseln können, ohne den Kontext zu verlieren.
+                        Gewicht für gängige Formen (Platte, Rohr, Stab, Ring…) mit Materialvorlagen, Stückzahl und metrischen/imperialen Einheiten schätzen.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Offline von Grund auf</h3>
+                    <h3>Für Handschuhe gebaut</h3>
                     <p>
-                        Kein Konto, keine Werbung, keine Tracking-SDKs. Berechnungen laufen auf dem Gerät — funktioniert auch in Netzwerken mit Einschränkungen.
+                        Eigene Zifferntastatur mit Ersetzen beim ersten Tipp, Vorzeichenwechsel und Auto-Scroll — kein Kampf mit der Systemtastatur mitten in der Messung.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Offline &amp; privat</h3>
+                    <p>
+                        Kein Konto, keine Werbung, keine Tracking-SDKs. Sitzungen bleiben auf dem Gerät. Es funktioniert in abgesicherten Werkstattnetzwerken, weil es gar kein Netzwerk braucht.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>Kurzanleitung</h2>
-            <p>Vier gängige Workflows — Mittelung, Passungen, Gewicht und Toleranzen.</p>
+            <p>Fünf Workflows — Geometry, Mittelung, Passungen, Gewicht und Toleranzen.</p>
 
             <div class="split">
                 <div class="figure">
                     <img
-                        src="../assets/cnc-screenshot-centering.png"
-                        alt="Screenshot des Mittelungs-Workflows"
+                        src="../assets/cnc-geo-flatness-chart.jpg"
+                        alt="Z-Adjust-Diagramm einer Ebenheitsmessung"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        Screenshot: Tab Mittelung — <span class="kbd">assets/cnc-screenshot-centering.png</span> hinzufügen
+                    <div class="figcap">Geometry-Tab, Z-Adjust-Ansicht — <span class="kbd">assets/cnc-geo-flatness-chart.jpg</span> hinzufügen</div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div><b>Modus wählen</b> Ebenheit: einfacher Ring, doppelter Ring, polar X/Y/Z oder kartesisch X/Y/Z. Rundform: Durchmesser, Radius, Messuhr oder X/Y.</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div><b>Werte eingeben</b> Ø setzen (bzw. den Ø-Referenzwert der Messuhr), dann Punkt für Punkt hinzufügen — die Tastatur ersetzt beim ersten Tipp, Korrekturen gehen schnell.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div><b>„Berechnen“ antippen</b> Die hervorgehobene Ergebniszeile nennt den Ebenheits- bzw. Rundformwert; Diagramme und Nivellierhinweise aktualisieren sich sofort.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div><b>Exportieren</b> PNG für den Bericht, CSV fürs Archiv — oder die Sitzung speichern und beim nächsten Job wieder laden.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="../assets/cnc-geo-circularity-chart.jpg"
+                        alt="Center-Zoom-Diagramm einer Rundformmessung"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">Geometry-Tab, Center-Ansicht — <span class="kbd">assets/cnc-geo-circularity-chart.jpg</span> hinzufügen</div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -272,20 +522,21 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>Für wen es ist</h2>
             <div class="grid3" role="list">
                 <div class="card" role="listitem">
-                    <h3>Lohnfertiger</h3>
-                    <p>Alltägliche Mittelung und Schnellprüfungen beschleunigen — ohne Tabellenkalkulation.</p>
+                    <h3>Werkstätten &amp; CNC-Einrichtung</h3>
+                    <p>Mittelung, Passungen und schnelle Geometriechecks ohne Weg zum Büro-PC.</p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Prototypen &amp; F&amp;E</h3>
-                    <p>Aufspannungen schneller iterieren und die Messmathematik über alle Durchläufe hinweg konsistent halten.</p>
+                    <h3>Qualität &amp; Prüfung</h3>
+                    <p>Minimale Zone für Ebenheit und Rundform mit ehrlich benannten Konventionen — und einem PNG-Bericht zum Anhängen.</p>
                 </div>
                 <div class="card" role="listitem">
                     <h3>Schulung</h3>
-                    <p>Neuen Bedienern helfen, Passungen, Toleranzen und Geometrieergebnisse zu verstehen.</p>
+                    <p>Zeigen Sie neuen Bedienern, was Nivellieren wirklich bringt — und wie die angepasste Ebene aussieht.</p>
                 </div>
             </div>
         </section>
@@ -294,14 +545,32 @@
             <h2>FAQ</h2>
             <div class="faq">
                 <details>
+                    <summary>Kann sie mein Excel-Ebenheitsmakro mit Solver ersetzen?</summary>
+                    <p>Am Maschinenplatz: ja. Der Geometry-Tab löst dieselbe Minimal-Z-Band-Aufgabe mit einem zweiphasigen Simplex-LP-Solver, auf dem Gerät, in unter einer Sekunde. Er meldet den Ebenheitswert, den Ausgangsbereich, die Verbesserung durch Nivellieren, die angepasste Ebene und Nivellierhinweise pro Punkt. Für prüfpflichtige Dokumentation lassen sich die Punkte als CSV exportieren und in eigenen Tools weiterverarbeiten.</p>
+                </details>
+                <details>
+                    <summary>Welche Rundformzahl meldet sie — der alte Durchmesserunterschied oder die minimale Zone?</summary>
+                    <p>Beide, bewusst getrennt: der Durchmesserunterschied im algebraisch angepassten Zentrum (klassische Arbeitsmappen-Konvention) und die minimale radiale Zone (der engere, normgerechte Wert).</p>
+                </details>
+                <details>
+                    <summary>Wie gebe ich Messuhrwerte für Rundform ein?</summary>
+                    <p>In den Modus „Messuhr“ wechseln, den Durchmesser, bei dem die Messuhr null zeigt, als Ø-Referenz eingeben, dann jede vorzeichenbehaftete Anzeige. Die Messuhr-Richtungseinstellung passt dazu, wie die Messuhr montiert ist (Nadel oben = größerer oder kleinerer Radius).</p>
+                </details>
+                <details>
+                    <summary>Worauf basieren die Nivellierhinweise?</summary>
+                    <p>Auf der angepassten Minimal-Band-Ebene. Pro Punkt zeigt die App die vorgeschlagene Starrkörper-Korrektur und das vorhergesagte Residuum danach — die Verbesserung, die allein durch Auflegen oder Neu-Nivellieren zu erwarten ist, vor jeder Bearbeitung.</p>
+                </details>
+                <details>
+                    <summary>Kann ich Ergebnisse für Prüfprotokolle exportieren?</summary>
+                    <p>Ja. Ein Tipp erzeugt ein 1200×800-PNG mit Diagramm und hervorgehobener Ergebnistafel, gespeichert in Fotos oder dem Teilen-Menü. Die Messpunkte exportieren als CSV zur Weiterverarbeitung.</p>
+                </details>
+                <details>
                     <summary>Braucht die App das Internet?</summary>
-                    <p>Nein. Die Kernberechnungen laufen offline.</p>
+                    <p>Nein. Alle Berechnungen, Diagramme, gespeicherten Sitzungen und Exporte laufen offline.</p>
                 </details>
                 <details>
                     <summary>Sammelt sie irgendwelche Daten?</summary>
-                    <p>
-                        Es werden keine Entwickler-Analytics- oder Tracking-SDKs verwendet. Die vollständige Richtlinie finden Sie auf der <a href="../privacy.html">Datenschutz</a>-Seite.
-                    </p>
+                    <p>Es werden keine Entwickler-Analytics- oder Tracking-SDKs verwendet. Die vollständige Richtlinie finden Sie auf der <a href="../privacy.html">Datenschutz</a>-Seite.</p>
                 </details>
                 <details>
                     <summary>Kann ich sie auf dem iPad nutzen?</summary>

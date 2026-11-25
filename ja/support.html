@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CNC Workpiece Calculator — 位置出し・はめあい・公差・重量計算（iOS）</title>
-    <meta name="description" content="CNC Workpiece Calculator は、プローブ測定による位置出し（円/長方形/楕円/スロット）、ISO の軸・穴はめあい、一般公差、材料の重量見積もりに対応したオフライン iPhone/iPad ユーティリティです。" />
+    <title>CNC Workpiece Calculator — 平面度・円度・位置出し・はめあい・重量（iOS）</title>
+    <meta name="description" content="ダイヤルゲージの読みから最小域法の平面度・円度を iPhone で直接計算 — Excel も Solver も不要。プローブ測定による位置出し、ISO のはめあい、一般公差、材料重量にも対応。完全オフライン、アカウント不要。" />
+    <meta name="keywords" content="平面度 計算, 円度, 最小域法, ダイヤルゲージ, 真円度, 段取り, 水準調整アドバイス, cnc workpiece calculator, プローブ位置出し, ISO はめあい H7 h6, 一般公差, 重量計算, オフライン iOS アプリ, 現場計測" />
     <link rel="canonical" href="https://30329277.github.io/ja/support.html" />
     <link rel="alternate" hreflang="en" href="https://30329277.github.io/support.html" />
     <link rel="alternate" hreflang="de" href="https://30329277.github.io/de/support.html" />
@@ -27,14 +28,51 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <meta property="og:title" content="CNC Workpiece Calculator" />
-    <meta property="og:description" content="位置出し、ISO はめあい、一般公差、重量見積もりに対応したオフライン CNC アシスタント — iPhone と iPad に対応。" />
+    <meta property="og:title" content="CNC Workpiece Calculator — 表計算なしの平面度・円度" />
+    <meta property="og:description" content="ダイヤルゲージの読みを入力すれば、最小域法の平面度・円度と水準調整アドバイス、チャート、ワンタップ PNG レポート。位置出し・ISO はめあい・公差・重量も。オフライン、アカウント不要。" />
     <meta property="og:url" content="https://30329277.github.io/ja/support.html" />
     <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="../landing.css" />
     <script src="../i18n.js" defer></script>
+
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -49,11 +87,104 @@
         "price": "0",
         "priceCurrency": "USD"
     },
+    "featureList": [
+        "Minimum-zone flatness from dial readings (single ring, double ring, polar X/Y/Z, rectangular X/Y/Z)",
+        "Per-point rigid-body leveling advice with predicted improvement",
+        "Circularity from diameters, radii, indicator readings or X/Y points",
+        "Algebraic, geometric and minimum-zone circle fitting side by side",
+        "Excel-compatible diameter difference and center correction vector",
+        "Layout, deviation, residual, 3D plane, contour and center charts",
+        "PNG report export (chart + highlighted results) and CSV point export",
+        "Probe-based centering for circle, rectangle, ellipse, slot and double circle",
+        "ISO shaft-hole fit checks",
+        "General size and geometric tolerance references",
+        "Stock weight estimation with material presets",
+        "Metric and imperial units",
+        "Works fully offline"
+    ],
     "url": "https://30329277.github.io/ja/support.html",
-    "description": "CNC Workpiece Calculator は、プローブ測定による位置出し（円/長方形/楕円/スロット）、ISO の軸・穴はめあい、一般公差、材料の重量見積もりに対応したオフライン iPhone/iPad ユーティリティです。",
+    "description": "CNC Workpiece Calculator は機械加工者・検査者向けのオフライン iPhone/iPad ユーティリティです。Geometry タブはダイヤルゲージの読み（単円環/二重円環、極座標または直交座標入力）から最小域法の平面度を測定点ごとの水準調整アドバイス付きで計算し、円度は直径・半径・ダイヤルゲージ読み・X/Y 点から代数 fit・幾何 fit・最小域法円 fit で求めます。プローブ測定による位置出し、ISO の軸・穴はめあい、一般公差、重量見積もりにも対応します。",
     "inLanguage": "ja"
 }
     </script>
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Excel の Solver マクロを置き換えられますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "現場での使用なら、はい。Geometry タブは同じ最小 Z 帯域問題を 2 段階シンプレックス LP ソルバーで端末内・1 秒以内に解きます。平面度の値、初期範囲、水準調整による減少量、当てはめた平面、点ごとのアドバイスを表示します。監査用の記録には点を CSV で書き出して独自ツールで処理できます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "円度はどの値を表示しますか — 旧来の直径差ですか、最小域法ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "両方、意図的に分けて表示します。代数 fit の中心での直径差（従来のワークブック流儀）と、より厳しい規格準拠の最小域法半径範囲です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "円度のダイヤルゲージ読みはどう入力しますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Indicator モードに切り替え、ゲージが 0 を示す直径を Ø 基準として入力し、各読みを符号付きで入力します。ゲージの符号設定は取付方向（針上 = 半径が大きい/小さい）に対応します。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "水準調整アドバイスは何に基づきますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "当てはめた最小帯域の平面です。各測定点について、提案される剛体補正と補正後の予測残差を表示します — 加工前の、シムや水準調整だけで得られる改善量です。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "品質記録のために結果を書き出せますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい。ワンタップでチャートと強調結果パネル入りの 1200×800 PNG を写真または共有シートに保存。測定点は CSV で書き出せます。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "インターネット接続は必要ですか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "いいえ。計算・チャート・セッション保存・書き出しはすべてオフラインで動作します。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "データを収集しますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "開発者向けアナリティクスやトラッキング SDK は使用していません。詳細は プライバシー ページをご覧ください。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "iPad で使えますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい — iPhone と iPad の両方のワークフロー向けに UI を設計しています。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "バグ報告や機能リクエストはどこへ？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "wangning.engineer@outlook.com までメールしてください。"
+            }
+        }
+    ]
+}
 
 </head>
 
@@ -69,6 +200,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">Geometry</a>
                     <a href="#features">特長</a>
                     <a href="#tutorial">チュートリアル</a>
                     <a href="#faq">よくある質問</a>
@@ -81,43 +213,132 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
                     <div class="kicker">
                         <span class="badge">オフライン • アカウント不要 • トラッキングなし</span>
-                        <span>CNC の段取りと検査のために</span>
+                        <span>新機能：ダイヤルゲージの読みから平面度・円度</span>
                     </div>
-                    <h1>位置出しを速く。はめあいと公差を計算。材料の重量を見積もる。</h1>
+                    <h1>平面度と円度 — 表計算への往復なしで。</h1>
                     <p class="lead">
-                        CNC Workpiece Calculator は機械加工者のための実用的な iPhone/iPad ツールボックスです。複数形状のプローブ測定による位置出し、ISO 式の軸/穴はめあいチェック、一般公差の参照、代表的な材料の重量見積もりをまとめました。
+                        従来の流れはお決まりです。ダイヤルゲージの読みを書き留め、オフィスの PC まで戻り、Excel マクロを開き、Solver を実行し、結果をレポートに書き写す。CNC Workpiece Calculator 1.0.2 はこの一連の流れをポケットに収めました。1 秒以内に端末内で完了する最小域法の平面度ソルバーと 3 方式の円度フィッターを、既存の位置出し・ISO はめあい・公差・重量ツールと並べて搭載しています。
                     </p>
                     <div class="ctaRow" id="download">
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             App Store で見る
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">作業の流れを見る</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">サポートに連絡</a>
+                        <a class="btn btnGhost" href="#geometry">新しい Geometry タブを見る</a>
+                        <a class="btn btnGhost" href="#tutorial">手順ガイド</a>
                     </div>
+                    <p class="heroNote">
+                        CNC の段取りと検査、受注加工の工場、品質エンジニア、教育訓練のために。すべて iPhone と iPad でオフライン動作 — アカウントなし、広告なし、トラッキングなし、ネットワーク不要。
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="../assets/cnc-hero-illustration.webp"
-                            alt="CNC ワークピースの位置出しと測定のイラスト"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="../assets/cnc-geo-flatness.jpg"
+                        alt="平面度の結果（キーとなる値を強調表示）"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/cnc-geo-circularity.jpg"
+                        alt="円度の結果と当てはめ円のチャート"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>できること</h2>
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>Geometry <span class="newTag">1.0.2 の新機能</span></h2>
             <p>
-                段取りと検査の手計算を減らします。機械のそばに立ったまま信頼できる端末内計算で、作業の流れを止めません。
+                検査でつらいのは平面度と円度です。測定自体はダイヤルゲージで 2 分 — 問題は計算です。誰も手で解かない最小 Z 帯域の問題は、たいてい 1 台の PC だけに住む Excel マクロ＋Solver に委ねられ、ファイルロックとマクロ警告に守られています。
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>工程</th>
+                            <th>Excel + Solver</th>
+                            <th>CNC Workpiece Calculator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>測定値の入力</b></td>
+                            <td>オフィス PC のグリッドに打ち込む</td>
+                            <td>マシン脇で使える専用テンキー（iPhone/iPad）</td>
+                        </tr>
+                        <tr>
+                            <td><b>平面度</b></td>
+                            <td>Solver を実行し、収束設定を願う</td>
+                            <td>2 段階シンプレックス LP。即座に、収束状態も表示</td>
+                        </tr>
+                        <tr>
+                            <td><b>水準調整</b></td>
+                            <td>平面の方程式からシムを手計算で導く</td>
+                            <td>測定点ごとの調整アドバイスと予測改善量</td>
+                        </tr>
+                        <tr>
+                            <td><b>円度</b></td>
+                            <td>ワークブックの流儀 1 つ、答え 1 つ</td>
+                            <td>代数 fit・幾何 fit・最小域法 fit を並べて表示</td>
+                        </tr>
+                        <tr>
+                            <td><b>レポート</b></td>
+                            <td>表計算のスクリーンショット</td>
+                            <td>ワンタップで PNG（チャート＋結果）または CSV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-flatness.jpg" alt="最小 Z 帯域の値を強調した平面度結果カード" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>平面度、4 つの入力モード</b> — 単円環、二重円環（外側 + 内側）、極座標 X/Y/Z、直交座標 X/Y/Z。結果カードは平面度の値を最初に強調表示し、初期範囲、水準調整による改善量、当てはめた平面、傾き方向、測定点ごとの調整アドバイスを続けます。
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-circularity.jpg" alt="円度の結果カードと当てはめ円チャート" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>円度、4 つの入力モード</b> — 実測直径（従来のワークブック方式）、半径、Ø 基準に対するダイヤルゲージの読み、生の X/Y 点。Center ビューは全点と当てはめた円、補正ベクトルを表示します。
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>3 方式の円 fit を正直に表示</h3>
+                    <p>
+                        代数的最小二乗、幾何学的最良 fit、Nelder–Mead による最小域法探索を同時に実行。Excel 互換の直径差と、より厳しい最小域法の半径範囲を別々に表示 — 旧来と新しい流儀の言い争いはもうありません。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>6 種類のチャート表示</h3>
+                    <p>
+                        配置、偏差 ×10、残差、3D 平面、コンター、中心ズーム — 点を入力しながらリアルタイムで切り替え。選択点を強調し、表示はデータに合わせて自動スケール。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>作業の流れに合う書き出し</h3>
+                    <p>
+                        ワンタップでチャートと結果パネル入りの 1200×800 PNG を写真または共有シートへ。点は CSV で書き出し。保存したセッションは後から「その他」パネルで再読み込み。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>その他の機能</h2>
+            <p>
+                Geometry タブが、これまでのツール群に加わりました — すべてオフライン、すべて端末内。
             </p>
 
             <div class="grid3" role="list">
@@ -134,47 +355,76 @@
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>重量の見積もり</h3>
-                    <p>
-                        代表的な形状（平板、パイプ、バー、リングなど）の重量を、材料プリセット・数量・メートル法/ヤードポンド法で見積もれます。
-                    </p>
-                </div>
-                <div class="card" role="listitem">
                     <h3>一般公差</h3>
                     <p>
                         寸法公差と幾何公差（真直度/平面度、直角度、円形振れなど）の早見表で、現場ですぐ使える明快な結果を表示します。
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>iPhone と iPad に対応</h3>
+                    <h3>重量の見積もり</h3>
                     <p>
-                        タッチしやすい入力とタブ形式のツールで、位置出し・はめあい・重量・公差を文脈を失わずに切り替えられます。
+                        代表的な形状（平板、パイプ、バー、リングなど）の重量を、材料プリセット・数量・メートル法/ヤードポンド法で見積もれます。
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>設計からオフライン</h3>
+                    <h3>軍手でも打てる設計</h3>
                     <p>
-                        アカウントなし、広告なし、トラッキング SDK なし。計算は端末内で実行されるので、ネットワークが制限された環境でも作業できます。
+                        最初のタップで置き換わる専用テンキー、符号切替、自動スクロール — 測定中にシステムキーボードと格闘しません。
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>オフライン &amp; プライベート</h3>
+                    <p>
+                        アカウントなし、広告なし、トラッキング SDK なし。セッションは端末内に保存。ネットワークを一切使わないので、制限された工場ネットワークでも動きます。
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>クイックチュートリアル</h2>
-            <p>4 つの基本的な作業の流れ — 位置出し、はめあい、重量、公差。</p>
+            <p>5 つの作業の流れ — Geometry、位置出し、はめあい、重量、公差。</p>
 
             <div class="split">
                 <div class="figure">
                     <img
-                        src="../assets/cnc-screenshot-centering.png"
-                        alt="位置出しの作業画面のスクリーンショット"
+                        src="../assets/cnc-geo-flatness-chart.jpg"
+                        alt="平面度測定の Z Adjust チャート"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        スクリーンショット：位置出しタブ — <span class="kbd">assets/cnc-screenshot-centering.png</span> を追加
+                    <div class="figcap">Geometry タブ、Z Adjust ビュー — <span class="kbd">assets/cnc-geo-flatness-chart.jpg</span> を追加</div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div><b>モードを選ぶ</b> 平面度：単円環、二重円環、極座標 X/Y/Z、直交座標 X/Y/Z。円度：直径、半径、ダイヤルゲージ、X/Y。</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div><b>測定値を入力する</b> Ø（またはダイヤルゲージの Ø 基準）を設定し、点を順に追加 — テンキーは最初のタップで置き換わるので修正が速い。</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div><b>「計算」をタップする</b> 強調表示された結果行に平面度・円度の値。チャートと水準調整アドバイスは即座に更新。</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div><b>書き出す</b> レポートは PNG、記録は CSV — セッションを保存して次の現場で再読み込みもできます。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="../assets/cnc-geo-circularity-chart.jpg"
+                        alt="円度測定の Center ズームチャート"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">Geometry タブ、Center ビュー — <span class="kbd">assets/cnc-geo-circularity-chart.jpg</span> を追加</div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -272,20 +522,21 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>こんな方に</h2>
             <div class="grid3" role="list">
                 <div class="card" role="listitem">
-                    <h3>受注加工の工場</h3>
-                    <p>表計算なしで、日々の位置出しと簡易チェックをスピードアップ。</p>
+                    <h3>工場 &amp; CNC 段取り</h3>
+                    <p>オフィスの PC まで歩かずに、位置出し・はめあい・幾何チェックを。</p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>試作・研究開発</h3>
-                    <p>段取りの試行錯誤を速くし、測定計算をロット間で一貫させます。</p>
+                    <h3>品質 &amp; 検査</h3>
+                    <p>流儀を正直に明示した最小域法の平面度・円度 — 添付できる PNG レポート付き。</p>
                 </div>
                 <div class="card" role="listitem">
                     <h3>教育訓練</h3>
-                    <p>新しいオペレーターがはめあい、公差、幾何形状の結果を理解できるよう支援します。</p>
+                    <p>水準調整で実際に何が改善するのか、当てはめた平面がどう見えるのかを新人に見せられます。</p>
                 </div>
             </div>
         </section>
@@ -294,14 +545,32 @@
             <h2>よくある質問</h2>
             <div class="faq">
                 <details>
+                    <summary>Excel の Solver マクロを置き換えられますか？</summary>
+                    <p>現場での使用なら、はい。Geometry タブは同じ最小 Z 帯域問題を 2 段階シンプレックス LP ソルバーで端末内・1 秒以内に解きます。平面度の値、初期範囲、水準調整による減少量、当てはめた平面、点ごとのアドバイスを表示します。監査用の記録には点を CSV で書き出して独自ツールで処理できます。</p>
+                </details>
+                <details>
+                    <summary>円度はどの値を表示しますか — 旧来の直径差ですか、最小域法ですか？</summary>
+                    <p>両方、意図的に分けて表示します。代数 fit の中心での直径差（従来のワークブック流儀）と、より厳しい規格準拠の最小域法半径範囲です。</p>
+                </details>
+                <details>
+                    <summary>円度のダイヤルゲージ読みはどう入力しますか？</summary>
+                    <p>Indicator モードに切り替え、ゲージが 0 を示す直径を Ø 基準として入力し、各読みを符号付きで入力します。ゲージの符号設定は取付方向（針上 = 半径が大きい/小さい）に対応します。</p>
+                </details>
+                <details>
+                    <summary>水準調整アドバイスは何に基づきますか？</summary>
+                    <p>当てはめた最小帯域の平面です。各測定点について、提案される剛体補正と補正後の予測残差を表示します — 加工前の、シムや水準調整だけで得られる改善量です。</p>
+                </details>
+                <details>
+                    <summary>品質記録のために結果を書き出せますか？</summary>
+                    <p>はい。ワンタップでチャートと強調結果パネル入りの 1200×800 PNG を写真または共有シートに保存。測定点は CSV で書き出せます。</p>
+                </details>
+                <details>
                     <summary>インターネット接続は必要ですか？</summary>
-                    <p>いいえ。基本的な計算はオフラインで動作します。</p>
+                    <p>いいえ。計算・チャート・セッション保存・書き出しはすべてオフラインで動作します。</p>
                 </details>
                 <details>
                     <summary>データを収集しますか？</summary>
-                    <p>
-                        開発者向けアナリティクスやトラッキング SDK は使用していません。詳細は <a href="../privacy.html">プライバシー</a> ページをご覧ください。
-                    </p>
+                    <p>開発者向けアナリティクスやトラッキング SDK は使用していません。詳細は <a href="../privacy.html">プライバシー</a> ページをご覧ください。</p>
                 </details>
                 <details>
                     <summary>iPad で使えますか？</summary>

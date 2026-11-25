@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CNC Workpiece Calculator — Centrado, ajustes, tolerancias y peso (iOS)</title>
-    <meta name="description" content="CNC Workpiece Calculator es una utilidad iPhone/iPad sin conexión para el centrado con sonda (círculo/rectángulo/elipse/ranura), ajustes eje-agujero ISO, tolerancias generales y estimación del peso del material." />
+    <title>CNC Workpiece Calculator — Planeidad, circularidad, centrado, ajustes y peso (iOS)</title>
+    <meta name="description" content="Planeidad y circularidad de zona mínima a partir de lecturas de comparador, directamente en tu iPhone — sin Excel, sin Solver. Más centrado con sonda, ajustes eje-agujero ISO, tolerancias generales y peso del material. Totalmente sin conexión, sin cuenta." />
+    <meta name="keywords" content="calculadora de planeidad, circularidad, zona mínima, comparador, redondez, lecturas de esfera, consejos de nivelación, cnc workpiece calculator, centrado con sonda, ajustes ISO H7 h6, tolerancias generales, calculadora de peso, app iOS sin conexión, metrología de taller" />
     <link rel="canonical" href="https://30329277.github.io/es/support.html" />
     <link rel="alternate" hreflang="en" href="https://30329277.github.io/support.html" />
     <link rel="alternate" hreflang="de" href="https://30329277.github.io/de/support.html" />
@@ -27,14 +28,51 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:title" content="CNC Workpiece Calculator" />
-    <meta property="og:description" content="Ayudante CNC sin conexión para centrado, ajustes ISO, tolerancias generales y estimación de peso — diseñado para iPhone y iPad." />
+    <meta property="og:title" content="CNC Workpiece Calculator — planeidad y circularidad sin la hoja de cálculo" />
+    <meta property="og:description" content="Lecturas de esfera dentro, planeidad y circularidad de zona mínima fuera — con consejos de nivelación, gráficos e informes PNG de un toque. Más centrado, ajustes ISO, tolerancias y peso. Sin conexión, sin cuenta." />
     <meta property="og:url" content="https://30329277.github.io/es/support.html" />
     <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="../landing.css" />
     <script src="../i18n.js" defer></script>
+
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -49,11 +87,104 @@
         "price": "0",
         "priceCurrency": "USD"
     },
+    "featureList": [
+        "Minimum-zone flatness from dial readings (single ring, double ring, polar X/Y/Z, rectangular X/Y/Z)",
+        "Per-point rigid-body leveling advice with predicted improvement",
+        "Circularity from diameters, radii, indicator readings or X/Y points",
+        "Algebraic, geometric and minimum-zone circle fitting side by side",
+        "Excel-compatible diameter difference and center correction vector",
+        "Layout, deviation, residual, 3D plane, contour and center charts",
+        "PNG report export (chart + highlighted results) and CSV point export",
+        "Probe-based centering for circle, rectangle, ellipse, slot and double circle",
+        "ISO shaft-hole fit checks",
+        "General size and geometric tolerance references",
+        "Stock weight estimation with material presets",
+        "Metric and imperial units",
+        "Works fully offline"
+    ],
     "url": "https://30329277.github.io/es/support.html",
-    "description": "CNC Workpiece Calculator es una utilidad iPhone/iPad sin conexión para el centrado con sonda (círculo/rectángulo/elipse/ranura), ajustes eje-agujero ISO, tolerancias generales y estimación del peso del material.",
+    "description": "CNC Workpiece Calculator es una utilidad iPhone/iPad sin conexión para mecanizadores e inspectores. La pestaña Geometry calcula la zona mínima de planeidad a partir de lecturas de comparador (anillo simple/doble, entrada polar o rectangular) con consejos de nivelación punto por punto, y la circularidad a partir de diámetros, radios, lecturas de comparador o puntos X/Y con ajustes de círculo algebraicos, geométricos y de zona mínima. También incluye centrado con sonda, ajustes eje-agujero ISO, tolerancias generales y estimación de peso.",
     "inLanguage": "es"
 }
     </script>
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Puede reemplazar mi macro de Excel de planeidad con Solver?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para uso en el taller, sí — la pestaña Geometry resuelve el mismo problema de banda Z mínima con un solver simplex LP en dos fases, en el dispositivo, en menos de un segundo. Reporta el valor de planeidad, el rango inicial, la reducción por nivelación, el plano ajustado y consejos punto por punto. Para documentación de auditoría, exporta los puntos como CSV y procésalos en tus propias herramientas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Qué número de circularidad reporta — la vieja diferencia de diámetros o la zona mínima?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ambos, separados a propósito: la diferencia de diámetros en el centro algebraico (la convención clásica de la hoja de cálculo) y el rango radial de zona mínima (el valor más ajustado, conforme a norma)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cómo introduzco lecturas de comparador para la circularidad?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cambia al modo Comparador, introduce como Ø de referencia el diámetro donde el comparador marca cero, y añade cada lectura con signo. El ajuste de signo del dial corresponde a cómo está montado tu comparador (aguja arriba = radio mayor o menor)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿En qué se basan los consejos de nivelación?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "En el plano ajustado de banda mínima. Para cada punto medido muestra la corrección de cuerpo rígido sugerida y el residual previsto tras la corrección — la mejora que puedes esperar solo por calzar o renivelar, antes de mecanizar nada."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Puedo exportar resultados para mis registros de calidad?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Un toque genera un PNG de 1200×800 con el gráfico y un panel de resultados resaltado, guardado en Fotos o en la hoja de compartir. Los puntos medidos se exportan como CSV."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿La app necesita Internet?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Todos los cálculos, gráficos, sesiones guardadas y exportaciones funcionan sin conexión."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Recopila algún dato?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No se usan SDK de analítica ni de rastreo. Consulta la política completa en la página de Privacidad."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Puedo usarla en iPad?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí — la interfaz está diseñada para flujos de trabajo de iPhone y iPad."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Dónde informo de un error o pido una función?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Escribe a wangning.engineer@outlook.com."
+            }
+        }
+    ]
+}
 
 </head>
 
@@ -69,6 +200,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">Geometry</a>
                     <a href="#features">Características</a>
                     <a href="#tutorial">Tutorial</a>
                     <a href="#faq">Preguntas frecuentes</a>
@@ -81,43 +213,132 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
                     <div class="kicker">
                         <span class="badge">Sin conexión • Sin cuenta • Sin rastreo</span>
-                        <span>Hecho para el ajuste y la inspección CNC</span>
+                        <span>Nuevo: planeidad y circularidad desde lecturas de esfera</span>
                     </div>
-                    <h1>Centra más rápido. Calcula ajustes y tolerancias. Estima el peso del material.</h1>
+                    <h1>Planeidad y circularidad — sin la caminata a la hoja de cálculo.</h1>
                     <p class="lead">
-                        CNC Workpiece Calculator es una caja de herramientas práctica para iPhone/iPad orientada a mecanizadores: centrado con sonda en múltiples formas, comprobación de ajustes eje/agujero ISO, referencias de tolerancias generales y estimación rápida del peso de materiales comunes.
+                        El flujo tradicional es conocido: anotar las lecturas de la esfera, caminar hasta el PC de la oficina, abrir la macro de Excel, ejecutar Solver, copiar los números al informe. CNC Workpiece Calculator 1.0.2 pone todo ese ciclo en tu bolsillo — un solver de zona mínima para planeidad y un ajustador de circularidad de tres métodos que corren en el dispositivo en menos de un segundo, junto a las herramientas de centrado, ajustes ISO, tolerancias y peso que ya tenía la app.
                     </p>
                     <div class="ctaRow" id="download">
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             Ver en el App Store
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">Ver el flujo de trabajo</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contactar con soporte</a>
+                        <a class="btn btnGhost" href="#geometry">Ver la nueva pestaña Geometry</a>
+                        <a class="btn btnGhost" href="#tutorial">Guía paso a paso</a>
                     </div>
+                    <p class="heroNote">
+                        Para ajuste e inspección CNC, talleres de mecanizado, ingenieros de calidad y formación. Todo funciona sin conexión en iPhone y iPad — sin cuenta, sin anuncios, sin rastreo y sin red.
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="../assets/cnc-hero-illustration.webp"
-                            alt="Ilustración del centrado y la medición de piezas CNC"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="../assets/cnc-geo-flatness.jpg"
+                        alt="Resultado de planeidad con el valor clave resaltado"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/cnc-geo-circularity.jpg"
+                        alt="Resultado de circularidad con gráfico del círculo ajustado"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>Qué te ayuda a hacer</h2>
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>Geometry <span class="newTag">NUEVO EN 1.0.2</span></h2>
             <p>
-                Reduce los cálculos manuales durante el ajuste y la inspección. Mantén tu flujo de trabajo con cálculos en el dispositivo en los que puedes confiar junto a la máquina.
+                La planeidad y la circularidad son donde la inspección se vuelve dolorosa. La medición en sí toma dos minutos con un comparador — lo que mata el trabajo son los cálculos: un problema de banda Z mínima que nadie resuelve a mano, normalmente delegado a una macro de Excel con Solver que vive en un solo PC, protegida por bloqueos de archivo y avisos de macros.
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>Paso</th>
+                            <th>Excel + Solver</th>
+                            <th>CNC Workpiece Calculator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Introducir lecturas</b></td>
+                            <td>Teclear en una cuadrícula del PC de la oficina</td>
+                            <td>Teclado numérico propio en la máquina, iPhone o iPad</td>
+                        </tr>
+                        <tr>
+                            <td><b>Planeidad</b></td>
+                            <td>Ejecutar Solver y esperar que la convergencia esté bien configurada</td>
+                            <td>Simplex LP en dos fases, instantáneo, con estado de convergencia visible</td>
+                        </tr>
+                        <tr>
+                            <td><b>Nivelación</b></td>
+                            <td>Deducir las cuñas a mano desde la ecuación del plano</td>
+                            <td>Consejos de nivelación punto por punto con mejora prevista</td>
+                        </tr>
+                        <tr>
+                            <td><b>Circularidad</b></td>
+                            <td>Una convención de hoja de cálculo, una sola respuesta</td>
+                            <td>Ajustes algebraico, geométrico y de zona mínima lado a lado</td>
+                        </tr>
+                        <tr>
+                            <td><b>Informe</b></td>
+                            <td>Capturar la hoja de cálculo</td>
+                            <td>PNG de un toque (gráfico + resultados) o CSV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-flatness.jpg" alt="Tarjeta de resultado de planeidad con el valor de zona mínima resaltado" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>Planeidad, cuatro modos de entrada</b> — anillo simple, doble anillo (exterior + interior), polar X/Y/Z o rectangular X/Y/Z. La tarjeta de resultado pone el valor de planeidad primero y resaltado, seguido del rango inicial, cuánto recupera el nivelado, el plano ajustado, la dirección de inclinación y consejos de nivelación punto por punto.
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-circularity.jpg" alt="Tarjeta de resultado de circularidad y gráfico del círculo ajustado" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>Circularidad, cuatro modos de entrada</b> — diámetros medidos (estilo de hoja de cálculo clásica), radios, lecturas de comparador respecto a un Ø de referencia, o puntos X/Y en bruto. El gráfico central muestra cada punto y el círculo ajustado con el vector de corrección.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>Tres ajustes de círculo, etiquetados con honestidad</h3>
+                    <p>
+                        Mínimos cuadrados algebraicos, mejor ajuste geométrico y una búsqueda de zona mínima por Nelder–Mead corren juntos. La diferencia de diámetro compatible con Excel y el rango radial de zona mínima, más ajustado, se reportan por separado — se acabó discutir entre convenciones viejas y nuevas.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Seis vistas de gráficos</h3>
+                    <p>
+                        Disposición, desviación ×10, residuos, plano 3D, contorno y zoom al centro — cambia en vivo mientras entran los puntos. Los puntos seleccionados se resaltan y la vista se escala a tus datos.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Exportación que encaja con el flujo</h3>
+                    <p>
+                        Un toque genera un PNG de 1200×800 con el gráfico y un panel de resultados, directo a Fotos o a la hoja de compartir. Los puntos se exportan como CSV. Las sesiones guardadas se recargan desde el panel Más.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>Todo lo demás que hace</h2>
+            <p>
+                La pestaña Geometry se une a las herramientas que la app ya traía — todo sin conexión, todo en el dispositivo.
             </p>
 
             <div class="grid3" role="list">
@@ -134,47 +355,76 @@
                     </p>
                 </div>
                 <div class="card" role="listitem">
+                    <h3>Tolerancias generales</h3>
+                    <p>
+                        Referencia de tolerancias dimensionales y geométricas (rectitud/planeidad, perpendicularidad, excentricidad circular, etc.) con resultados claros para el taller.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
                     <h3>Estimación de peso</h3>
                     <p>
                         Estima el peso de formas comunes (placa, tubo, barra, anillo…) con materiales predefinidos, cantidades y unidades métricas/imperiales.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Tolerancias generales</h3>
+                    <h3>Diseñado para manos con guantes</h3>
                     <p>
-                        Referencia de tolerancias dimensionales y geométricas (rectitud/planitud, perpendicularidad, excentricidad circular, etc.) con resultados claros para el taller.
+                        Un teclado numérico propio con reemplazo al primer toque, cambio de signo y autoscroll — sin pelear con el teclado del sistema en plena medición.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Diseñado para iPhone y iPad</h3>
+                    <h3>Sin conexión y privado</h3>
                     <p>
-                        Entradas táctiles y herramientas en pestañas para alternar entre centrado, ajustes, peso y tolerancias sin perder el contexto.
-                    </p>
-                </div>
-                <div class="card" role="listitem">
-                    <h3>Sin conexión por diseño</h3>
-                    <p>
-                        Sin cuenta, sin anuncios, sin SDK de rastreo. Los cálculos se ejecutan en el dispositivo, incluso en entornos de red restringidos.
+                        Sin cuenta, sin anuncios, sin SDK de rastreo. Las sesiones se guardan en el dispositivo. Funciona en redes de taller restringidas porque nunca necesita red.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>Tutorial rápido</h2>
-            <p>Cuatro flujos de trabajo comunes — centrado, ajustes, peso y tolerancias.</p>
+            <p>Cinco flujos de trabajo — geometry, centrado, ajustes, peso y tolerancias.</p>
 
             <div class="split">
                 <div class="figure">
                     <img
-                        src="../assets/cnc-screenshot-centering.png"
-                        alt="Captura del flujo de centrado"
+                        src="../assets/cnc-geo-flatness-chart.jpg"
+                        alt="Gráfico Z Adjust de una medición de planeidad"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        Captura de pantalla: pestaña Centrado — añadir <span class="kbd">assets/cnc-screenshot-centering.png</span>
+                    <div class="figcap">Pestaña Geometry, vista Z Adjust — añadir <span class="kbd">assets/cnc-geo-flatness-chart.jpg</span></div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div><b>Elige el modo</b> Planeidad: anillo simple, doble anillo, polar X/Y/Z o rectangular X/Y/Z. Circularidad: diámetro, radio, comparador o X/Y.</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div><b>Introduce las lecturas</b> Ajusta Ø (o el Ø de referencia del comparador) y añade cada punto — el teclado reemplaza al primer toque, corregir es rápido.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div><b>Toca Calcular</b> La línea de resultado resaltada da el valor de planeidad o circularidad; gráficos y consejos de nivelación se actualizan al instante.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div><b>Exporta</b> PNG para el informe, CSV para los registros — o guarda la sesión y recárgala en el siguiente trabajo.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="../assets/cnc-geo-circularity-chart.jpg"
+                        alt="Gráfico Center de una medición de circularidad"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">Pestaña Geometry, vista Center — añadir <span class="kbd">assets/cnc-geo-circularity-chart.jpg</span></div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -267,25 +517,26 @@
                     </div>
                     <div class="step">
                         <div class="stepNum">3</div>
-                        <div><b>Tolerancia geométrica</b> Elige un tipo geométrico (rectitud/planitud, perpendicularidad, excentricidad, etc.) y el grado (H/K/L) para ver el resultado.</div>
+                        <div><b>Tolerancia geométrica</b> Elige un tipo geométrico (rectitud/planeidad, perpendicularidad, excentricidad, etc.) y el grado (H/K/L) para ver el resultado.</div>
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>¿Para quién es?</h2>
             <div class="grid3" role="list">
                 <div class="card" role="listitem">
-                    <h3>Talleres de mecanizado</h3>
-                    <p>Acelera el centrado diario y las comprobaciones rápidas sin hojas de cálculo.</p>
+                    <h3>Talleres y ajuste CNC</h3>
+                    <p>Centrado, ajustes y comprobaciones geométricas rápidas sin caminar al PC de la oficina.</p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Prototipos e I+D</h3>
-                    <p>Itera los montajes más rápido y mantén la coherencia de los cálculos de medición entre series.</p>
+                    <h3>Calidad e inspección</h3>
+                    <p>Zona mínima de planeidad y circularidad con convenciones etiquetadas con honestidad — y un informe PNG para adjuntar.</p>
                 </div>
                 <div class="card" role="listitem">
                     <h3>Formación</h3>
-                    <p>Ayuda a los nuevos operarios a entender ajustes, tolerancias y resultados geométricos.</p>
+                    <p>Muéstrale a los operarios nuevos qué recupera realmente la nivelación y cómo es el plano ajustado.</p>
                 </div>
             </div>
         </section>
@@ -294,14 +545,32 @@
             <h2>Preguntas frecuentes</h2>
             <div class="faq">
                 <details>
+                    <summary>¿Puede reemplazar mi macro de Excel de planeidad con Solver?</summary>
+                    <p>Para uso en el taller, sí — la pestaña Geometry resuelve el mismo problema de banda Z mínima con un solver simplex LP en dos fases, en el dispositivo, en menos de un segundo. Reporta el valor de planeidad, el rango inicial, la reducción por nivelación, el plano ajustado y consejos punto por punto. Para documentación de auditoría, exporta los puntos como CSV y procésalos en tus propias herramientas.</p>
+                </details>
+                <details>
+                    <summary>¿Qué número de circularidad reporta — la vieja diferencia de diámetros o la zona mínima?</summary>
+                    <p>Ambos, separados a propósito: la diferencia de diámetros en el centro algebraico (la convención clásica de la hoja de cálculo) y el rango radial de zona mínima (el valor más ajustado, conforme a norma).</p>
+                </details>
+                <details>
+                    <summary>¿Cómo introduzco lecturas de comparador para la circularidad?</summary>
+                    <p>Cambia al modo Comparador, introduce como Ø de referencia el diámetro donde el comparador marca cero, y añade cada lectura con signo. El ajuste de signo del dial corresponde a cómo está montado tu comparador (aguja arriba = radio mayor o menor).</p>
+                </details>
+                <details>
+                    <summary>¿En qué se basan los consejos de nivelación?</summary>
+                    <p>En el plano ajustado de banda mínima. Para cada punto medido muestra la corrección de cuerpo rígido sugerida y el residual previsto tras la corrección — la mejora que puedes esperar solo por calzar o renivelar, antes de mecanizar nada.</p>
+                </details>
+                <details>
+                    <summary>¿Puedo exportar resultados para mis registros de calidad?</summary>
+                    <p>Sí. Un toque genera un PNG de 1200×800 con el gráfico y un panel de resultados resaltado, guardado en Fotos o en la hoja de compartir. Los puntos medidos se exportan como CSV.</p>
+                </details>
+                <details>
                     <summary>¿La app necesita Internet?</summary>
-                    <p>No. Los cálculos principales funcionan sin conexión.</p>
+                    <p>No. Todos los cálculos, gráficos, sesiones guardadas y exportaciones funcionan sin conexión.</p>
                 </details>
                 <details>
                     <summary>¿Recopila algún dato?</summary>
-                    <p>
-                        No se usan SDK de analítica ni de rastreo. Consulta la política completa en la página de <a href="../privacy.html">Privacidad</a>.
-                    </p>
+                    <p>No se usan SDK de analítica ni de rastreo. Consulta la política completa en la página de <a href="../privacy.html">Privacidad</a>.</p>
                 </details>
                 <details>
                     <summary>¿Puedo usarla en iPad?</summary>

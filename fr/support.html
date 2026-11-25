@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CNC Workpiece Calculator — Centrage, ajustements, tolérances et poids (iOS)</title>
-    <meta name="description" content="CNC Workpiece Calculator est un utilitaire iPhone/iPad hors ligne pour le centrage par palpeur (cercle/rectangle/ellipse/rainure), les ajustements arbre-alésage ISO, les tolérances générales et l'estimation du poids des bruts." />
+    <title>CNC Workpiece Calculator — Planéité, circularité, centrage, ajustements &amp; poids (iOS)</title>
+    <meta name="description" content="Planéité et circularité en zone minimale à partir de relevés au comparateur, directement sur votre iPhone — sans Excel, sans Solver. Plus le centrage par palpeur, les ajustements arbre-alésage ISO, les tolérances générales et le poids des bruts. Hors ligne, sans compte." />
+    <meta name="keywords" content="calcul planéité, circularité, zone minimale, comparateur, ronditude, relevé cadran, conseils de nivellement, cnc workpiece calculator, centrage palpeur, ajustements ISO H7 h6, tolérances générales, calculateur poids, app iOS hors ligne, métrologie atelier" />
     <link rel="canonical" href="https://30329277.github.io/fr/support.html" />
     <link rel="alternate" hreflang="en" href="https://30329277.github.io/support.html" />
     <link rel="alternate" hreflang="de" href="https://30329277.github.io/de/support.html" />
@@ -27,14 +28,51 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:title" content="CNC Workpiece Calculator" />
-    <meta property="og:description" content="Aide CNC hors ligne pour le centrage, les ajustements ISO, les tolérances générales et l'estimation du poids — conçu pour iPhone et iPad." />
+    <meta property="og:title" content="CNC Workpiece Calculator — planéité &amp; circularité sans le tableur" />
+    <meta property="og:description" content="Relevés au cadran entrés, zone minimale de planéité et de circularité en sortie — avec conseils de nivellement, graphiques et rapports PNG en un geste. Plus centrage, ajustements ISO, tolérances et poids. Hors ligne, sans compte." />
     <meta property="og:url" content="https://30329277.github.io/fr/support.html" />
     <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="../landing.css" />
     <script src="../i18n.js" defer></script>
+
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -49,11 +87,104 @@
         "price": "0",
         "priceCurrency": "USD"
     },
+    "featureList": [
+        "Minimum-zone flatness from dial readings (single ring, double ring, polar X/Y/Z, rectangular X/Y/Z)",
+        "Per-point rigid-body leveling advice with predicted improvement",
+        "Circularity from diameters, radii, indicator readings or X/Y points",
+        "Algebraic, geometric and minimum-zone circle fitting side by side",
+        "Excel-compatible diameter difference and center correction vector",
+        "Layout, deviation, residual, 3D plane, contour and center charts",
+        "PNG report export (chart + highlighted results) and CSV point export",
+        "Probe-based centering for circle, rectangle, ellipse, slot and double circle",
+        "ISO shaft-hole fit checks",
+        "General size and geometric tolerance references",
+        "Stock weight estimation with material presets",
+        "Metric and imperial units",
+        "Works fully offline"
+    ],
     "url": "https://30329277.github.io/fr/support.html",
-    "description": "CNC Workpiece Calculator est un utilitaire iPhone/iPad hors ligne pour le centrage par palpeur (cercle/rectangle/ellipse/rainure), les ajustements arbre-alésage ISO, les tolérances générales et l'estimation du poids des bruts.",
+    "description": "CNC Workpiece Calculator est un utilitaire iPhone/iPad hors ligne pour usineurs et contrôleurs. L'onglet Geometry calcule la zone minimale de planéité à partir de relevés au comparateur (anneau simple/double, saisie polaire ou rectangulaire) avec des conseils de nivellement point par point, et la circularité à partir de diamètres, rayons, relevés au comparateur ou points X/Y avec des ajustements de cercle algébriques, géométriques et en zone minimale. Il couvre aussi le centrage par palpeur, les ajustements arbre-alésage ISO, les tolérances générales et l'estimation du poids des bruts.",
     "inLanguage": "fr"
 }
     </script>
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Peut-il remplacer ma macro Excel de planéité avec Solver ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pour l'atelier, oui — l'onglet Geometry résout le même problème de bande Z minimale avec un solveur simplexe LP en deux phases, sur l'appareil, en moins d'une seconde. Il reporte la valeur de planéité, la plage initiale, le gain par nivellement, le plan ajusté et les conseils point par point. Pour une documentation d'audit, exportez les points en CSV et traitez-les dans vos propres outils."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Quelle valeur de circularité est reportée — l'ancienne différence de diamètre ou la zone minimale ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Les deux, volontairement séparées : la différence de diamètre au centre algébrique (la convention classique du classeur) et la plage radiale en zone minimale (la valeur plus serrée, conforme aux normes)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Comment saisir les relevés au comparateur pour la circularité ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Passez en mode Comparateur, entrez comme Référence Ø le diamètre où le comparateur indique zéro, puis saisissez chaque relevé signé. Le réglage du signe du cadran correspond au montage de votre comparateur (aiguille en haut = rayon plus grand ou plus petit)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Sur quoi se basent les conseils de nivellement ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sur le plan ajusté en bande minimale. Pour chaque point mesuré, l'app montre la correction de corps rigide proposée et le résidu prévu après correction — le gain attendu du calage ou du re-nivellement seul, avant tout usinage."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Puis-je exporter les résultats pour mes dossiers qualité ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui. Un geste génère un PNG 1200×800 contenant le graphique et un panneau de résultats surligné, enregistré dans Photos ou la feuille de partage. Les points mesurés s'exportent en CSV."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "L'app nécessite-t-elle Internet ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Non. Tous les calculs, graphiques, sessions enregistrées et exports fonctionnent hors ligne."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Collecte-t-elle des données ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aucun SDK d'analyse ou de suivi n'est utilisé. Consultez la politique complète sur la page Confidentialité."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Puis-je l'utiliser sur iPad ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui — l'interface est conçue pour les flux iPhone et iPad."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Où signaler un bug ou demander une fonctionnalité ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Écrivez à wangning.engineer@outlook.com."
+            }
+        }
+    ]
+}
 
 </head>
 
@@ -69,6 +200,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">Geometry</a>
                     <a href="#features">Fonctionnalités</a>
                     <a href="#tutorial">Tutoriel</a>
                     <a href="#faq">FAQ</a>
@@ -81,43 +213,132 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
                     <div class="kicker">
                         <span class="badge">Hors ligne • Sans compte • Sans suivi</span>
-                        <span>Conçu pour le réglage et le contrôle CNC</span>
+                        <span>Nouveau : planéité &amp; circularité au comparateur</span>
                     </div>
-                    <h1>Centrez plus vite. Calculez ajustements et tolérances. Estimez le poids du brut.</h1>
+                    <h1>Planéité et circularité — sans l'aller-retour au tableur.</h1>
                     <p class="lead">
-                        CNC Workpiece Calculator est une boîte à outils pratique iPhone/iPad pour les usineurs : centrage par palpeur sur plusieurs formes, vérification des ajustements arbre/alésage ISO, références de tolérances générales et estimation rapide du poids des matériaux courants.
+                        Le flux de travail classique est connu : noter les relevés au comparateur, retourner au PC du bureau, ouvrir la macro Excel, lancer Solver, recopier les chiffres dans le rapport. CNC Workpiece Calculator 1.0.2 met toute cette boucle dans votre poche — un solveur de zone minimale pour la planéité et un ajusteur de circularité à trois méthodes qui tournent sur l'appareil en moins d'une seconde, aux côtés des outils de centrage, ajustements ISO, tolérances et poids déjà présents.
                     </p>
                     <div class="ctaRow" id="download">
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             Voir sur l'App Store
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">Voir le flux de travail</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">Contacter l'assistance</a>
+                        <a class="btn btnGhost" href="#geometry">Découvrir le nouvel onglet Geometry</a>
+                        <a class="btn btnGhost" href="#tutorial">Guide pas à pas</a>
                     </div>
+                    <p class="heroNote">
+                        Pour le réglage et le contrôle CNC, les ateliers de sous-traitance, les ingénieurs qualité et la formation. Tout tourne hors ligne sur iPhone et iPad — sans compte, sans pub, sans suivi, sans réseau.
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="../assets/cnc-hero-illustration.webp"
-                            alt="Illustration du centrage et de la mesure d'une pièce CNC"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="../assets/cnc-geo-flatness.jpg"
+                        alt="Résultat de planéité avec la valeur clé en surbrillance"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/cnc-geo-circularity.jpg"
+                        alt="Résultat de circularité avec graphique du cercle ajusté"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>Ce que ça vous permet de faire</h2>
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>Geometry <span class="newTag">NOUVEAU DANS 1.0.2</span></h2>
             <p>
-                Réduisez les calculs manuels pendant le réglage et le contrôle. Gardez votre flux de travail fluide grâce à des calculs sur l'appareil, fiables même la machine en marche.
+                La planéité et la circularité sont là où le contrôle devient pénible. La mesure elle-même prend deux minutes au comparateur — c'est le calcul qui tue le travail : un problème de zone Z minimale que personne ne résout à la main, généralement délégué à une macro Excel avec Solver qui vit sur un seul PC, gardée par des verrous de fichiers et des avertissements de macros.
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>Étape</th>
+                            <th>Excel + Solver</th>
+                            <th>CNC Workpiece Calculator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Saisir les relevés</b></td>
+                            <td>Taper dans une grille sur le PC du bureau</td>
+                            <td>Pavé numérique dédié à la machine, iPhone ou iPad</td>
+                        </tr>
+                        <tr>
+                            <td><b>Planéité</b></td>
+                            <td>Lancer Solver et espérer des réglages de convergence corrects</td>
+                            <td>Simplexe LP en deux phases, instantané, avec état de convergence affiché</td>
+                        </tr>
+                        <tr>
+                            <td><b>Nivellement</b></td>
+                            <td>Dériver les cales à la main depuis l'équation du plan</td>
+                            <td>Conseils de nivellement point par point avec gain prévu</td>
+                        </tr>
+                        <tr>
+                            <td><b>Circularité</b></td>
+                            <td>Une convention de classeur, une seule réponse</td>
+                            <td>Ajustements algébrique, géométrique et zone minimale côte à côte</td>
+                        </tr>
+                        <tr>
+                            <td><b>Rapport</b></td>
+                            <td>Capture d'écran du tableur</td>
+                            <td>PNG en un geste (graphique + résultats) ou CSV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-flatness.jpg" alt="Carte de résultat de planéité avec la valeur de zone minimale en surbrillance" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>Planéité, quatre modes de saisie</b> — anneau simple, double anneau (extérieur + intérieur), polaire X/Y/Z ou rectangulaire X/Y/Z. La carte de résultat place la valeur de planéité en premier et en surbrillance, suivie de la plage initiale, du gain apporté par le nivellement, du plan ajusté, de la direction d'inclinaison et des conseils de nivellement point par point.
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-circularity.jpg" alt="Carte de résultat de circularité et graphique du cercle ajusté" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>Circularité, quatre modes de saisie</b> — diamètres mesurés (style ancien classeur), rayons, relevés au comparateur par rapport à un Ø de référence, ou points X/Y bruts. Le graphique central montre chaque point et le cercle ajusté avec le vecteur de correction.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>Trois ajustements de cercle, honnêtement nommés</h3>
+                    <p>
+                        Moindres carrés algébriques, meilleur ajustement géométrique et recherche de zone minimale par Nelder–Mead tournent ensemble. La différence de diamètre compatible Excel et la plage radiale en zone minimale, plus serrée, sont reportées séparément — fini les disputes entre anciennes et nouvelles conventions.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Six vues graphiques</h3>
+                    <p>
+                        Disposition, écart ×10, résidus, plan 3D, contour et zoom centre — basculez en direct pendant la saisie des points. Les points sélectionnés sont surlignés et la vue s'adapte à vos données.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Un export qui colle au flux de travail</h3>
+                    <p>
+                        Un geste génère un PNG 1200×800 avec le graphique et un panneau de résultats, directement dans Photos ou la feuille de partage. Les points s'exportent en CSV. Les sessions enregistrées se rechargent depuis le panneau Plus.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>Tout le reste qu'il fait</h2>
+            <p>
+                L'onglet Geometry rejoint les outils que l'app embarquait déjà — tout hors ligne, tout sur l'appareil.
             </p>
 
             <div class="grid3" role="list">
@@ -134,47 +355,76 @@
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Estimation du poids</h3>
-                    <p>
-                        Estimez le poids des formes courantes (plaque, tube, barre, anneau…) avec préréglages de matériaux, quantités et unités métriques/impériales.
-                    </p>
-                </div>
-                <div class="card" role="listitem">
                     <h3>Tolérances générales</h3>
                     <p>
                         Référence des tolérances dimensionnelles et géométriques (rectitude/planéité, perpendicularité, faux-rond circulaire, etc.) avec des résultats clairs pour l'atelier.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Conçu pour iPhone et iPad</h3>
+                    <h3>Estimation du poids</h3>
                     <p>
-                        Saisies tactiles et outils en onglets pour passer du centrage aux ajustements, au poids ou aux tolérances sans perdre le contexte.
+                        Estimez le poids des formes courantes (plaque, tube, barre, anneau…) avec préréglages de matériaux, quantités et unités métriques/impériales.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Hors ligne par conception</h3>
+                    <h3>Conçu pour les mains gantées</h3>
                     <p>
-                        Sans compte, sans pub, sans SDK de suivi. Les calculs s'exécutent sur l'appareil, même dans les environnements réseau restreints.
+                        Un pavé numérique dédié avec remplacement au premier geste, inversion de signe et défilement auto — plus de lutte contre le clavier système en pleine mesure.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>Hors ligne &amp; privé</h3>
+                    <p>
+                        Sans compte, sans pub, sans SDK de suivi. Les sessions restent sur l'appareil. Ça marche dans les réseaux d'atelier restreints parce que ça n'a jamais besoin de réseau.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>Tutoriel rapide</h2>
-            <p>Quatre flux de travail courants — centrage, ajustements, poids et tolérances.</p>
+            <p>Cinq flux de travail — geometry, centrage, ajustements, poids et tolérances.</p>
 
             <div class="split">
                 <div class="figure">
                     <img
-                        src="../assets/cnc-screenshot-centering.png"
-                        alt="Capture d'écran du flux de centrage"
+                        src="../assets/cnc-geo-flatness-chart.jpg"
+                        alt="Graphique Z Adjust d'une mesure de planéité"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        Capture d'écran : onglet Centrage — ajouter <span class="kbd">assets/cnc-screenshot-centering.png</span>
+                    <div class="figcap">Onglet Geometry, vue Z Adjust — ajouter <span class="kbd">assets/cnc-geo-flatness-chart.jpg</span></div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div><b>Choisissez le mode</b> Planéité : anneau simple, double anneau, polaire X/Y/Z ou rectangulaire X/Y/Z. Circularité : diamètre, rayon, comparateur ou X/Y.</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div><b>Saisissez les relevés</b> Réglez Ø (ou la référence Ø du comparateur), puis ajoutez chaque point — le pavé remplace au premier geste, les corrections sont rapides.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div><b>Touchez Calculer</b> La ligne de résultat surlignée donne la valeur de planéité ou de circularité ; graphiques et conseils de nivellement se mettent à jour instantanément.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div><b>Exportez</b> PNG pour le rapport, CSV pour les archives — ou enregistrez la session et rechargez-la au prochain chantier.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="../assets/cnc-geo-circularity-chart.jpg"
+                        alt="Graphique Center d'une mesure de circularité"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">Onglet Geometry, vue Center — ajouter <span class="kbd">assets/cnc-geo-circularity-chart.jpg</span></div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -272,20 +522,21 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>Pour qui ?</h2>
             <div class="grid3" role="list">
                 <div class="card" role="listitem">
-                    <h3>Ateliers de sous-traitance</h3>
-                    <p>Accélérez le centrage quotidien et les vérifications rapides, sans tableur.</p>
+                    <h3>Ateliers &amp; réglage CNC</h3>
+                    <p>Centrage, ajustements et contrôles géométriques rapides sans retour au PC du bureau.</p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>Prototypage &amp; R&amp;D</h3>
-                    <p>Itérez plus vite sur les montages et gardez les calculs de mesure cohérents d'une série à l'autre.</p>
+                    <h3>Qualité &amp; contrôle</h3>
+                    <p>Zone minimale pour la planéité et la circularité avec des conventions honnêtement nommées — et un rapport PNG à joindre.</p>
                 </div>
                 <div class="card" role="listitem">
                     <h3>Formation</h3>
-                    <p>Aidez les nouveaux opérateurs à comprendre les ajustements, les tolérances et les résultats géométriques.</p>
+                    <p>Montrez aux nouveaux opérateurs ce que le nivellement récupère réellement, et à quoi ressemble le plan ajusté.</p>
                 </div>
             </div>
         </section>
@@ -294,14 +545,32 @@
             <h2>Questions fréquentes</h2>
             <div class="faq">
                 <details>
+                    <summary>Peut-il remplacer ma macro Excel de planéité avec Solver ?</summary>
+                    <p>Pour l'atelier, oui — l'onglet Geometry résout le même problème de bande Z minimale avec un solveur simplexe LP en deux phases, sur l'appareil, en moins d'une seconde. Il reporte la valeur de planéité, la plage initiale, le gain par nivellement, le plan ajusté et les conseils point par point. Pour une documentation d'audit, exportez les points en CSV et traitez-les dans vos propres outils.</p>
+                </details>
+                <details>
+                    <summary>Quelle valeur de circularité est reportée — l'ancienne différence de diamètre ou la zone minimale ?</summary>
+                    <p>Les deux, volontairement séparées : la différence de diamètre au centre algébrique (la convention classique du classeur) et la plage radiale en zone minimale (la valeur plus serrée, conforme aux normes).</p>
+                </details>
+                <details>
+                    <summary>Comment saisir les relevés au comparateur pour la circularité ?</summary>
+                    <p>Passez en mode Comparateur, entrez comme Référence Ø le diamètre où le comparateur indique zéro, puis saisissez chaque relevé signé. Le réglage du signe du cadran correspond au montage de votre comparateur (aiguille en haut = rayon plus grand ou plus petit).</p>
+                </details>
+                <details>
+                    <summary>Sur quoi se basent les conseils de nivellement ?</summary>
+                    <p>Sur le plan ajusté en bande minimale. Pour chaque point mesuré, l'app montre la correction de corps rigide proposée et le résidu prévu après correction — le gain attendu du calage ou du re-nivellement seul, avant tout usinage.</p>
+                </details>
+                <details>
+                    <summary>Puis-je exporter les résultats pour mes dossiers qualité ?</summary>
+                    <p>Oui. Un geste génère un PNG 1200×800 contenant le graphique et un panneau de résultats surligné, enregistré dans Photos ou la feuille de partage. Les points mesurés s'exportent en CSV.</p>
+                </details>
+                <details>
                     <summary>L'app nécessite-t-elle Internet ?</summary>
-                    <p>Non. Les calculs principaux fonctionnent hors ligne.</p>
+                    <p>Non. Tous les calculs, graphiques, sessions enregistrées et exports fonctionnent hors ligne.</p>
                 </details>
                 <details>
                     <summary>Collecte-t-elle des données ?</summary>
-                    <p>
-                        Aucun SDK d'analyse ou de suivi n'est utilisé. Consultez la politique complète sur la page <a href="../privacy.html">Confidentialité</a>.
-                    </p>
+                    <p>Aucun SDK d'analyse ou de suivi n'est utilisé. Consultez la politique complète sur la page <a href="../privacy.html">Confidentialité</a>.</p>
                 </details>
                 <details>
                     <summary>Puis-je l'utiliser sur iPad ?</summary>
@@ -319,7 +588,7 @@
             <p>Prêt à l'utiliser sur le sol de l'atelier ?</p>
             <div class="ctaRow" style="margin-top: 12px">
                 <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
-                    Ouvrir l'App Store
+                    Ouvrir App Store
                 </a>
                 <a class="btn btnGhost" href="../privacy.html">Politique de confidentialité</a>
                 <a class="btn btnGhost" href="../index.html">Autres pages</a>

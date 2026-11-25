@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CNC Workpiece Calculator — التمركز والتجميع والتفاوتات والوزن (iOS)</title>
-    <meta name="description" content="CNC Workpiece Calculator أداة iPhone/iPad دون اتصال للتمركز القائم على المسبار (دائرة/مستطيل/قطع ناقص/مجرى)، وتجميع العمود والفتحة وفق ISO، والتفاوتات العامة، وتقدير وزن المواد الخام." />
+    <title>CNC Workpiece Calculator — السطحية والدائرية والتمركز والتجميع والوزن (iOS)</title>
+    <meta name="description" content="سطحية ودائرية بالمنطقة الدنيا من قراءات مؤشر القياس مباشرة على الآيفون — بلا Excel وبلا Solver. بالإضافة إلى التمركز بالمسبار، وتجميع العمود والفتحة وفق ISO، والتفاوتات العامة، ووزن الخامة. دون اتصال بالكامل وبلا حساب." />
+    <meta name="keywords" content="حاسبة السطحية, الدائرية, المنطقة الدنيا, مؤشر قياس, استدارة, قراءة العداد, نصائح التسوية, cnc workpiece calculator, تمركز بالمسبار, تجميع ISO H7 h6, تفاوتات عامة, حاسبة الوزن, تطبيق iOS دون اتصال, قياس الورشة" />
     <link rel="canonical" href="https://30329277.github.io/ar/support.html" />
     <link rel="alternate" hreflang="en" href="https://30329277.github.io/support.html" />
     <link rel="alternate" hreflang="de" href="https://30329277.github.io/de/support.html" />
@@ -27,14 +28,51 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ar_AR" />
-    <meta property="og:title" content="CNC Workpiece Calculator" />
-    <meta property="og:description" content="مساعد CNC دون اتصال للتمركز وتجميع ISO والتفاوتات العامة وتقدير الوزن — مصمم لآيفون وآيباد." />
+    <meta property="og:title" content="CNC Workpiece Calculator — سطحية ودائرية دون جداول البيانات" />
+    <meta property="og:description" content="قراءات المؤشر دخل، سطحية ودائرية بالمنطقة الدنيا خرج — مع نصائح التسوية ومخططات وتقارير PNG بلمسة واحدة. إضافة إلى التمركز وتجميع ISO والتفاوتات والوزن. دون اتصال وبلا حساب." />
     <meta property="og:url" content="https://30329277.github.io/ar/support.html" />
     <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="../landing.css" />
     <script src="../i18n.js" defer></script>
+
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -49,11 +87,104 @@
         "price": "0",
         "priceCurrency": "USD"
     },
+    "featureList": [
+        "Minimum-zone flatness from dial readings (single ring, double ring, polar X/Y/Z, rectangular X/Y/Z)",
+        "Per-point rigid-body leveling advice with predicted improvement",
+        "Circularity from diameters, radii, indicator readings or X/Y points",
+        "Algebraic, geometric and minimum-zone circle fitting side by side",
+        "Excel-compatible diameter difference and center correction vector",
+        "Layout, deviation, residual, 3D plane, contour and center charts",
+        "PNG report export (chart + highlighted results) and CSV point export",
+        "Probe-based centering for circle, rectangle, ellipse, slot and double circle",
+        "ISO shaft-hole fit checks",
+        "General size and geometric tolerance references",
+        "Stock weight estimation with material presets",
+        "Metric and imperial units",
+        "Works fully offline"
+    ],
     "url": "https://30329277.github.io/ar/support.html",
-    "description": "CNC Workpiece Calculator أداة iPhone/iPad دون اتصال للتمركز القائم على المسبار (دائرة/مستطيل/قطع ناقص/مجرى)، وتجميع العمود والفتحة وفق ISO، والتفاوتات العامة، وتقدير وزن المواد الخام.",
+    "description": "CNC Workpiece Calculator أداة iPhone/iPad دون اتصال للمشغلين والمفتشين. يحسب تبويب Geometry السطحية بالمنطقة الدنيا من قراءات مؤشر القياس (حلقة مفردة/مزدوجة، إدخال قطبي أو مستطيل) مع نصائح تسوية لكل نقطة، والدائرية من الأقطار أو أنصاف الأقطار أو قراءات المؤشر أو نقاط X/Y بمطابقات دائرية جبرية وهندسية وبالمنطقة الدنيا. ويغطي أيضًا التمركز بالمسبار وتجميع ISO والتفاوتات العامة وتقدير الوزن.",
     "inLanguage": "ar"
 }
     </script>
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "هل يمكنه استبدال ماكرو Excel للسطحية مع Solver؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "للاستخدام في الورشة، نعم — يحل تبويب Geometry مسألة النطاق Z الدنيا نفسها بحلّار بسيكس بطورين، على الجهاز، في أقل من ثانية. ويعرض قيمة السطحية والمدى الابتدائي والتحسن بالتسوية والمستوى المطابق ونصائح لكل نقطة. وللتوثيق التدقيقي صدّر النقاط بصيغة CSV وعالجها في أدواتك."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "أي رقم دائرية يعرضه — فرض القطر القديم أم المنطقة الدنيا؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "كلاهما، مفصولان عمدًا: فرض القطر عند المركز الجبري (اتفاقية الجدول الكلاسيكية) والمدى القطري للمنطقة الدنيا (القيمة الأضيق المطابقة للمعايير)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "كيف أدخل قراءات المؤشر للدائرية؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "بدّل إلى وضع المؤشر، وأدخل كمرجع Ø القطر الذي يظهر عنده المؤشر صفرًا، ثم أدخل كل قراءة بإشارتها. ويتوافق ضبط إشارة العداد مع طريقة تركيب مؤشرك (الإبرة للأعلى = نصف قطر أكبر أو أصغر)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "على ماذا تُبنى نصائح التسوية؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "على المستوى المطابق للنطاق الأدنى. لكل نقطة مقاسة تُظهر التطبيق التصحيح الجسمي المقترح والبواقي المتوقعة بعد التصحيح — التحسن المتوقع من الوتد أو إعادة التسوية وحدهما، قبل أي تشغيل."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "هل يمكنني تصدير النتائج لسجلات الجودة؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم. لمسة واحدة تولد PNG بأبعاد 1200×800 يتضمن المخطط ولوحة نتائج مُبرزة، محفوظًا في الصور أو ورقة المشاركة. وتصدر النقاط المقاسة بصيغة CSV."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "هل يحتاج التطبيق إلى الإنترنت؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "لا. تعمل جميع الحسابات والمخططات والجلسات المحفوظة والتصديرات دون اتصال."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "هل يجمع أي بيانات؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "لا تُستخدم أدوات تحليل أو SDK تتبع. راجع السياسة الكاملة في صفحة الخصوصية."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "هل يمكن استخدامه على آيباد؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم — الواجهة مصممة لسير العمل على آيفون وآيباد معًا."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "أين أبلّغ عن خلل أو أطلب ميزة؟",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "راسلنا على wangning.engineer@outlook.com."
+            }
+        }
+    ]
+}
 
 </head>
 
@@ -69,6 +200,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">Geometry</a>
                     <a href="#features">المزايا</a>
                     <a href="#tutorial">التعليمات</a>
                     <a href="#faq">الأسئلة الشائعة</a>
@@ -81,43 +213,132 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
                     <div class="kicker">
                         <span class="badge">دون اتصال • بلا حساب • بلا تتبع</span>
-                        <span>صُمّم للإعداد والفحص في ماكينات CNC</span>
+                        <span>جديد: السطحية والدائرية من قراءات المؤشر</span>
                     </div>
-                    <h1>ركز بسرعة أكبر. احسب التجميع والتفاوتات. قدّر وزن الخامة.</h1>
+                    <h1>السطحية والدائرية — دون العودة إلى جدول البيانات.</h1>
                     <p class="lead">
-                        CNC Workpiece Calculator صندوق أدوات عملي لآيفون/آيباد موجه لعمال التشغيل: تمركز قائم على المسبار لأشكال متعددة، وفحص تجميع العمود/الفتحة وفق ISO، ومراجع التفاوتات العامة، وتقدير سريع للوزن للمواد الشائعة.
+                        سير العمل التقليدي معروف: تدوّن قراءات المؤشر، تعود إلى حاسوب المكتب، تفتح ماكرو Excel، تشغّل Solver، ونسخ الأرقام إلى التقرير. الإصدار 1.0.2 من CNC Workpiece Calculator يضع هذه الدورة كلها في جيبك — حلّار للمنطقة الدنيا للسطحية ومصنّف دائرية ثلاثي يعملان على الجهاز في أقل من ثانية، بجانب أدوات التمركز والتجميع والتفاوتات والوزن الموجودة أصلًا.
                     </p>
                     <div class="ctaRow" id="download">
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             شاهده على App Store
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">شاهد سير العمل</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">اتصل بالدعم</a>
+                        <a class="btn btnGhost" href="#geometry">شاهد تبويب Geometry الجديد</a>
+                        <a class="btn btnGhost" href="#tutorial">دليل خطوة بخطوة</a>
                     </div>
+                    <p class="heroNote">
+                        لإعداد وفحص ماكينات CNC، وورش التشغيل، ومهندسي الجودة، والتدريب. يعمل دون اتصال بالكامل على آيفون وآيباد — بلا حساب وبلا إعلانات وبلا تتبع.
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="../assets/cnc-hero-illustration.webp"
-                            alt="رسم توضيحي لتمركز وقياس قطعة عمل على CNC"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="../assets/cnc-geo-flatness.jpg"
+                        alt="نتيجة السطحية مع إبراز القيمة الرئيسية"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/cnc-geo-circularity.jpg"
+                        alt="نتيجة الدائرية مع مخطط الدائرة المطابقة"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>ما الذي يساعدك على إنجازه</h2>
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>Geometry <span class="newTag">جديد في 1.0.2</span></h2>
             <p>
-                قلّل الحسابات اليدوية أثناء الإعداد والفحص. حافظ على استمرارية سير عملك بحسابات على الجهاز يمكنك الوثوق بها وأنت واقف عند الماكينة.
+                السطحية والدائرية حيث يصبح الفحص مؤلمًا. القياس نفسه يستغرق دقيقتين بمؤشر القياس — لكن الحساب هو ما يقتل المهمة: مسألة النطاق Z الدنيا التي لا يحلها أحد يدويًا، وتُوكَل عادة إلى ماكرو Excel مع Solver يعيش على حاسوب واحد، محروسًا بأقفال الملفات وتحذيرات الماكرو.
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>الخطوة</th>
+                            <th>Excel + Solver</th>
+                            <th>CNC Workpiece Calculator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>إدخال القراءات</b></td>
+                            <td>الكتابة في شبكة على حاسوب المكتب</td>
+                            <td>لوحة أرقام مخصصة عند الماكينة، آيفون أو آيباد</td>
+                        </tr>
+                        <tr>
+                            <td><b>السطحية</b></td>
+                            <td>تشغيل Solver والأمل في صحة إعدادات التقارب</td>
+                            <td>برمجة خطية بسيكسية بطورين، فورية، مع حالة التقارب ظاهرة</td>
+                        </tr>
+                        <tr>
+                            <td><b>التسوية</b></td>
+                            <td>اشتقاق الأوتاد يدويًا من معادلة المستوى</td>
+                            <td>نصائح تسوية لكل نقطة مع التحسن المتوقع</td>
+                        </tr>
+                        <tr>
+                            <td><b>الدائرية</b></td>
+                            <td>اتفاقية جدول واحدة، إجابة واحدة</td>
+                            <td>مطابقات جبرية وهندسية وبالمنطقة الدنيا جنبًا إلى جنب</td>
+                        </tr>
+                        <tr>
+                            <td><b>التقرير</b></td>
+                            <td>لقطة شاشة للجدول</td>
+                            <td>PNG بلمسة واحدة (مخطط + نتائج) أو CSV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-flatness.jpg" alt="بطاقة نتيجة السطحية مع إبراز قيمة النطاق الأدنى" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>السطحية، أربعة أوضاع إدخال</b> — حلقة مفردة، حلقة مزدوجة (خارجية + داخلية)، قطبية X/Y/Z أو مستطيلة X/Y/Z. تضع بطاقة النتيجة قيمة السطحية أولًا وبإبراز، تليها المدى الابتدائي، ومقدار التحسّن بالتسوية، والمستوى المطابق، واتجاه الميل، ونصائح التسوية لكل نقطة.
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-circularity.jpg" alt="بطاقة نتيجة الدائرية ومخطط الدائرة المطابقة" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>الدائرية، أربعة أوضاع إدخال</b> — أقطار مقاسة (بأسلوب الجدول القديم)، أو أنصاف أقطار، أو قراءات مؤشر مقابل Ø مرجعي، أو نقاط X/Y خام. يظهر المخطط المركزي كل نقطة والدائرة المطابقة مع متجه التصحيح.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>ثلاث مطابقات دائرية، مسماة بصدق</h3>
+                    <p>
+                        المربعات الصغرى الجبرية، وأفضل مطابقة هندسية، وبحث المنطقة الدنيا بـ Nelder–Mead تعمل معًا. يُعرض فرض القطر المتوافق مع Excel والمدى القطري الأضيق للمنطقة الدنيا منفصلين — لا جدال بعد بين الاتفاقيات القديمة والجديدة.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>ستة مخططات عرض</h3>
+                    <p>
+                        التخطيط، الانحراف ×10، البواقي، المستوى ثلاثي الأبعاد، الكنتور، وتكبير المركز — بدّل مباشرة مع دخول النقاط. تُبرز النقاط المحددة، والمخطط يضبط مقياسه نفسه على بياناتك.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>تصدير يناسب سير العمل</h3>
+                    <p>
+                        لمسة واحدة تولد PNG بأبعاد 1200×800 يتضمن المخطط ولوحة النتائج، مباشرة إلى الصور أو ورقة المشاركة. تصدر النقاط بصيغة CSV. وتُعاد الجلسات المحفوظة من لوحة المزيد.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>كل ما يفعله غير ذلك</h2>
+            <p>
+                انضم تبويب Geometry إلى الأدوات التي جاء بها التطبيق سلفًا — كلها دون اتصال، وكلها على الجهاز.
             </p>
 
             <div class="grid3" role="list">
@@ -134,47 +355,76 @@
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>تقدير الوزن</h3>
-                    <p>
-                        قدّر وزن الأشكال الشائعة (لوح، أنبوب، قضيب، حلقة…) مع إعدادات مواد جاهزة وكميات ووحدات مترية/إمبراطورية.
-                    </p>
-                </div>
-                <div class="card" role="listitem">
                     <h3>التفاوتات العامة</h3>
                     <p>
                         مرجع تفاوتات الأبعاد والهندسة (الاستقامة/السطحية، التعامد، الانحراف الدائري وغيرها) بنتائج واضحة للاستخدام في الورشة.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>مصمم لآيفون وآيباد</h3>
+                    <h3>تقدير الوزن</h3>
                     <p>
-                        إدخال مناسب للمس وأدوات بتبويبات تتيح الانتقال بين التمركز والتجميع والوزن والتفاوتات دون فقدان السياق.
+                        قدّر وزن الأشكال الشائعة (لوح، أنبوب، قضيب، حلقة…) مع إعدادات مواد جاهزة وكميات ووحدات مترية/إمبراطورية.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>دون اتصال بالتصميم</h3>
+                    <h3>مصمم لليد بالقفازات</h3>
                     <p>
-                        بلا حساب وبلا إعلانات وبلا SDK تتبع. تُنفَّذ الحسابات على الجهاز لتحتى تعمل في بيئات الشبكات المقيدة.
+                        لوحة أرقام مخصصة مع الاستبدال عند أول لمسة، وتبديل الإشارة، والتمرير التلقائي — لا صراع مع لوحة النظام في منتصف القياس.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>دون اتصال وخاص</h3>
+                    <p>
+                        بلا حساب وبلا إعلانات وبلا SDK تتبع. تبقى الجلسات على الجهاز. ويعمل في شبكات الورش المقيدة لأنه لا يحتاج شبكة أصلًا.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>تعليمات سريعة</h2>
-            <p>أربعة سير عمل شائعة — التمركز والتجميع والوزن والتفاوتات.</p>
+            <p>خمسة سير عمل — الهندسة والتمركز والتجميع والوزن والتفاوتات.</p>
 
             <div class="split">
                 <div class="figure">
                     <img
-                        src="../assets/cnc-screenshot-centering.png"
-                        alt="لقطة شاشة لسير عمل التمركز"
+                        src="../assets/cnc-geo-flatness-chart.jpg"
+                        alt="مخطط Z Adjust لقياس السطحية"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        لقطة شاشة: تبويب التمركز — أضف <span class="kbd">assets/cnc-screenshot-centering.png</span>
+                    <div class="figcap">تبويب Geometry، عرض Z Adjust — أضف <span class="kbd">assets/cnc-geo-flatness-chart.jpg</span></div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div><b>اختر الوضع</b> السطحية: حلقة مفردة، حلقة مزدوجة، قطبية X/Y/Z أو مستطيلة X/Y/Z. الدائرية: قطر، نصف قطر، مؤشر أو X/Y.</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div><b>أدخل القراءات</b> اضبط Ø (أو المرجع Ø للمؤشر)، ثم أضف كل نقطة — تستبدل اللوحة عند أول لمسة فالتصحيح سريع.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div><b>المس احسب</b> يعطي سطر النتيجة المُبرز قيمة السطحية أو الدائرية؛ وتتحدث المخططات ونصائح التسوية فورًا.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div><b>صدّر</b> PNG للتقرير، وCSV للسجلات — أو احفظ الجلسة وأعدها في المهمة التالية.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="../assets/cnc-geo-circularity-chart.jpg"
+                        alt="مخطط Center لقياس الدائرية"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">تبويب Geometry، عرض Center — أضف <span class="kbd">assets/cnc-geo-circularity-chart.jpg</span></div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -272,20 +522,21 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>لمن هذا التطبيق؟</h2>
             <div class="grid3" role="list">
                 <div class="card" role="listitem">
-                    <h3>ورش التشغيل</h3>
-                    <p>سارّع التمركز اليومي والفحوص السريعة دون جداول بيانات.</p>
+                    <h3>ورش التشغيل وإعداد CNC</h3>
+                    <p>تمركز وتجميع وفحوص هندسية سريعة دون العودة إلى حاسوب المكتب.</p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>النماذج الأولية والبحث والتطوير</h3>
-                    <p>كرّر الإعدادات بسرعة أكبر وحافظ على اتساق حسابات القياس عبر الجولات.</p>
+                    <h3>الجودة والفحص</h3>
+                    <p>منطقة دنيا للسطحية والدائرية باتفاقيات مسماة بصدق — وتقرير PNG للإرفاق.</p>
                 </div>
                 <div class="card" role="listitem">
                     <h3>التدريب</h3>
-                    <p>ساعد المشغلين الجدد على فهم التجميع والتفاوتات والنتائج الهندسية.</p>
+                    <p>أرِ للمشغلين الجدد ما تستعيده التسوية فعلًا، وكيف يبدو المستوى المطابق.</p>
                 </div>
             </div>
         </section>
@@ -294,14 +545,32 @@
             <h2>الأسئلة الشائعة</h2>
             <div class="faq">
                 <details>
+                    <summary>هل يمكنه استبدال ماكرو Excel للسطحية مع Solver؟</summary>
+                    <p>للاستخدام في الورشة، نعم — يحل تبويب Geometry مسألة النطاق Z الدنيا نفسها بحلّار بسيكس بطورين، على الجهاز، في أقل من ثانية. ويعرض قيمة السطحية والمدى الابتدائي والتحسن بالتسوية والمستوى المطابق ونصائح لكل نقطة. وللتوثيق التدقيقي صدّر النقاط بصيغة CSV وعالجها في أدواتك.</p>
+                </details>
+                <details>
+                    <summary>أي رقم دائرية يعرضه — فرض القطر القديم أم المنطقة الدنيا؟</summary>
+                    <p>كلاهما، مفصولان عمدًا: فرض القطر عند المركز الجبري (اتفاقية الجدول الكلاسيكية) والمدى القطري للمنطقة الدنيا (القيمة الأضيق المطابقة للمعايير).</p>
+                </details>
+                <details>
+                    <summary>كيف أدخل قراءات المؤشر للدائرية؟</summary>
+                    <p>بدّل إلى وضع المؤشر، وأدخل كمرجع Ø القطر الذي يظهر عنده المؤشر صفرًا، ثم أدخل كل قراءة بإشارتها. ويتوافق ضبط إشارة العداد مع طريقة تركيب مؤشرك (الإبرة للأعلى = نصف قطر أكبر أو أصغر).</p>
+                </details>
+                <details>
+                    <summary>على ماذا تُبنى نصائح التسوية؟</summary>
+                    <p>على المستوى المطابق للنطاق الأدنى. لكل نقطة مقاسة تُظهر التطبيق التصحيح الجسمي المقترح والبواقي المتوقعة بعد التصحيح — التحسن المتوقع من الوتد أو إعادة التسوية وحدهما، قبل أي تشغيل.</p>
+                </details>
+                <details>
+                    <summary>هل يمكنني تصدير النتائج لسجلات الجودة؟</summary>
+                    <p>نعم. لمسة واحدة تولد PNG بأبعاد 1200×800 يتضمن المخطط ولوحة نتائج مُبرزة، محفوظًا في الصور أو ورقة المشاركة. وتصدر النقاط المقاسة بصيغة CSV.</p>
+                </details>
+                <details>
                     <summary>هل يحتاج التطبيق إلى الإنترنت؟</summary>
-                    <p>لا. تعمل الحسابات الأساسية دون اتصال.</p>
+                    <p>لا. تعمل جميع الحسابات والمخططات والجلسات المحفوظة والتصديرات دون اتصال.</p>
                 </details>
                 <details>
                     <summary>هل يجمع أي بيانات؟</summary>
-                    <p>
-                        لا تُستخدم أدوات تحليل أو SDK تتبع. راجع السياسة الكاملة في صفحة <a href="../privacy.html">الخصوصية</a>.
-                    </p>
+                    <p>لا تُستخدم أدوات تحليل أو SDK تتبع. راجع السياسة الكاملة في صفحة <a href="../privacy.html">الخصوصية</a>.</p>
                 </details>
                 <details>
                     <summary>هل يمكن استخدامه على آيباد؟</summary>

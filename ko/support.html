@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CNC Workpiece Calculator — 중심축 찾기, 끼워맞춤, 공차, 무게 (iOS)</title>
-    <meta name="description" content="CNC Workpiece Calculator는 프로브 기반 중심축 찾기(원/사각형/타원/슬롯), ISO 축-구멍 끼워맞춤, 일반 공차, 소재 무게 추정을 지원하는 오프라인 iPhone/iPad 유틸리티입니다." />
+    <title>CNC Workpiece Calculator — 평면도·원도·중심축 찾기·끼워맞춤·무게 (iOS)</title>
+    <meta name="description" content="다이얼 게이지 값으로 최소영역 평면도·원도를 iPhone에서 바로 계산 — Excel도 Solver도 없이. 프로브 기반 중심축 찾기, ISO 축-구멍 끼워맞춤, 일반 공차, 소재 무게까지 지원. 완전 오프라인, 계정 불필요." />
+    <meta name="keywords" content="평면도 계산, 원도, 최소영역, 다이얼 게이지, 진원도, 다이얼 값, 수평 조정 조언, cnc workpiece calculator, 프로브 중심축 찾기, ISO 끼워맞춤 H7 h6, 일반 공차, 무게 계산, 오프라인 iOS 앱, 현장 계측" />
     <link rel="canonical" href="https://30329277.github.io/ko/support.html" />
     <link rel="alternate" hreflang="en" href="https://30329277.github.io/support.html" />
     <link rel="alternate" hreflang="de" href="https://30329277.github.io/de/support.html" />
@@ -27,14 +28,51 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ko_KR" />
-    <meta property="og:title" content="CNC Workpiece Calculator" />
-    <meta property="og:description" content="중심축 찾기, ISO 끼워맞춤, 일반 공차, 무게 추정을 위한 오프라인 CNC 보조 도구 — iPhone과 iPad 지원." />
+    <meta property="og:title" content="CNC Workpiece Calculator — 스프레드시트 없는 평면도·원도" />
+    <meta property="og:description" content="다이얼 게이지 값을 넣으면 최소영역 평면도·원도와 수평 조정 조언, 차트, 원탭 PNG 보고서가 나옵니다. 중심축 찾기·ISO 끼워맞춤·공차·무게까지. 오프라인, 계정 불필요." />
     <meta property="og:url" content="https://30329277.github.io/ko/support.html" />
     <meta property="og:image" content="https://30329277.github.io/assets/cnc-hero-illustration.webp" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="../landing.css" />
     <script src="../i18n.js" defer></script>
+
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -49,11 +87,104 @@
         "price": "0",
         "priceCurrency": "USD"
     },
+    "featureList": [
+        "Minimum-zone flatness from dial readings (single ring, double ring, polar X/Y/Z, rectangular X/Y/Z)",
+        "Per-point rigid-body leveling advice with predicted improvement",
+        "Circularity from diameters, radii, indicator readings or X/Y points",
+        "Algebraic, geometric and minimum-zone circle fitting side by side",
+        "Excel-compatible diameter difference and center correction vector",
+        "Layout, deviation, residual, 3D plane, contour and center charts",
+        "PNG report export (chart + highlighted results) and CSV point export",
+        "Probe-based centering for circle, rectangle, ellipse, slot and double circle",
+        "ISO shaft-hole fit checks",
+        "General size and geometric tolerance references",
+        "Stock weight estimation with material presets",
+        "Metric and imperial units",
+        "Works fully offline"
+    ],
     "url": "https://30329277.github.io/ko/support.html",
-    "description": "CNC Workpiece Calculator는 프로브 기반 중심축 찾기(원/사각형/타원/슬롯), ISO 축-구멍 끼워맞춤, 일반 공차, 소재 무게 추정을 지원하는 오프라인 iPhone/iPad 유틸리티입니다.",
+    "description": "CNC Workpiece Calculator는 기계공과 검사자를 위한 오프라인 iPhone/iPad 유틸리티입니다. Geometry 탭은 다이얼 게이지 값(단일 링/이중 링, 극좌표 또는 직교좌표 입력)으로 최소영역 평면도를 점별 수평 조정 조언과 함께 계산하고, 원도는 직경·반경·다이얼 게이지 값·X/Y 좌표에서 대수·기하·최소영역 원 피팅으로 구합니다. 프로브 기반 중심축 찾기, ISO 축-구멍 끼워맞춤, 일반 공차, 소재 무게 추정도 지원합니다.",
     "inLanguage": "ko"
 }
     </script>
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Excel Solver 매크로를 대체할 수 있나요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "현장 사용 기준으로는, 네 — Geometry 탭은 같은 최소 Z 밴드 문제를 2단계 심플렉스 LP 솔버로 기기에서 1초 이내에 풉니다. 평면도 값, 초기 범위, 수평 조정 감소량, 피팅된 평면, 점별 조언을 표시합니다. 감사용 문서화에는 점을 CSV로 내보내 자체 도구에서 처리하면 됩니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "원도는 어떤 값을 표시하나요 — 기존 직경 차입니까 최소영역입니까?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "둘 다, 의도적으로 분리해서 표시합니다. 대수 피팅 중심의 직경 차(기존 워크북 관례)와 더 타이트한 규격 준수 최소영역 반경 범위입니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "원도의 다이얼 게이지 값은 어떻게 입력하나요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Indicator 모드로 전환하고, 게이지가 0을 가리키는 직경을 Ø 기준으로 입력한 뒤 부호가 있는 값을 입력합니다. 다이얼 부호 설정은 게이지 장착 방향(바늘 위 = 반경 크게/작게)에 대응합니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "수평 조정 조언은 무엇에 근거합니까?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "피팅된 최소 밴드 평면입니다. 각 측정점에 대해 제안되는 강체 보정과 보정 후 예상 잔차를 표시합니다 — 가공 전에 심기나 재수평만으로 얻을 수 있는 개선량입니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "품질 기록용으로 결과를 내보낼 수 있나요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네. 원탭으로 차트와 강조 결과 패널이 담긴 1200×800 PNG를 사진이나 공유 시트에 저장합니다. 측정점은 CSV로 내보낼 수 있습니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "인터넷이 필요한가요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "아니요. 계산·차트·세션 저장·내보내기 모두 오프라인에서 작동합니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "데이터를 수집하나요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "개발자 분석이나 추적 SDK를 사용하지 않습니다. 전체 정책은 개인정보 페이지를 확인하세요."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "iPad에서 사용할 수 있나요?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네 — UI는 iPhone과 iPad 작업 흐름 모두를 위해 설계되었습니다."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "버그 제보나 기능 요청은 어디로?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "wangning.engineer@outlook.com로 이메일을 보내 주세요."
+            }
+        }
+    ]
+}
 
 </head>
 
@@ -69,6 +200,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">Geometry</a>
                     <a href="#features">기능</a>
                     <a href="#tutorial">튜토리얼</a>
                     <a href="#faq">자주 묻는 질문</a>
@@ -81,43 +213,132 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
                     <div class="kicker">
                         <span class="badge">오프라인 • 계정 불필요 • 추적 없음</span>
-                        <span>CNC 셋업과 검사를 위해 만들었습니다</span>
+                        <span>신규: 다이얼 게이지 값으로 평면도·원도</span>
                     </div>
-                    <h1>더 빠른 중심축 찾기. 끼워맞춤과 공차 계산. 소재 무게 추정.</h1>
+                    <h1>평면도와 원도 — 스프레드시트로의 왕복 없이.</h1>
                     <p class="lead">
-                        CNC Workpiece Calculator는 기계공을 위한 실용적인 iPhone/iPad 툴박스입니다. 여러 형상의 프로브 기반 중심축 찾기, ISO 방식의 축/구멍 끼워맞춤 확인, 일반 공차 참조, 대표 재질의 빠른 무게 추정을 하나로 담았습니다.
+                        익숙한 전통적인 흐름입니다. 다이얼 게이지 값을 적고, 사무실 PC로 돌아가고, Excel 매크로를 열고, Solver를 돌리고, 숫자를 보고서에 옮기는 것. CNC Workpiece Calculator 1.0.2는 이 전체 고리를 주머니에 넣었습니다 — 1초 안에 기기에서 끝나는 최소영역 평면도 솔버와 3방식 원도 피터를, 기존의 중심축 찾기·ISO 끼워맞춤·공차·무게 도구와 함께 담았습니다.
                     </p>
                     <div class="ctaRow" id="download">
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             App Store에서 보기
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">작업 흐름 보기</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">지원팀에 문의</a>
+                        <a class="btn btnGhost" href="#geometry">새 Geometry 탭 보기</a>
+                        <a class="btn btnGhost" href="#tutorial">단계별 가이드</a>
                     </div>
+                    <p class="heroNote">
+                        CNC 셋업과 검사, 수주 가공 공장, 품질 엔지니어, 교육 훈련을 위해. 모든 기능이 iPhone과 iPad에서 오프라인으로 동작합니다 — 계정·광고·추적·네트워크 모두 불필요.
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="../assets/cnc-hero-illustration.webp"
-                            alt="CNC 공작물 중심축 찾기와 측정 삽화"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="../assets/cnc-geo-flatness.jpg"
+                        alt="핵심 값이 강조된 평면도 결과 화면"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="../assets/cnc-geo-circularity.jpg"
+                        alt="피팅된 원 차트가 있는 원도 결과 화면"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
-        <section id="features" class="section">
-            <h2>할 수 있는 일</h2>
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>Geometry <span class="newTag">1.0.2 신규</span></h2>
             <p>
-                셋업과 검사 중 수작업 계산을 줄여 줍니다. 기계 앞에 서서도 신뢰할 수 있는 기기 내 계산으로 작업 흐름을 멈추지 마세요.
+                검사에서 고생하는 부분이 바로 평면도와 원도입니다. 측정 자체는 다이얼 게이지로 2분 — 문제는 계산입니다. 아무도 손으로 풀지 않는 최소 Z 밴드 문제는 보통 한 대의 PC에만 사는 Excel 매크로+Solver에 맡겨지고, 파일 잠금과 매크로 경고가 지키고 있습니다.
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>단계</th>
+                            <th>Excel + Solver</th>
+                            <th>CNC Workpiece Calculator</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>측정값 입력</b></td>
+                            <td>사무실 PC의 격자에 타이핑</td>
+                            <td>기계 옆에서 바로, iPhone/iPad 전용 숫자 키패드</td>
+                        </tr>
+                        <tr>
+                            <td><b>평면도</b></td>
+                            <td>Solver를 돌리고 수렴 설정을 기도</td>
+                            <td>2단계 심플렉스 LP, 즉시, 수렴 상태 표시</td>
+                        </tr>
+                        <tr>
+                            <td><b>수평 조정</b></td>
+                            <td>평면 방정식에서 심 값을 손으로 유도</td>
+                            <td>점별 수평 조정 조언과 예상 개선량</td>
+                        </tr>
+                        <tr>
+                            <td><b>원도</b></td>
+                            <td>워크북 관례 하나, 답 하나</td>
+                            <td>대수·기하·최소영역 피팅을 나란히</td>
+                        </tr>
+                        <tr>
+                            <td><b>보고서</b></td>
+                            <td>스프레드시트 캡처</td>
+                            <td>원탭 PNG(차트 + 결과) 또는 CSV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-flatness.jpg" alt="최소 Z 밴드 값이 강조된 평면도 결과 카드" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>평면도, 4가지 입력 모드</b> — 단일 링, 이중 링(외측 + 내측), 극좌표 X/Y/Z, 직교좌표 X/Y/Z. 결과 카드는 평면도 값을 맨 앞에 강조해서 보여 주고, 초기 범위, 수평 조정으로 회복되는 양, 피팅된 평면, 기울기 방향, 점별 수평 조정 조언이 이어집니다.
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="../assets/cnc-geo-circularity.jpg" alt="원도 결과 카드와 피팅된 원 차트" loading="lazy" />
+                    <figcaption class="figcap">
+                        <b>원도, 4가지 입력 모드</b> — 실측 직경(기존 워크북 방식), 반경, Ø 기준에 대한 다이얼 게이지 값, raw X/Y 좌표. Center 뷰는 모든 점과 피팅된 원, 보정 벡터를 보여 줍니다.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>세 가지 원 피팅, 정직하게 표기</h3>
+                    <p>
+                        대수 최소제곱, 기하 최적 피팅, Nelder–Mead 최소영역 탐색이 함께 실행됩니다. Excel 호환 직경 차와 더 타이트한 최소영역 반경 범위를 따로 표기 — 옛 관례와 새 관례 사이의 말다툼은 끝입니다.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>6가지 차트 뷰</h3>
+                    <p>
+                        배치, 편차 ×10, 잔차, 3D 평면, 컨투어, 센터 줌 — 점이 입력되는 동안 실시간 전환. 선택한 점이 강조되고 뷰는 데이터에 맞춰 자동 스케일됩니다.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>작업 흐름에 맞는 내보내기</h3>
+                    <p>
+                        원탭으로 차트와 결과 패널이 담긴 1200×800 PNG를 사진이나 공유 시트로 바로. 점은 CSV로 내보내고, 저장한 세션은 더 보기 패널에서 다시 불러옵니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section id="features" class="section">
+            <h2>나머지 기능들</h2>
+            <p>
+                Geometry 탭이 앱이 원래 갖춘 도구들에 합류했습니다 — 모두 오프라인, 모두 기기 안에서.
             </p>
 
             <div class="grid3" role="list">
@@ -134,47 +355,76 @@
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>무게 추정</h3>
-                    <p>
-                        일반적인 형상(판재, 관, 바, 링 등)의 무게를 재질 프리셋, 수량, 미터법/야드파운드법으로 추정합니다.
-                    </p>
-                </div>
-                <div class="card" role="listitem">
                     <h3>일반 공차</h3>
                     <p>
                         치수 및 기하 공차(직진도/평면도, 수직도, 원형 흔들림 등)를 참조하고 현장에서 바로 쓸 수 있는 명확한 결과를 제공합니다.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>iPhone과 iPad 지원</h3>
+                    <h3>무게 추정</h3>
                     <p>
-                        터치에 최적화된 입력과 탭 기반 도구로 중심축 찾기, 끼워맞춤, 무게, 공차 사이를 맥락을 잃지 않고 전환할 수 있습니다.
+                        일반적인 형상(판재, 관, 바, 링 등)의 무게를 재질 프리셋, 수량, 미터법/야드파운드법으로 추정합니다.
                     </p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>설계부터 오프라인</h3>
+                    <h3>장갑 낀 손에 최적화</h3>
                     <p>
-                        계정도 광고도 추적 SDK도 없습니다. 계산은 기기에서 실행되므로 네트워크가 제한된 환경에서도 작업할 수 있습니다.
+                        첫 탭에서 값이 대체되는 전용 숫자 키패드, 부호 전환, 자동 스크롤 — 측정 중에 시스템 키보드와 싸우지 않습니다.
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>오프라인 &amp; 프라이빗</h3>
+                    <p>
+                        계정도 광고도 추적 SDK도 없습니다. 세션은 기기에 저장됩니다. 네트워크를 전혀 쓰지 않으므로 제한된 공장 네트워크에서도 작동합니다.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>빠른 튜토리얼</h2>
-            <p>네 가지 대표 작업 흐름 — 중심축 찾기, 끼워맞춤, 무게, 공차.</p>
+            <p>다섯 가지 작업 흐름 — Geometry, 중심축 찾기, 끼워맞춤, 무게, 공차.</p>
 
             <div class="split">
                 <div class="figure">
                     <img
-                        src="../assets/cnc-screenshot-centering.png"
-                        alt="중심축 찾기 작업 화면 스크린샷"
+                        src="../assets/cnc-geo-flatness-chart.jpg"
+                        alt="평면도 측정의 Z Adjust 차트"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        스크린샷: 중심축 찾기 탭 — <span class="kbd">assets/cnc-screenshot-centering.png</span> 추가
+                    <div class="figcap">Geometry 탭, Z Adjust 뷰 — <span class="kbd">assets/cnc-geo-flatness-chart.jpg</span> 추가</div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div><b>모드 선택</b> 평면도: 단일 링, 이중 링, 극좌표 X/Y/Z, 직교좌표 X/Y/Z. 원도: 직경, 반경, 다이얼 게이지, X/Y.</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div><b>측정값 입력</b> Ø(또는 다이얼 게이지의 Ø 기준)를 설정하고 점을 하나씩 추가 — 키패드는 첫 탭에서 대체되므로 수정이 빠릅니다.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div><b>계산 탭하기</b> 강조된 결과 행에 평면도·원도 값이 표시되고, 차트와 수평 조정 조언이 즉시 갱신됩니다.</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div><b>내보내기</b> 보고서는 PNG, 기록은 CSV — 세션을 저장했다가 다음 작업에서 다시 불러올 수도 있습니다.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="../assets/cnc-geo-circularity-chart.jpg"
+                        alt="원도 측정의 Center 줌 차트"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">Geometry 탭, Center 뷰 — <span class="kbd">assets/cnc-geo-circularity-chart.jpg</span> 추가</div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -272,20 +522,21 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>이런 분께</h2>
             <div class="grid3" role="list">
                 <div class="card" role="listitem">
-                    <h3>수주 가공 공장</h3>
-                    <p>스프레드시트 없이 일상적인 중심축 찾기와 빠른 검사를 가속화합니다.</p>
+                    <h3>공장 &amp; CNC 셋업</h3>
+                    <p>사무실 PC까지 갈 필요 없이, 중심축 찾기·끼워맞춤·기하 확인을 빠르게.</p>
                 </div>
                 <div class="card" role="listitem">
-                    <h3>시제품 및 연구개발</h3>
-                    <p>셋업 반복을 더 빠르게 하고 측정 계산을 로트 간에 일관되게 유지합니다.</p>
+                    <h3>품질 &amp; 검사</h3>
+                    <p>관례를 정직하게 표기한 최소영역 평면도·원도 — 첨부할 PNG 보고서까지.</p>
                 </div>
                 <div class="card" role="listitem">
                     <h3>교육 훈련</h3>
-                    <p>새로운 작업자가 끼워맞춤, 공차, 기하 결과를 이해하도록 돕습니다.</p>
+                    <p>수평 조정이 실제로 무엇을 회복하는지, 피팅된 평면이 어떻게 보이는지 새 작업자에게 보여 줍니다.</p>
                 </div>
             </div>
         </section>
@@ -294,14 +545,32 @@
             <h2>자주 묻는 질문</h2>
             <div class="faq">
                 <details>
+                    <summary>Excel Solver 매크로를 대체할 수 있나요?</summary>
+                    <p>현장 사용 기준으로는, 네 — Geometry 탭은 같은 최소 Z 밴드 문제를 2단계 심플렉스 LP 솔버로 기기에서 1초 이내에 풉니다. 평면도 값, 초기 범위, 수평 조정 감소량, 피팅된 평면, 점별 조언을 표시합니다. 감사용 문서화에는 점을 CSV로 내보내 자체 도구에서 처리하면 됩니다.</p>
+                </details>
+                <details>
+                    <summary>원도는 어떤 값을 표시하나요 — 기존 직경 차입니까 최소영역입니까?</summary>
+                    <p>둘 다, 의도적으로 분리해서 표시합니다. 대수 피팅 중심의 직경 차(기존 워크북 관례)와 더 타이트한 규격 준수 최소영역 반경 범위입니다.</p>
+                </details>
+                <details>
+                    <summary>원도의 다이얼 게이지 값은 어떻게 입력하나요?</summary>
+                    <p>Indicator 모드로 전환하고, 게이지가 0을 가리키는 직경을 Ø 기준으로 입력한 뒤 부호가 있는 값을 입력합니다. 다이얼 부호 설정은 게이지 장착 방향(바늘 위 = 반경 크게/작게)에 대응합니다.</p>
+                </details>
+                <details>
+                    <summary>수평 조정 조언은 무엇에 근거합니까?</summary>
+                    <p>피팅된 최소 밴드 평면입니다. 각 측정점에 대해 제안되는 강체 보정과 보정 후 예상 잔차를 표시합니다 — 가공 전에 심기나 재수평만으로 얻을 수 있는 개선량입니다.</p>
+                </details>
+                <details>
+                    <summary>품질 기록용으로 결과를 내보낼 수 있나요?</summary>
+                    <p>네. 원탭으로 차트와 강조 결과 패널이 담긴 1200×800 PNG를 사진이나 공유 시트에 저장합니다. 측정점은 CSV로 내보낼 수 있습니다.</p>
+                </details>
+                <details>
                     <summary>인터넷이 필요한가요?</summary>
-                    <p>아니요. 핵심 계산은 오프라인에서 작동합니다.</p>
+                    <p>아니요. 계산·차트·세션 저장·내보내기 모두 오프라인에서 작동합니다.</p>
                 </details>
                 <details>
                     <summary>데이터를 수집하나요?</summary>
-                    <p>
-                        개발자 분석이나 추적 SDK를 사용하지 않습니다. 전체 정책은 <a href="../privacy.html">개인정보</a> 페이지를 확인하세요.
-                    </p>
+                    <p>개발자 분석이나 추적 SDK를 사용하지 않습니다. 전체 정책은 <a href="../privacy.html">개인정보</a> 페이지를 확인하세요.</p>
                 </details>
                 <details>
                     <summary>iPad에서 사용할 수 있나요?</summary>

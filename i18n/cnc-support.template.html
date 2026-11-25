@@ -7,6 +7,7 @@
 
     <title>{{title}}</title>
     <meta name="description" content="{{description}}" />
+    <meta name="keywords" content="{{keywords}}" />
     <link rel="canonical" href="{{canonical}}" />
 {{hreflang_tags}}
 
@@ -29,9 +30,47 @@
     <link rel="stylesheet" href="{{base}}landing.css" />
     <script src="{{base}}i18n.js" defer></script>
 
+    <style>
+        .cmpTable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .cmpTable th,
+        .cmpTable td {
+            border: 1px solid var(--border);
+            padding: 9px 11px;
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.5;
+        }
+        .cmpTable th {
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--muted2);
+        }
+        .cmpTable td b {
+            white-space: nowrap;
+        }
+        .newTag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #34c759;
+            border: 1px solid rgba(52, 199, 89, 0.45);
+            border-radius: 999px;
+            padding: 1px 8px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+    </style>
+
     <script type="application/ld+json">
     {{jsonld_app}}
     </script>
+{{jsonld_faq}}
 {{suggest_data}}
 </head>
 
@@ -47,6 +86,7 @@
                     <b>CNC Workpiece Calculator</b>
                 </a>
                 <nav class="nav" aria-label="Primary">
+                    <a href="#geometry">{{nav_geometry}}</a>
                     <a href="#features">{{nav_features}}</a>
                     <a href="#tutorial">{{nav_tutorial}}</a>
                     <a href="#faq">{{nav_faq}}</a>
@@ -59,6 +99,7 @@
     </header>
 
     <main id="main" class="container">
+        <!-- Hero -->
         <section class="hero">
             <div class="heroGrid">
                 <div>
@@ -74,24 +115,112 @@
                         <a class="btn btnPrimary" href="https://apps.apple.com/us/app/cnc-workpiece-calculator/id6755989452" target="_blank" rel="noopener">
                             {{cta_store}}
                         </a>
-                        <a class="btn btnGhost" href="#tutorial">{{cta_how}}</a>
-                        <a class="btn btnGhost" href="mailto:wangning.engineer@outlook.com">{{cta_contact}}</a>
+                        <a class="btn btnGhost" href="#geometry">{{cta_geometry}}</a>
+                        <a class="btn btnGhost" href="#tutorial">{{cta_tutorial}}</a>
                     </div>
+                    <p class="heroNote">
+                        {{hero_note}}
+                    </p>
                 </div>
-
-                <div class="heroCard" aria-label="App preview">
-                    <div class="heroCardInner">
-                        <img
-                            class="heroMedia"
-                            src="{{base}}assets/cnc-hero-illustration.webp"
-                            alt="{{alt_hero}}"
-                            loading="lazy"
-                        />
-                    </div>
+                <div style="display: flex; gap: 12px; justify-content: center">
+                    <img
+                        src="{{base}}assets/cnc-geo-flatness.jpg"
+                        alt="{{alt_hero_flat}}"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
+                    <img
+                        src="{{base}}assets/cnc-geo-circularity.jpg"
+                        alt="{{alt_hero_circ}}"
+                        style="width: 48%; border-radius: 14px; box-shadow: var(--shadow)"
+                    />
                 </div>
             </div>
         </section>
 
+        <!-- Geometry (new in 1.0.2) -->
+        <section id="geometry" class="section">
+            <h2>{{h2_geometry}} <span class="newTag">{{tag_new}}</span></h2>
+            <p>
+                {{p_geometry_intro}}
+            </p>
+
+            <div class="card">
+                <table class="cmpTable">
+                    <thead>
+                        <tr>
+                            <th>{{th_step}}</th>
+                            <th>{{th_excel}}</th>
+                            <th>{{th_app}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>{{cmp1s}}</b></td>
+                            <td>{{cmp1e}}</td>
+                            <td>{{cmp1a}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{cmp2s}}</b></td>
+                            <td>{{cmp2e}}</td>
+                            <td>{{cmp2a}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{cmp3s}}</b></td>
+                            <td>{{cmp3e}}</td>
+                            <td>{{cmp3a}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{cmp4s}}</b></td>
+                            <td>{{cmp4e}}</td>
+                            <td>{{cmp4a}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>{{cmp5s}}</b></td>
+                            <td>{{cmp5e}}</td>
+                            <td>{{cmp5a}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/cnc-geo-flatness.jpg" alt="{{alt_geo_flat}}" loading="lazy" />
+                    <figcaption class="figcap">
+                        {{figcap_flat}}
+                    </figcaption>
+                </figure>
+                <figure class="figure" style="margin: 0">
+                    <img src="{{base}}assets/cnc-geo-circularity.jpg" alt="{{alt_geo_circ}}" loading="lazy" />
+                    <figcaption class="figcap">
+                        {{figcap_circ}}
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="grid3" role="list" style="margin-top: 14px">
+                <div class="card" role="listitem">
+                    <h3>{{g1t}}</h3>
+                    <p>
+                        {{g1d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{g2t}}</h3>
+                    <p>
+                        {{g2d}}
+                    </p>
+                </div>
+                <div class="card" role="listitem">
+                    <h3>{{g3t}}</h3>
+                    <p>
+                        {{g3d}}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
         <section id="features" class="section">
             <h2>{{h2_features}}</h2>
             <p>
@@ -138,6 +267,7 @@
             </div>
         </section>
 
+        <!-- Tutorial -->
         <section id="tutorial" class="section">
             <h2>{{h2_tutorial}}</h2>
             <p>{{p_tutorial}}</p>
@@ -145,14 +275,42 @@
             <div class="split">
                 <div class="figure">
                     <img
-                        src="{{base}}assets/cnc-screenshot-centering.png"
-                        alt="{{alt_fig1}}"
+                        src="{{base}}assets/cnc-geo-flatness-chart.jpg"
+                        alt="{{alt_geo1}}"
                         loading="lazy"
                         onerror="this.style.display='none'"
                     />
-                    <div class="figcap">
-                        {{fig1}}
+                    <div class="figcap">{{fig_geo1}}</div>
+                </div>
+                <div class="steps" aria-label="Geometry steps">
+                    <div class="step">
+                        <div class="stepNum">1</div>
+                        <div>{{gc1}}</div>
                     </div>
+                    <div class="step">
+                        <div class="stepNum">2</div>
+                        <div>{{gc2}}</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">3</div>
+                        <div>{{gc3}}</div>
+                    </div>
+                    <div class="step">
+                        <div class="stepNum">4</div>
+                        <div>{{gc4}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="split" style="margin-top: 14px">
+                <div class="figure">
+                    <img
+                        src="{{base}}assets/cnc-geo-circularity-chart.jpg"
+                        alt="{{alt_geo2}}"
+                        loading="lazy"
+                        onerror="this.style.display='none'"
+                    />
+                    <div class="figcap">{{fig_geo2}}</div>
                 </div>
                 <div class="steps" aria-label="Centering steps">
                     <div class="step">
@@ -250,6 +408,7 @@
                 </div>
             </div>
         </section>
+
         <section class="section">
             <h2>{{h2_who}}</h2>
             <div class="grid3" role="list">
@@ -277,9 +436,7 @@
                 </details>
                 <details>
                     <summary>{{q2}}</summary>
-                    <p>
-                        {{a2}}
-                    </p>
+                    <p>{{a2}}</p>
                 </details>
                 <details>
                     <summary>{{q3}}</summary>
@@ -288,6 +445,26 @@
                 <details>
                     <summary>{{q4}}</summary>
                     <p>{{a4}}</p>
+                </details>
+                <details>
+                    <summary>{{q5}}</summary>
+                    <p>{{a5}}</p>
+                </details>
+                <details>
+                    <summary>{{q6}}</summary>
+                    <p>{{a6}}</p>
+                </details>
+                <details>
+                    <summary>{{q7}}</summary>
+                    <p>{{a7}}</p>
+                </details>
+                <details>
+                    <summary>{{q8}}</summary>
+                    <p>{{a8}}</p>
+                </details>
+                <details>
+                    <summary>{{q9}}</summary>
+                    <p>{{a9}}</p>
                 </details>
             </div>
         </section>
